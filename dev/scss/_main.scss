@@ -1,0 +1,62 @@
+body{
+  font-family: $font-main;
+  font-size: 18px;
+  color: #333;
+}
+
+h1{
+  font-family: $font-main-black;
+  font-size: 72px;
+  color: $color-alt-light;
+  text-transform: uppercase;
+}
+
+h2{
+  font-family: $font-main-black;
+  font-size: 40px;
+  color: $color-alt;
+  text-transform: uppercase;
+}
+
+h3{
+  font-family: $font-main-black;
+  font-size: 20px;
+  color: $color-alt;
+  text-transform: uppercase;
+}
+
+a{
+  transition: all .3s ease;
+}
+
+.btn-main{
+  color: $color-brand-gray;
+  text-transform: uppercase;
+  padding: 5px 40px;
+  border: 1px solid $color-brand;
+  background-color: transparent;
+  display: inline-block;
+  text-align: center;
+
+  &:hover,
+  &:focus{
+    background-color: $color-brand;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  &.btn-lrg{
+    font-size: 36px;
+    padding: 10px 20px;
+  }
+}
+
+.blue-overlay{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 3;
+  background-color: rgba(2, 32, 62, .6);
+}
