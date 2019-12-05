@@ -1,0 +1,60 @@
+@font-face {
+  font-family: 'sansationbold';
+  src: url('Fonts/Sansation-Bold-webfont.eot');
+  src: url('Fonts/Sansation-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+        url('Fonts/Sansation-Bold-webfont.woff2') format('woff2'),
+        url('Fonts/Sansation-Bold-webfont.woff') format('woff'),
+        url('Fonts/Sansation-Bold-webfont.ttf') format('truetype'),
+        url('Font/Sansation-Bold-webfont.svg#sansationbold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'sansation_lightlight';
+  src: url('Fonts/Sansation-Light-webfont.eot');
+  src: url('Fonts/Sansation-Light-webfont.eot?#iefix') format('embedded-opentype'),
+        url('Fonts/Sansation-Light-webfont.woff2') format('woff2'),
+        url('Fonts/Sansation-Light-webfont.woff') format('woff'),
+        url('Fonts/Sansation-Light-webfont.ttf') format('truetype'),
+        url('Fonts/Sansation-Light-webfont.svg#sansation_lightlight') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@import url("http://fast.fonts.net/t/1.css?apiType=css&projectid=4ab6e0ae-8c33-408e-b24a-76f929d1c77e");
+@font-face{
+    font-family:"Avenir LT W01_45 Book1475508";
+    src:url("Fonts/710789a0-1557-48a1-8cec-03d52d663d74.eot?#iefix");
+    src:url("Fonts/710789a0-1557-48a1-8cec-03d52d663d74.eot?#iefix") format("eot"),url("Fonts/065a6b14-b2cc-446e-9428-271c570df0d9.woff2") format("woff2"),url("Fonts/65d75eb0-2601-4da5-a9a4-9ee67a470a59.woff") format("woff"),url("Fonts/c70e90bc-3c94-41dc-bf14-caa727c76301.ttf") format("truetype");
+}
+@font-face{
+    font-family:"Avenir LT W01_55 Roman1475520";
+    src:url("Fonts/57bf7902-79ee-4b31-a327-1bbf59a3d155.eot?#iefix");
+    src:url("Fonts/57bf7902-79ee-4b31-a327-1bbf59a3d155.eot?#iefix") format("eot"),url("Fonts/b290e775-e0f9-4980-914b-a4c32a5e3e36.woff2") format("woff2"),url("Fonts/4b978f72-bb48-46c3-909a-2a8cd2f8819c.woff") format("woff"),url("Fonts/9bdf0737-f98c-477a-9365-ffc41b9d1285.ttf") format("truetype");
+}
+@font-face{
+    font-family:"Avenir LT W01_65 Medium1475532";
+    src:url("Fonts/e0542193-b2e6-4273-bc45-39d4dfd3c15b.eot?#iefix");
+    src:url("Fonts/e0542193-b2e6-4273-bc45-39d4dfd3c15b.eot?#iefix") format("eot"),url("Fonts/17b90ef5-b63f-457b-a981-503bb7afe3c0.woff2") format("woff2"),url("Fonts/c9aeeabd-dd65-491d-b4be-3e0db9ae47a0.woff") format("woff"),url("Fonts/25f994de-d13f-4a5d-a82b-bf925a1e054d.ttf") format("truetype");
+}
+@font-face{
+    font-family:"Avenir LT W01_85 Heavy1475544";
+    src:url("Fonts/6af9989e-235b-4c75-8c08-a83bdaef3f66.eot?#iefix");
+    src:url("Fonts/6af9989e-235b-4c75-8c08-a83bdaef3f66.eot?#iefix") format("eot"),url("Fonts/d513e15e-8f35-4129-ad05-481815e52625.woff2") format("woff2"),url("Fonts/61bd362e-7162-46bd-b67e-28f366c4afbe.woff") format("woff"),url("Fonts/ccd17c6b-e7ed-4b73-b0d2-76712a4ef46b.ttf") format("truetype");
+}
+@font-face{
+    font-family:"Avenir LT W01_95 Black1475556";
+    src:url("Fonts/f55e4498-ad48-4577-93a0-c614de5cbbb8.eot?#iefix");
+    src:url("Fonts/f55e4498-ad48-4577-93a0-c614de5cbbb8.eot?#iefix") format("eot"),url("Fonts/c78eb7af-a1c8-4892-974b-52379646fef4.woff2") format("woff2"),url("Fonts/75b36c58-2a02-4057-a537-09af0832ae46.woff") format("woff"),url("Fonts/b5c44a82-eeb8-41de-9c3f-a8db50b24b8a.ttf") format("truetype");
+}
+
+
+
+$font-main: "Avenir LT W01_55 Roman1475520", sans-serif;
+$font-main-book: "Avenir LT W01_45 Book1475508", sans-serif;
+$font-main-medium: "Avenir LT W01_65 Medium1475532", sans-serif;
+$font-main-heavy: "Avenir LT W01_85 Heavy1475544", sans-serif;
+$font-main-black: "Avenir LT W01_95 Black1475556", sans-serif;
+
+$font-brand-bold: "sansationbold", sans-serif;
+$font-brand-light: "sansation_lightlight", sans-serif;
