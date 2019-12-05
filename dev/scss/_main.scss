@@ -33,7 +33,7 @@ a{
   color: $color-brand-gray;
   text-transform: uppercase;
   padding: 5px 40px;
-  border: 1px solid $color-brand;
+  border: 2px solid $color-brand;
   background-color: transparent;
   display: inline-block;
   text-align: center;
@@ -59,4 +59,31 @@ a{
   width: 100%;
   z-index: 3;
   background-color: rgba(2, 32, 62, .6);
+}
+
+section{
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+#our-purpose{
+  h2{
+    font-size: 70px;
+    font-family: $font-main;
+    color: $color-alt-light;
+
+    .bold{
+      font-family: $font-main-black;
+    }
+  }
+
+  h3{
+    font-size: 40px;
+    font-family: $font-main;
+    color: $color-alt-light;
+
+    .bold{
+      font-family: $font-main-black;
+    }
+  }
 }
