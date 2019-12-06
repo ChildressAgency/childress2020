@@ -7,22 +7,22 @@ body{
 h1{
   font-family: $font-main-black;
   font-size: 72px;
-  color: $color-alt-light;
   text-transform: uppercase;
+  line-height: 1em;
 }
 
 h2{
   font-family: $font-main-black;
   font-size: 40px;
-  color: $color-alt;
   text-transform: uppercase;
+  line-height: 1em;
 }
 
 h3{
   font-family: $font-main-black;
   font-size: 20px;
-  color: $color-alt;
   text-transform: uppercase;
+  line-height: 1em;
 }
 
 a{
@@ -87,6 +87,14 @@ section{
     .bold{
       font-family: $font-main-black;
     }
+  }
+}
+
+#what-we-do{
+  color: #fff;
+
+  .btn-main{
+    color: #fff;
   }
 }
 
@@ -159,4 +167,142 @@ section{
     height: 50%;
     z-index: 5;
   }
+}
+
+.v-centered-caption{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+.xtra-lrg-text{
+  font-size: 118px;
+  font-family: $font-main-book;
+
+  .bold{
+    font-family: $font-main-black;
+    display: block;
+  }
+}
+
+#clients{
+  text-align: center;
+
+  .client-list{
+    list-style: none;
+    padding-left: 0;
+
+    li{
+      display: inline-block;
+      margin: 0 25px;
+    }
+  }
+}
+
+#testimonials{
+  text-align: center;
+  background-image: url(images/tbg-all-layers.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom left;
+
+  .btn-main{
+    margin-top:60px;
+  }
+}
+
+.testimonial-bubble{
+  background-color: $color-alt;
+  max-width: 360px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+  padding: 50px 25px 25px;
+  color: #fff;
+  font-size: 14px;
+  position:relative;
+
+  blockquote::before{
+    content:"";
+    position: absolute;
+    height: 44px;
+    width: 72px;
+    background-image: url(images/sprites-png.png);
+    background-repeat: no-repeat;
+    background-position: 0 -43px;
+    top: 5px;
+    left: 15px;
+  }
+
+  blockquote::after{
+    content: "";
+    position: absolute;
+    height: 41px;
+    width: 67px;
+    background-image: url(images/sprites-png.png);
+    background-repeat: no-repeat;
+    background-position: -77px -43px;
+    bottom: 5px;
+    right: 15px;
+  }
+}
+
+.testimonial{
+  &:nth-child(even){
+    .testimonial-bubble{
+      margin-top: 50px;
+
+      &::before{
+        content:"";
+        position: absolute;
+        height: 52px;
+        width: 37px;
+        background-image: url(images/sprites-png.png);
+        background-repeat: no-repeat;
+        background-position: -150px -41px;
+        top: -50px;
+        left: 5px;
+      }
+    }
+  }
+
+  &:nth-child(odd){
+    .testimonial-bubble{
+      margin-bottom: 50px;
+
+      &::after{
+        content: "";
+        position: absolute;
+        height: 51px;
+        width: 36px;
+        background-image: url(images/sprites-png.png);
+        background-repeat: no-repeat;
+        background-position:-192px -41px;
+        bottom: -50px;
+        right: 5px;
+      }
+    }
+  }
+}
+
+.swiper-button-prev::after{
+  content: "";
+  font-family: none;
+  height: 24px;
+  width: 24px;
+  background-image: url(images/sprites-png.png);
+  background-repeat: no-repeat;
+  background-position: 0 -90px;
+}
+
+.swiper-button-next::after{
+  content: "";
+  font-family: none;
+  height: 25px;
+  width: 25px;
+  background-image: url(images/sprites-png.png);
+  background-repeat: no-repeat;
+  background-position: -30px -90px;
 }

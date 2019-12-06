@@ -4,11 +4,22 @@
 
 jQuery(document).ready(function($){
   var testimonials = new Swiper('.swiper-container',{
+    autoplay: true,
     loop: true,
     navigation:{
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev'
     },
+    slidesPerView: 1,
+    spaceBetween: 25,
+    breakpoints: {
+      1200: {
+        slidesPerView: 3,
+      },
+      992: {
+        slidesPerView: 2
+      }
+    }
   });
 
   $(window).on('scroll', function(){
