@@ -1,0 +1,63 @@
+.marketing-easy{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+
+  h2{
+    font-family: $font-brand-bold;
+    font-size: 65px;
+    color: #fff;
+    text-transform: uppercase;
+    margin-top:60px;
+  }
+
+  @include media-breakpoint-down(sm){
+    h2{
+      font-size: 52px;
+    }
+  }
+}
+
+.contact-form{
+  max-width: 560px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #fff;
+
+  .contact-form-intro{
+    font-family: $font-brand-bold;
+    font-size: 48px;
+    color: #fff;
+    text-transform: uppercase;
+  }
+
+  p{
+    font-family: $font-main-black;
+    font-size: 22px;
+    color: #fff;
+  }
+}
+
+.service-selection{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  text-align: center;
+  font-size:14px;
+}
+
+.contact-service{
+  width: 60px;
+  margin: 10px;
+
+  .wpcf7-list-item-label{
+    display: block;
+  }
+
+  .service-icon-bg{
+    height: 60px;
+    width:60px;
+    border-radius: 50%;
+  }
+}

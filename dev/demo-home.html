@@ -318,30 +318,35 @@
   </main>
 
   <section id="contact"
-    style="background-image:url(../wp-theme-files/images/dot-bg.jpg); background-position:center center;">
+    style="background-image:url(../wp-theme-files/images/contact-section-bg.jpg); background-position:center center;">
     <div class="container-fluid">
       <div class="row">
-        <div class="col-md-4">
+        <div class="col-lg-4 marketing-easy">
           <img src="../wp-theme-files/images/logo-large.png" class="img-fluid d-block" alt="" />
           <h2>We Make Marketing Easy</h2>
         </div>
-        <div class="col-md-8">
+        <div class="col-lg-8">
           <div class="contact-form">
-            <h3>Need help with a particular service?</h3>
-            <p>Please select the service you need help with.</p>
+            <h3 class="contact-form-intro">Need help with a particular service?</h3>
+            <p style="color:#f19024;">Please select the service you need help with.</p>
   
             <div class="service-selection">
               <div class="contact-service">
-                <span class="wpcf7-form-control-wrap service">
-                  <span class="wpcf7-form-control wpcf7-checkbox" id="brand-identity">
-                    <span class="wpcf7-list-item first last">
-                      <label>
+                <label>
+                  <div class="service-icon-bg">
+                    <svg class="service-icon">
+                      <use xlink:href="#icon-magnifier" />
+                    </svg>
+                  </div>
+                  <span class="wpcf7-form-control-wrap service">
+                    <span class="wpcf7-form-control wpcf7-checkbox" id="brand-identity">
+                      <span class="wpcf7-list-item first last">
                         <input type="checkbox" name="service[]" value="Brand Identity" />
                         <span class="wpcf7-list-item-label">brand identity</span>
-                      </label>
+                      </span>
                     </span>
                   </span>
-                </span>
+                </label>
               </div>
   
               <div class="contact-service">
