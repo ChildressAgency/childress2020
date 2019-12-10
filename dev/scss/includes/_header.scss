@@ -20,6 +20,12 @@
       &>img{
         transition: all .3s ease;
       }
+
+      &>svg{
+        width: 70px;
+        height: 64px;
+        transition: all .3s ease;
+      }
     }
     .brand-name{
       padding-left: 20px;
@@ -58,6 +64,11 @@
       .brand{
         .logo>img{
           max-width:50%;
+        }
+
+        .logo>svg{
+          width: 40px;
+          height: 34px;
         }
 
         .brand-name{

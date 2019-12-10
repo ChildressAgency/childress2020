@@ -63,6 +63,25 @@
   }
 }
 
+#hero{
+  .hero-caption{
+    margin-left: auto;
+    margin-right: 0;
+
+    h2{
+      font-size: 65px;
+      color: #fff;
+      text-align: right;
+    }
+
+    @include media-breakpoint-down(sm){
+      h2{
+        font-size: 52px;
+      }
+    }
+  }
+}
+
 @include media-breakpoint-up(lg){
   .hero-caption{
     max-width:75%;

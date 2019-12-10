@@ -4,6 +4,12 @@
   justify-content: flex-end;
   align-items: flex-start;
 
+  .logo-large{
+    height: 273px;
+    width: 244px;
+    fill: #fff;
+  }
+
   h2{
     font-family: $font-brand-bold;
     font-size: 65px;
