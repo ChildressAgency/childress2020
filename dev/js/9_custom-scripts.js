@@ -30,4 +30,15 @@ jQuery(document).ready(function($){
       $('#header').removeClass('slim');
     }
   });
+
+  $('.contact-service input[type="checkbox"]').on('click', function(){
+    var $serviceIconBg = $(this).closest('.service').siblings('.service-icon-bg');
+
+    if($(this).prop("checked") == true){
+      $serviceIconBg.addClass('service-checked');
+    }
+    else{
+      $serviceIconBg.removeClass('service-checked');
+    }
+  });
 }); //end jQuery

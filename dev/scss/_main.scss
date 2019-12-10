@@ -26,6 +26,18 @@ h3{
 }
 
 a{
+  color: $color-alt;
+  font-family: $font-main-heavy;
+  transition: all .3s ease;
+
+  &:hover,
+  &:focus{
+    color: $color-alt;
+    text-decoration: underline;
+  }
+}
+
+input[type="submit"]{
   transition: all .3s ease;
 }
 
@@ -48,6 +60,17 @@ a{
   &.btn-lrg{
     font-size: 36px;
     padding: 10px 20px;
+  }
+
+  &.btn-alt{
+    font-family: $font-main;
+    color: #fff;
+    background-color: $color-brand;
+
+    &:hover,
+    &:focus{
+      background-color: $color-alt;
+    }
   }
 }
 
