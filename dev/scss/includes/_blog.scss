@@ -153,3 +153,30 @@
     font-size: 75px;
   }
 }
+
+.alignnone{
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 25px;
+}
+.aligncenter{
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 25px auto;
+}
+.alignright{
+  float: right;
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 25px 0 25px 25px;
+}
+.alignleft{
+  float: left;
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 25px 25px 25px 0;
+}
