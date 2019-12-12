@@ -198,3 +198,33 @@
   justify-content: space-around;
   align-items: center;
 }
+
+#contact-info{
+  color: #fff;
+
+  .container-fluid{
+    position: relative;
+    z-index: 5;
+  }
+
+  h3{
+    font-size: 48px;
+  }
+
+  h4{
+    font-family: $font-main-black;
+    color: $color-brand;
+  }
+
+  .loc-city{
+    font-size: 20px;
+    color: $color-brand;
+    font-family: $font-main-heavy;
+    margin-bottom: 0;
+    margin-top: 25px;
+  }
+
+  a{
+    color: #fff;
+  }
+}
