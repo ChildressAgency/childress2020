@@ -73,6 +73,10 @@
       color: #fff;
       text-align: right;
       text-transform: lowercase;
+
+      span{
+        color: $color-brand;
+      }
     }
 
     @include media-breakpoint-down(sm){

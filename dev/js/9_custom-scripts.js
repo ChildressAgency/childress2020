@@ -3,8 +3,8 @@
 */
 
 jQuery(document).ready(function($){
-  var testimonials = new Swiper('.swiper-container',{
-    autoplay: true,
+  var testimonials = new Swiper('#testimonials .swiper-container',{
+    //autoplay: true,
     loop: true,
     navigation:{
       nextEl: '.swiper-button-next',
@@ -18,6 +18,27 @@ jQuery(document).ready(function($){
       },
       992: {
         slidesPerView: 2
+      }
+    }
+  });
+
+  var team = new Swiper('#our-team .swiper-container', {
+    //autoplay: true,
+    loop: true,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev'
+    },
+    slidesPerView: 1,
+    spaceBetween: 25,
+    centeredSlides: true,
+    //autoHeight: true,
+    breakpoints: {
+      1200: {
+        slidesPerView: 5
+      },
+      992: { 
+        slidesPerView: 3
       }
     }
   });
