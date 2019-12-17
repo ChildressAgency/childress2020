@@ -52,6 +52,17 @@ jQuery(document).ready(function($){
     }
   });
 
+  var servicePageHeight = $('.service-page').outerHeight();
+  var contactHeight = $('#contact').outerHeight();
+  var serviceLineContainerHeight = servicePageHeight - contactHeight;
+  $(window).on('scroll', function(){
+    var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    //var height = $('.service-page').outerHeight() - $('#contact').outerHeight();
+    //var height = $('.service-page').outerHeight() - 275;
+    var scrolled = (winScroll / serviceLineContainerHeight) * 100;
+    $('.service-line').css('height', scrolled + '%');
+  });
+
   $('.contact-service input[type="checkbox"]').on('click', function(){
     var $serviceIconBg = $(this).closest('.service').siblings('.service-icon-bg');
 

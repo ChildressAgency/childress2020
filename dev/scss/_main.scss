@@ -646,7 +646,9 @@ section{
 }
 
 .service-page{
-  padding-top: 200px;
+  padding-top: 160px;
+  position: relative;
+  overflow: hidden;
 
   .image-side{
     background-repeat: no-repeat;
@@ -750,6 +752,32 @@ section{
   .service-page{
     .image-side{
       height: 465px;
+    }
+  }
+}
+
+@include media-breakpoint-up(md){
+  .service-line{
+    position: absolute;
+    z-index: 999;
+    top: 260px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 15px;
+    height: 0%;
+    background-color: $color-brand;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+
+    &::before{
+      content:"";
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      height: 52px;
+      width: 52px;
+      background-color: $color-brand;
     }
   }
 }
