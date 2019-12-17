@@ -1,12 +1,18 @@
 #header{
+  position: fixed;
+  z-index: 999999;
+  top: 0;
+  left: 0;
+  width: 100%;
+
   nav{
-    position: fixed;
-    width: 100%;
-    z-index: 99999;
-    background-color: rgba(241,144,36,.8);
     padding-top: 20px;
     padding-bottom: 20px;
     transition: all .3s ease;
+
+    &.navbar-dark{
+      background-color: rgba(241,144,36,.8);
+    }
   }
 
   .brand{
@@ -45,15 +51,6 @@
     margin-right: 0;
   }
 
-
-  @include media-breakpoint-down(md){
-    nav{
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
-  }
-
   @include media-breakpoint-up(lg){
     &.slim{
       nav{
@@ -79,6 +76,14 @@
         font-size: 14px;
       }
     }
+  }
+}
+
+@include media-breakpoint-down(md){
+  #header{
+    position: absolute;
+    top: 0;
+    left: 0;
   }
 }
 
@@ -122,5 +127,41 @@
   .nav-link:focus{
     font-family: $font-main-black;
     border-color: #fff;
+  }
+}
+
+#services-nav{
+  background-color: rgba(2, 32, 62, .8);
+  display: flex;
+  justify-content: center;
+
+  nav{
+    padding-top: 0;
+    padding-bottom: 0;
+    display: flex;
+    justify-content: space-around;
+
+    a{
+      padding: 10px 15px;
+      color: #fff;
+      font-size: 12px;
+      text-transform: uppercase;
+      text-align: center;
+
+      &::after{
+        content: attr(title);
+        font-family: $font-main-black;
+        height:0;
+        overflow: hidden;
+        visibility: hidden;
+        display:block;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(sm){
+    nav{
+      flex-wrap: nowrap;
+    }
   }
 }

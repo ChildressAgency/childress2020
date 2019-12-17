@@ -62,4 +62,6 @@ jQuery(document).ready(function($){
       $serviceIconBg.removeClass('service-checked');
     }
   });
+
+  AOS.init();
 }); //end jQuery
