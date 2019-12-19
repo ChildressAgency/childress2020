@@ -72,56 +72,6 @@
   font-size:14px;
 }
 
-.contact-service{
-  width: 60px;
-  margin: 10px;
-
-  .wpcf7-list-item-label{
-    display: block;
-  }
-
-  .service-icon-bg{
-    height: 60px;
-    width:60px;
-    border-radius: 50%;
-    background-color: $color-brand;
-    padding: 15px;
-    position: relative;
-    overflow: hidden;
-    transition: all .3s ease;
-
-    &.service-checked{
-      background-color: $color-alt-light;
-    }
-  }
-
-  .service-icon{
-    fill: #fff;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height: 50%;
-    z-index: 5;
-  }
-
-  &:hover,
-  &:focus{
-    .service-icon-bg{
-      background-color: $color-alt-light;
-    }
-  }
-
-  input[type="checkbox"]{
-    position: absolute;
-    opacity: 0;
-  }
-
-  .wpcf7-list-item-label{
-    margin-top: 10px;
-  }
-}
-
 .social{
   display: flex;
   align-items: center;

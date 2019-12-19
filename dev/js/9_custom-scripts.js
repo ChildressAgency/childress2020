@@ -63,8 +63,8 @@ jQuery(document).ready(function($){
     $('.service-line').css('height', scrolled + '%');
   });
 
-  $('.contact-service input[type="checkbox"]').on('click', function(){
-    var $serviceIconBg = $(this).closest('.service').siblings('.service-icon-bg');
+  $('.disc-icon-checkbox input[type="checkbox"]').on('click', function(){
+    var $serviceIconBg = $(this).closest('.service').siblings('.disc-icon-bg');
 
     if($(this).prop("checked") == true){
       $serviceIconBg.addClass('service-checked');
