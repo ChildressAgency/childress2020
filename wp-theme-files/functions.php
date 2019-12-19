@@ -67,11 +67,6 @@ function cai_add_script_meta($tag, $handle){
 add_action('wp_enqueue_scripts', 'cai_styles');
 function cai_styles(){
   wp_register_style(
-    'google-fonts',
-    'https://fonts.googleapis.com/css?family=Maitree:400,700|Nunito+Sans:400,600,700|Nunito:700'
-  );
-
-  wp_register_style(
     'fontawesome',
     'https://use.fontawesome.com/releases/v5.6.3/css/all.css'
   );
@@ -81,7 +76,6 @@ function cai_styles(){
     get_stylesheet_directory_uri() . '/style.css'
   );
 
-  wp_enqueue_style('google-fonts');
   wp_enqueue_style('fontawesome');
   wp_enqueue_style('cai-css');
 }
@@ -102,14 +96,67 @@ function cai_setup(){
   add_theme_support('post-thumbnails');
   //set_post_thumbnail_size(320, 320);
 
+  add_theme_support(
+    'html5',
+    array(
+      'comment-form',
+      'comment-list',
+      'gallery',
+      'caption'
+    )
+  );
+
+  add_theme_support('editor-styles');
+  add_editor_style('style-editor.css');
+
+  add_theme_support('wp-block-styles');
+  add_theme_support('responsive-embeds');
+
   register_nav_menus(array(
     'header-nav' => 'Header Navigation',
-    'footer-nav' => 'Footer Navigation',
-    'company-menu' => 'Company Footer Menu',
-    'services-menu' => 'Services Footer Menu'
+    'services-sub-nav' => 'Services Sub Navigation',
+    'services-nav' => 'Services Footer Navigation'
   ));
 
   load_theme_textdomain('cai', get_stylesheet_directory_uri() . '/languages');
 }
 
 require_once dirname(__FILE__) . '/includes/class-wp-bootstrap-navwalker.php';
+
+function cai_header_fallback_menu(){ ?>
+  <div id="header-nav" class="collapse navbar-collapse">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item<?php if(is_front_page()){ echo ' active'; } ?>">
+        <a href="<?php echo esc_url(home_url()); ?>" class="nav-link" title="<?php echo esc_attr__('Home', 'cai'); ?>"><?php echo esc_html__('Home', 'cai'); ?></a>
+      </li>
+      <li class="nav-item<?php if(is_page('about-us')); ?>">
+        <a href="<?php echo esc_url(home_url('about-us')); ?>" class="nav-link" title="<?php echo esc_attr__('About Us', 'cai'); ?>"><?php echo esc_html__('About Us', 'cai'); ?></a>
+      </li>
+      <li class="nav-item<?php if(is_page('services') || is_singular('service')){ echo ' active'; } ?>">
+        <a href="<?php echo esc_url(home_url('services')); ?>" class="nav-link" title="<?php echo esc_attr__('Services', 'cai'); ?>"><?php echo esc_html__('Services', 'cai'); ?></a>
+      </li>
+      <li class="nav-item<?php if(is_page('case-studies') || is_singular('case-study')){ echo ' active'; } ?>">
+        <a href="<?php echo esc_url(home_url('case-studies')); ?>" class="nav-link" title="<?php echo esc_attr__('Case Studies', 'cai'); ?>"><?php echo esc_html__('Case Studies', 'cai'); ?></a>
+      </li>
+      <li class="nav-item<?php if(is_home() || is_singular('post')){ echo ' active'; } ?>">
+        <a href="<?php echo esc_url(home_url('news-events')); ?>" class="nav-link" title="<?php echo esc_attr__('News/Events', 'cai'); ?>"><?php echo esc_html__('News/Events', 'cai'); ?></a>
+      </li>
+      <li class="nav-item<?php if(is_page('contact')){ echo ' active'; } ?>">
+        <a href="<?php echo esc_url(home_url('contact')); ?>" class="nav-link" title="<?php echo esc_attr__('Contact', 'cai'); ?>"><?php echo esc_html__('Contact', 'cai'); ?></a>
+      </li>
+    </ul>
+  </div>
+<?php }
+
+function cai_services_sub_nav_fallback_menu(){ ?>
+  <div id="services-nav">
+    <nav class="nav services-nav">
+      <a href="<?php echo esc_url(home_url('brand-identity')); ?>" title="<?php echo esc_attr__('Brand Identity', 'cai'); ?>"><?php echo esc_html__('Brand Identity', 'cai'); ?></a>
+      <a href="<?php echo esc_url(home_url('graphic-design')); ?>" title="<?php echo esc_attr__('Graphic Design', 'cai'); ?>"><?php echo esc_html__('Graphic Design', 'cai'); ?></a>
+      <a href="<?php echo esc_url(home_url('web-design')); ?>" title="<?php echo esc_attr__('Web Design', 'cai'); ?>"><?php echo esc_html__('Web Design', 'cai'); ?></a>
+      <a href="<?php echo esc_url(home_url('seo')); ?>" title="<?php echo esc_attr__('SEO', 'cai'); ?>"><?php echo esc_html__('SEO', 'cai'); ?></a>
+      <a href="<?php echo esc_url(home_url('digital-marketing')); ?>" title="<?php echo esc_attr_('Digital Marketing', 'cai'); ?>"><?php echo esc_html__'Digital Marketing', 'cai'); ?></a>
+      <a href="<?php echo esc_url(home_url('social-media')); ?>" title="<?php echo esc_attr__('Social Media', 'cai'); ?>"><?php echo esc_html__('Social Media', 'cai'); ?></a>
+    </nav>
+  </div>
+<?php }
