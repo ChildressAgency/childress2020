@@ -1,0 +1,105 @@
+#testimonials{
+  text-align: center;
+  background-image: url(images/tbg-all-layers.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom left;
+
+  .btn-main{
+    margin-top:60px;
+  }
+}
+
+.testimonial-bubble{
+  background-color: $color-alt;
+  max-width: 360px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+  padding: 50px 25px 25px;
+  color: #fff;
+  font-size: 14px;
+  position:relative;
+
+  blockquote::before{
+    content:"";
+    position: absolute;
+    height: 44px;
+    width: 72px;
+    background-image: url(images/sprites-png.png);
+    background-repeat: no-repeat;
+    background-position: 0 -43px;
+    top: 5px;
+    left: 15px;
+  }
+
+  blockquote::after{
+    content: "";
+    position: absolute;
+    height: 41px;
+    width: 67px;
+    background-image: url(images/sprites-png.png);
+    background-repeat: no-repeat;
+    background-position: -77px -43px;
+    bottom: 5px;
+    right: 15px;
+  }
+}
+
+.testimonial{
+  &:nth-child(even){
+    .testimonial-bubble{
+      margin-top: 50px;
+
+      &::before{
+        content:"";
+        position: absolute;
+        height: 52px;
+        width: 37px;
+        background-image: url(images/sprites-png.png);
+        background-repeat: no-repeat;
+        background-position: -150px -41px;
+        top: -50px;
+        left: 5px;
+      }
+    }
+  }
+
+  &:nth-child(odd){
+    .testimonial-bubble{
+      margin-bottom: 50px;
+
+      &::after{
+        content: "";
+        position: absolute;
+        height: 51px;
+        width: 36px;
+        background-image: url(images/sprites-png.png);
+        background-repeat: no-repeat;
+        background-position:-192px -41px;
+        bottom: -50px;
+        right: 5px;
+      }
+    }
+  }
+}
+
+.swiper-button-prev::after{
+  content: "";
+  font-family: none;
+  height: 24px;
+  width: 24px;
+  background-image: url(images/sprites-png.png);
+  background-repeat: no-repeat;
+  background-position: 0 -90px;
+}
+
+.swiper-button-next::after{
+  content: "";
+  font-family: none;
+  height: 25px;
+  width: 25px;
+  background-image: url(images/sprites-png.png);
+  background-repeat: no-repeat;
+  background-position: -30px -90px;
+}
