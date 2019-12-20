@@ -99,6 +99,33 @@ section{
   position: relative;
 }
 
+.alignnone{
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 25px;
+}
+.aligncenter{
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 25px auto;
+}
+.alignleft{
+  display: block;
+  max-width: 100%;
+  height: auto;
+  float: left;
+  margin: 25px 25px 25px 0;
+}
+.alignright{
+  display: block;
+  max-width: 100%;
+  height: auto;
+  float: right;
+  margin: 25px 0 25px 25px;
+}
+
 #our-purpose{
   h2{
     font-size: 70px;
