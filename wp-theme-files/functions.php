@@ -160,3 +160,14 @@ function cai_services_sub_nav_fallback_menu(){ ?>
     </nav>
   </div>
 <?php }
+
+function cai_services_footer_nav_fallback_menu(){ ?>
+  <ul class="services-nav list-unstyled">
+    <li><a href="<?php echo esc_url(home_url('brand-identity')); ?>"><?php echo esc_html__('brand identity', 'cai'); ?></a></li>
+    <li><a href="<?php echo esc_url(home_url('graphic-design')); ?>"><?php echo esc_html__('graphic design', 'cai'); ?></a></li>
+    <li><a href="<?php echo esc_url(home_url('web-design')); ?>"><?php echo esc_html__('web design', 'cai'); ?></a></li>
+    <li><a href="<?php echo esc_url(home_url('seo')); ?>"><?php echo esc_html__('seo', 'cai'); ?></a></li>
+    <li><a href="<?php echo esc_url(home_url('digital-marketing')); ?>"><?php echo esc_html__('digital marketing', 'cai'); ?></a></li>
+    <li><a href="<?php echo esc_url(home_url('social-media')); ?>"><?php echo esc_html__('social media', 'cai'); ?></a></li>
+  </ul>
+<?php }
