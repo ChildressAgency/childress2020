@@ -1,0 +1,16 @@
+.btn-main{
+  color: #666;
+  text-transform: uppercase;
+  padding: 5px 40px;
+  border: 2px solid #f19024;
+  background-color: transparent;
+  display: inline-block;
+  text-align: center;
+}
+
+.btn-main:hover,
+.btn-main:focus{
+  background-color: #f19024;;
+  color: #fff;
+  text-decoration: none;
+}

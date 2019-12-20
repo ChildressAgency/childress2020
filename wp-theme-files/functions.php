@@ -171,3 +171,33 @@ function cai_services_footer_nav_fallback_menu(){ ?>
     <li><a href="<?php echo esc_url(home_url('social-media')); ?>"><?php echo esc_html__('social media', 'cai'); ?></a></li>
   </ul>
 <?php }
+
+add_filter('block_categories', 'cai_custom_block_category', 10, 2);
+function cai_custom_block_category($categories, $post){
+  return array_merge(
+    $categories,
+    array(
+      array(
+        'slug' => 'custom-blocks',
+        'title' => esc_html__('Custom Blocks', 'cai'),
+        'icon' => 'wordpress'
+      )
+    )
+  );
+}
+
+add_action('acf/init', 'cai_register_blocks');
+function cai_register_blocks(){
+  if(function_exists('acf_register_block_type')){
+    acf_register_block_type(array(
+      'name' => 'prestyled_button',
+      'title' => esc_html__('Pre-Styled button', 'cai'),
+      'description' => esc_html__('Add a pre-styled button', 'cai'),
+      'category' => 'custom-blocks',
+      'mode' => 'auto',
+      'align' => 'full',
+      'render_template' => get_stylesheet_directory() . '/partials/blocks/prestyled_button.php',
+      'enqueue_style' => get_stylesheet_directory_uri() . '/partials/blocks/prestyled_button.css',
+    ));
+  }
+}
