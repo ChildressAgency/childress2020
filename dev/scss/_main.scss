@@ -126,6 +126,13 @@ section{
   margin: 25px 0 25px 25px;
 }
 
+.childress-font-normal{
+  font-family: $font-brand-light;
+}
+.childress-font-bold{
+  font-family: $font-brand-bold;
+}
+
 #our-purpose{
   h2{
     font-size: 70px;
@@ -145,38 +152,6 @@ section{
     .bold{
       font-family: $font-main-black;
     }
-  }
-}
-
-#what-we-do{
-  color: #fff;
-
-  .btn-main{
-    color: #fff;
-  }
-}
-
-.v-centered-caption{
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-  height: 100%;
-
-  p{
-    font-size: 24px;
-    text-transform: uppercase;
-    color: $color-brand-light;
-  }
-}
-
-.xtra-lrg-text{
-  font-size: 118px;
-  font-family: $font-main-book;
-
-  .bold{
-    font-family: $font-main-black;
-    display: block;
   }
 }
 
@@ -471,14 +446,3 @@ section{
   }
 }
 
-.graphic-design-icons{
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-
-  .graphic-design-icon{
-    width: 200px;
-    margin-left: 15px;
-    margin-right: 15px;
-  }
-}

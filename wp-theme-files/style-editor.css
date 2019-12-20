@@ -1,0 +1,31 @@
+@font-face {
+  font-family: 'sansationbold';
+  src: url('Fonts/Sansation-Bold-webfont.eot');
+  src: url('Fonts/Sansation-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+        url('Fonts/Sansation-Bold-webfont.woff') format('woff'),
+        url('Fonts/Sansation-Bold-webfont.ttf') format('truetype'),
+        url('Font/Sansation-Bold-webfont.svg#sansationbold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'sansation_lightlight';
+  src: url('Fonts/Sansation-Light-webfont.eot');
+  src: url('Fonts/Sansation-Light-webfont.eot?#iefix') format('embedded-opentype'),
+        url('Fonts/Sansation-Light-webfont.woff') format('woff'),
+        url('Fonts/Sansation-Light-webfont.ttf') format('truetype'),
+        url('Fonts/Sansation-Light-webfont.svg#sansation_lightlight') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.wp-block{
+  max-width: none;
+}
+
+.childress-font-normal{
+  font-family: 'sansation_lightlight', sans-serif;
+}.childress-font-bold{
+  font-family: "sansationbold", sans-serif;
+}
