@@ -48,7 +48,7 @@
     </nav>
 
     <?php 
-      if(is_page('services') || is_singular('service')){
+      if(is_page('services') || is_page_template('templates/services.php')){
         $services_sub_nav_args = array(
           'theme_location' => 'services-sub-nav', 
           'menu' => '',

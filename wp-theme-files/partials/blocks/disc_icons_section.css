@@ -1,0 +1,128 @@
+.disc-icon-section{
+  background-image: url(images/dot-bg.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 60px;
+  padding-bottom: 100px;
+}
+
+.disc-icon-section h2{
+  color: #fff;
+  text-align: center;
+  font-size: 70px;
+  font-family: "Avenir LT W01_55 Roman1475520", sans-serif;
+}
+
+.disc-icon-section h2 .bold,
+.disc-icon-section h2 strong,
+.disc-icon-section h2 b{
+  font-family: "Avenir LT W01_95 Black1475556", sans-serif;
+  display: block;
+}
+
+.disc-icon-section .extra-large-text{
+  font-size: 99px;
+}
+
+.disc-icon-section-icons{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.disc-icon-wrapper{
+  width: 200px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.disc-icon-bg{
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+  padding: 15px;
+  border-radius: 50%;
+  background-color: #f19024;
+  transition: all .3s ease;
+}
+
+.disc-icon{
+  fill: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 50%;
+  z-index: 5;
+}
+
+.disc-icon-card{
+  display: block;
+  margin-bottom: 40px;
+}
+
+.disc-icon-card h4{
+  font-size: 22px;
+  font-family: "Avenir LT W01_85 Heavy1475544", sans-serif;
+  color: #f19024;
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+.disc-icon-card p{
+  font-family: "Avenir LT W01_65 Medium1475532", sans-serif;
+  color: #fff;
+  line-height: 1.2em;
+}
+
+.disc-icon-card .disc-icon-bg{
+  height: 115px;
+  width: 115px;
+}
+
+.disc-icon-card .disc-icon-bg::after{
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: scaleY(0);
+  transform-origin: bottom center;
+  background: #fd9d59;
+  transition: transform .5s ease-in-out;
+}
+
+.disc-icon-card:hover,
+.disc-icon-card:focus{
+    text-decoration: none;
+}
+
+.disc-icon-card:hover .disc-icon-bg,
+.disc-icon-card:focus .disc-icon-bg{
+  transform: scale(1.2);
+}
+.disc-icon-card:hover .disc-icon-bg::after,
+.disc-icon-card:focus .disc-icon-bg::after{
+  transform: scaleY(1);
+}
+
+.disc-icon-section-caption{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+.disc-icon-section-caption p{
+  font-size: 24px;
+  text-transform: uppercase;
+  color: #fd9d59;
+}
+
+.disc-icon-section-caption .btn-main{
+  color: #fff;
+}

@@ -1,77 +1,62 @@
+<?php if(have_rows('disc_icons')); ?>
+</div></section><?php //close container and previous section ?>
+
 <section class="disc-icon-section">
   <div class="container">
     <div class="row">
       <div class="col-md-8">
-        <div class="graphic-design-icons">
+        <div class="disc-icon-section-icons">
 
-          <div class="graphic-design-icon">
-            <div class="disc-icon-card">
-              <div class="disc-icon-bg">
-                <svg class="disc-icon">
-                  <use xlink:href="#icon-lightbulb" />
-                </svg>
-              </div>
-              <h4>Logo</h4>
-              <p>a fresh breath of creativity</p>
+          <?php while(have_rows('disc_icons')): the_row(); ?>
+
+            <div class="disc-icon-wrapper">
+              <?php 
+                $link = get_sub_field('disc_icon_link');
+                if($link){
+                  echo '<a href="' . esc_url($link['url']) . '" class="disc-icon-card">';
+                }
+                else{
+                  echo '<div class="disc-icon-card">';
+                }
+              ?>
+
+                <div class="disc-icon-bg">
+                  <?php 
+                    if(get_sub_field('icon_file_type') == 'png'){
+                      echo '<img src="' . esc_url(get_sub_field('icon')) . '" class="disc-icon" alt="" />';
+                    }
+                    else{
+                      $icon_id = get_sub_field('icon_svg_sprite_id');
+                      echo '<svg class="disc-icon"><use xlink:href="#' . $icon_id . '" /></svg>';
+                    }
+                  ?>
+                </div>
+                <?php
+                  $disc_icon_title = get_sub_field('disc_icon_title');
+                  $disc_icon_description = get_sub_field('disc_icon_description');
+                ?>
+                <h4><?php echo esc_html($disc_icon_title); ?></h4>
+                <p><?php echo esc_html($disc_icon_description); ?></p>
+
+              <?php
+                if($link){
+                  echo '</a>';
+                }
+                else{
+                  echo '</div>';
+                }
+              ?>
             </div>
-          </div>
 
-          <div class="graphic-design-icon">
-            <div class="disc-icon-card">
-              <div class="disc-icon-bg">
-                <svg class="disc-icon">
-                  <use xlink:href="#icon-shadow-men" />
-                </svg>
-              </div>
-              <h4>Social</h4>
-              <p>certified google partner, marketing consultants</p>
-            </div>
-          </div>
-
-          <div class="graphic-design-icon">
-            <div class="disc-icon-card">
-              <div class="disc-icon-bg">
-                <svg class="disc-icon">
-                  <use xlink:href="#icon-webpage" />
-                </svg>
-              </div>
-              <h4>Website</h4>
-              <p>builders of bold, beautiful brands</p>
-            </div>
-          </div>
-
-          <div class="graphic-design-icon">
-            <div class="disc-icon-card">
-              <div class="disc-icon-bg">
-                <svg class="disc-icon">
-                  <use xlink:href="#icon-document" />
-                </svg>
-              </div>
-              <h4>Print</h4>
-              <p>bod, beautiful projects</p>
-            </div>
-          </div>
-
-          <div class="graphic-design-icon">
-            <div class="disc-icon-card">
-              <div class="disc-icon-bg">
-                <svg class="disc-icon">
-                  <use xlink:href="#icon-monitor-ads" />
-                </svg>
-              </div>
-              <h4>Advertising</h4>
-              <p>your primary source of traffic to websites</p>
-            </div>
-          </div>
-
+          <?php endwhile; ?>
         </div>
       </div>
+
       <div class="col-md-4">
-        <div class="v-centered-caption">
-          <h2 class="xtra-lrg-text">Graphic Design</h2>
-          <p>Our graphic design services</p>
+        <div class="disc-icon-section-caption">
+          <?php the_field('disc-icon-section-caption'); ?>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </div><?php //.row ?>
+<?php //this container and section will be closed by previous section's opening section and container ?>
+<?php endif; ?>

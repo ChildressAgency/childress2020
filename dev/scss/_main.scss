@@ -127,10 +127,16 @@ section{
 }
 
 .childress-font-normal{
-  font-family: $font-brand-light;
+  font-family: $font-brand-light !important;
 }
 .childress-font-bold{
-  font-family: $font-brand-bold;
+  font-family: $font-brand-bold !important;
+}
+
+.bold,
+strong,
+b{
+  font-family: $font-main-black;
 }
 
 #our-purpose{
