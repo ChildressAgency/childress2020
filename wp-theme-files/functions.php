@@ -132,7 +132,7 @@ function cai_header_fallback_menu(){ ?>
       <li class="nav-item<?php if(is_page('about-us')); ?>">
         <a href="<?php echo esc_url(home_url('about-us')); ?>" class="nav-link" title="<?php echo esc_attr__('About Us', 'cai'); ?>"><?php echo esc_html__('About Us', 'cai'); ?></a>
       </li>
-      <li class="nav-item<?php if(is_page('services') || is_singular('service')){ echo ' active'; } ?>">
+      <li class="nav-item<?php if(is_page('services') || is_page_template('templates/services.php')){ echo ' active'; } ?>">
         <a href="<?php echo esc_url(home_url('services')); ?>" class="nav-link" title="<?php echo esc_attr__('Services', 'cai'); ?>"><?php echo esc_html__('Services', 'cai'); ?></a>
       </li>
       <li class="nav-item<?php if(is_page('case-studies') || is_singular('case-study')){ echo ' active'; } ?>">
@@ -211,4 +211,14 @@ function cai_register_blocks(){
       'enqueue_style' => get_stylesheet_directory_uri() . '/partials/blocks/disc_icons_section.css'
     ));
   }
+}
+
+function cai_testimonial_excerpt($testimonial){
+  $testimonial = strip_shortcodes($testimonial);
+  $testimonial = apply_filters('the_content', $testimonial);
+  $testimonial = str_replace(']]>', ']]>', $testimonial);
+  $excerpt_length = apply_filters('excerpt_length', 25);
+  $excerpt_more = apply_filters('excerpt_more', ' ' . '[...]');
+  
+  return wp_trim_words($testimonial, $excerpt_length, $excerpt_more);
 }
