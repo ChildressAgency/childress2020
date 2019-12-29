@@ -222,3 +222,10 @@ function cai_testimonial_excerpt($testimonial){
   
   return wp_trim_words($testimonial, $excerpt_length, $excerpt_more);
 }
+
+add_filter('posts_where', 'cai_posts_where');
+function cai_posts_where($where){
+  $where = str_replace("meta_key = 'testimonials_$", "meta_key LIKE 'testimonials_%", $where);
+
+  return $where;
+}

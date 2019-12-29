@@ -22,6 +22,9 @@
   }
 
   &.flip-disc:hover{
+    .flip-disc-title{
+      transform: translateZ(40px);
+    }
     .flip-disc-inner{
       transform: rotateY(180deg);
     }
@@ -41,6 +44,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: transform .3s ease;
 
     h3{
       font-family: $font-brand-bold;

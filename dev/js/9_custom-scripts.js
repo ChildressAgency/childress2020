@@ -53,14 +53,13 @@ jQuery(document).ready(function($){
   });
 
   var servicePageHeight = $('.service-page').outerHeight();
-  var contactHeight = $('#contact').outerHeight();
-  var serviceLineContainerHeight = servicePageHeight - contactHeight;
+  var windowHeight = $(window).height() - 250; //250 = distance from line start to top of doc
+  var serviceLineContainerHeight = servicePageHeight - windowHeight;
+  var $serviceLine = $('.service-line');
   $(window).on('scroll', function(){
     var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-    //var height = $('.service-page').outerHeight() - $('#contact').outerHeight();
-    //var height = $('.service-page').outerHeight() - 275;
     var scrolled = (winScroll / serviceLineContainerHeight) * 100;
-    $('.service-line').css('height', scrolled + '%');
+    $serviceLine.css('height', scrolled + '%');
   });
 
   $('.disc-icon-checkbox input[type="checkbox"]').on('click', function(){
@@ -75,4 +74,50 @@ jQuery(document).ready(function($){
   });
 
   AOS.init();
+
+  $(window).on('scroll', function(){
+    if(isInViewport($('#stats'), 200)){
+      //$('.count').each(function(index){
+      //  var topNumber = $(this).data('top_number');
+      //  var elementId = $(this).attr('id');
+      //  countUp(elementId, topNumber);
+      //});
+
+      $('.count').each(function(index){
+        var topNumber = $(this).data('top_number');
+        $(this).text(topNumber);
+      });
+    }
+  });
+
 }); //end jQuery
+
+
+function isInViewport(element, offset){
+  if(element.length == 0){ return; }
+
+  var $window = $(window);
+  var viewportTop = $window.scrollTop();
+  var viewportHeight = $window.height();
+  var viewportBottom = viewportTop + viewportHeight -100;
+  var $element = $(element);
+  var top = $element.offset().top;
+  var height = $element.height();
+  var bottom = top + height;
+
+  return (bottom > viewportTop) && (top < viewportBottom);
+}
+
+function countUp(elementId, topNumber){
+  var current = 0;
+  var duration = 5000;
+  var stepTime = Math.abs(Math.floor(duration / topNumber));
+  var $element = $(elementId);
+  var timer = setInterval(function(){
+    current += 1;
+    $element.html(current);
+    if(current == topNumber){
+      clearInterval(timer);
+    }
+  }, stepTime);
+}

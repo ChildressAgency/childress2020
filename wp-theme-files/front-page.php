@@ -29,66 +29,51 @@
       </div>
     </section>
 
-  <?php if(have_rows('testimonials')): ?>
-    <section id="testimonials">
-      <div class="container-fluid">
-      <div class="swiper-container">
-        <div class="swiper-wrapper">
+  <?php 
+    //$testimonials_page = get_page_by_path('testimonials');
+    //$testimonials_page_id = $testimonials_page->ID;
+    //if(have_rows('testimonials', $testimonials_page_id)): 
 
-          <div class="testimonial swiper-slide">
-            <div class="testimonial-bubble">
-              <blockquote>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed adola.</p>
-                <cite>&mdash; Gabby Elle</cite>
-              </blockquote>
-            </div>
+    $testimonials = new WP_Query(array(
+      'post_type' => 'page',
+      'posts_per_page' => -1,
+      'meta_query' => array(
+        array(
+          'key' => 'testimonials_$_feature_on_homepage',
+          'compare' => '=',
+          'value' => 1
+        )
+      )
+    ));
+
+    if($testimonials): ?>
+
+      <section id="testimonials">
+        <div class="container-fluid">
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+
+            <?php foreach($testimonials as $testimonial): ?>
+              <div class="testimonial swiper-slide">
+                <div class="testimonial-bubble">
+                  <blockquote>
+                    <?php echo cai_testimonial_excerpt($testimonial['testimonial']); ?>
+                    <cite>&mdash; <?php echo esc_html__($testimonial['testimonial_author']); ?></cite>
+                  </blockquote>
+                </div>
+              </div>
+            <?php endforeach; ?>
+
           </div>
 
-          <div class="testimonial swiper-slide">
-            <div class="testimonial-bubble">
-              <blockquote>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed adola.</p>
-                <cite>&mdash; Gabby Elle</cite>
-              </blockquote>
-            </div>
-          </div>
-
-          <div class="testimonial swiper-slide">
-            <div class="testimonial-bubble">
-              <blockquote>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed adola.</p>
-                <cite>&mdash; Gabby Elle</cite>
-              </blockquote>
-            </div>
-          </div>
-
-          <div class="testimonial swiper-slide">
-            <div class="testimonial-bubble">
-              <blockquote>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed adola.</p>
-                <cite>&mdash; Gabby Elle</cite>
-              </blockquote>
-            </div>
-          </div>
-
-          <div class="testimonial swiper-slide">
-            <div class="testimonial-bubble">
-              <blockquote>
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed adola.</p>
-                <cite>&mdash; Gabby Elle</cite>
-              </blockquote>
-            </div>
-          </div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
 
         </div>
-
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
-        
-      </div>
-      <a href="#" class="btn-main">More testimonials</a>
-      </div>
-    </section>
+        <a href="<?php echo esc_url(home_url('testimonials')); ?>" class="btn-main">More testimonials</a>
+        </div>
+      </section>
+  <?php endif; ?>
 
     <section id="stats">
       <div class="container">
@@ -97,7 +82,7 @@
             <div class="stat-counter">
               <div class="counter-wrapper">
                 <!--<ul class="flip-counter default" id="experience-counter"></ul>-->
-                <span class="count years-count">20</span>
+                <span id="years-count" class="count years-count" data-top_number="20"></span>
                 <span class="counter-plus">+</span>
               </div>
               <p>Years of Digital Marketing Experience</p>
@@ -107,7 +92,7 @@
             <div class="stat-counter">
               <div class="counter-wrapper">
                 <!--<ul class="flip-counter default" id="clients-counter"></ul>-->
-                <span class="count clients-count">500</span>
+                <span id="clients-count" class="count clients-count" data-top_number="500"></span>
               </div>
               <p>Clients & Growing</p>
             </div>
@@ -116,7 +101,7 @@
             <div class="stat-counter">
               <div class="counter-wrapper">
                 <!--<ul class="flip-counter default" id="industries-counter"></ul>-->
-                <span class="count industries-count">30</span>
+                <span id="industries-count" class="count industries-count" data-top_number="30"></span>
                 <span class="counter-plus">+</span>
               </div>
               <p>Industries we have worked with</p>
