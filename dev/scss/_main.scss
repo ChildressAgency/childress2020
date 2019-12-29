@@ -139,6 +139,10 @@ b{
   font-family: $font-main-black;
 }
 
+.container-fluid{
+  max-width: 1600px;
+}
+
 #our-purpose{
   h2{
     font-size: 70px;
