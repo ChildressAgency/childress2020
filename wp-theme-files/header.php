@@ -17,34 +17,36 @@
   <?php get_template_part('partials/sprites.svg'); ?>
   <header id="header">
     <nav class="navbar navbar-expand-lg navbar-dark">
-      <div class="brand">
-        <a href="<?php echo esc_url(home_url()); ?>" class="logo">
-          <svg>
-            <use xlink:href="#logo" />
-          </svg>
-        </a>
-        <a href="<?php echo esc_url(home_url()); ?>" class="brand-name">Childress Agency</a>
+      <div class="container-fluid">
+        <div class="brand">
+          <a href="<?php echo esc_url(home_url()); ?>" class="logo">
+            <svg>
+              <use xlink:href="#logo" />
+            </svg>
+          </a>
+          <a href="<?php echo esc_url(home_url()); ?>" class="brand-name">Childress Agency</a>
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#header-nav" aria-controls="header-nav" aria-expanded="false" aria-label="Toggle Navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <?php
+          $header_nav_args = array(
+            'theme_location' => 'header-nav',
+            'menu' => '',
+            'container' => 'div',
+            'container_id' => 'header-nav',
+            'container_class' => 'collapse navbar-collapse',
+            'menu_id' => '',
+            'menu_class' => 'navbar-nav ml-auto',
+            'echo' => true,
+            'fallback_cb' => 'cai_header_fallback_menu',
+            'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+            'depth' => 2,
+            'walker' => new WP_Bootstrap_NavWalker()
+          );
+          wp_nav_menu($header_nav_args);
+        ?>
       </div>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#header-nav" aria-controls="header-nav" aria-expanded="false" aria-label="Toggle Navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <?php
-        $header_nav_args = array(
-          'theme_location' => 'header-nav',
-          'menu' => '',
-          'container' => 'div',
-          'container_id' => 'header-nav',
-          'container_class' => 'collapse navbar-collapse',
-          'menu_id' => '',
-          'menu_class' => 'navbar-nav ml-auto',
-          'echo' => true,
-          'fallback_cb' => 'cai_header_fallback_menu',
-          'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-          'depth' => 2,
-          'walker' => new WP_Bootstrap_NavWalker()
-        );
-        wp_nav_menu($header_nav_args);
-       ?>
     </nav>
 
     <?php 
