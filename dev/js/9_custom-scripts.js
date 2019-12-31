@@ -91,6 +91,30 @@ jQuery(document).ready(function($){
       $serviceIconBg.removeClass('service-checked');
     }
   });
+
+  // ajax loadmore
+  $('body').on('click', '.loadmore', function(){
+    var $this = $(this);
+    $this.text('Loading...');
+    var video = $this.data('video');
+    var data = {
+      'action': 'cai_ajax_load_more_posts',
+      'page': cai_ajax_loadmore.page,
+      'video': video,
+      'nonce': cai_ajax_loadmore.nonce
+    };
+
+    $.post(cai_ajax_loadmore.ajaxurl, data, function(response){
+      if(response != ''){
+        $('.recent-posts').append(response);
+        cai_ajax_loadmore.page++;
+        $this.text('Load More');
+      }
+      else{
+        $('.loadmore').hide();
+      }
+    });
+  });
 }); //end jQuery
 
 

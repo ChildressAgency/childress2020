@@ -40,6 +40,15 @@ function cai_scripts(){
     true
   );
 
+  wp_localize_script('cai-scripts',
+    'cai_ajax_loadmore',
+    array(
+      'ajaxurl' => admin_url('admin-ajax.php'),
+      'nonce' => wp_create_nonce('cai_ajax_load_more_posts'),
+      'page' => 2
+    )
+  );
+
   wp_enqueue_script('bootstrap-popper');
   wp_enqueue_script('bootstrap-scripts');
   wp_enqueue_script('cai-scripts');
@@ -228,4 +237,53 @@ function cai_posts_where($where){
   $where = str_replace("meta_key = 'testimonials_$", "meta_key LIKE 'testimonials_%", $where);
 
   return $where;
+}
+
+add_action('wp_ajax_cai_ajax_load_more_posts', 'cai_load_more_posts');
+add_action('wp_ajax_nopriv_cai_ajax_load_more_posts', 'cai_load_more_posts');
+function cai_load_more_posts(){
+  //https://artisansweb.net/load-wordpress-post-ajax/
+  //https://rudrastyh.com/wordpress/load-more-posts-ajax.html
+  check_ajax_referrer('cai_ajax_load_more_posts');
+
+  $paged = $_POST['page'];
+  $video = $_POST['video'];
+  $video_category = get_category_by_slug('videos');
+  $video_category_id = $video_category->term_id;
+  $more_posts_args = '';
+  $template_part = '';
+
+  if($video == 'no'){
+    $more_posts_args = arry(
+      'post_type' => 'post',
+      'post_status' => 'publish',
+      'posts_per_page' => 6,
+      'category__not_in' => array($video_category_id),
+      'paged' => $paged
+    );
+
+    $template_part = 'recent_posts';
+  }
+  else{
+    $more_posts_args = array(
+      'post_type' => 'post',
+      'post_status' => 'publish',
+      'posts_per_page' => 6,
+      'cat' => $video_category_id,
+      'paged' => $paged
+    );
+
+    $template_part = 'recent_videos';
+  }
+
+  $more_posts = new WP_Query($more_posts_args);
+  if($more_posts->have_posts()){
+    while($more_posts->have_posts()){
+      $more_posts->the_post();
+
+      get_template_part('partials/loop', $template_part);
+    }
+  }
+
+  wp_die();
 }
