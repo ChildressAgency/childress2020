@@ -71,7 +71,7 @@
 
   <?php if(!is_page('services')): ?>
     <?php
-      if(is_home()){
+      if(is_home() || is_singular('post')){
         $blog_page = get_page_by_path('news-events');
         $blog_page_id = $blog_page->ID;
 
