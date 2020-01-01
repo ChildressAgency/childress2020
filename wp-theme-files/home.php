@@ -69,9 +69,11 @@
                   }
                 ?>
               </div>
-              <p class="text-center mt-5">
-                <a href="#" class="btn-main loadmore" data-video="no">Load More</a>
-              </p>
+              <?php if($recent_posts->found_posts > 6):?>
+                <p class="text-center mt-5">
+                  <a href="#" class="btn-main loadmore" data-video="no">Load More</a>
+                </p>
+              <?php endif; ?>
             </div>
 
             <?php
@@ -129,9 +131,11 @@
                       }
                     ?>
                   </div>
-                  <p class="text-center mt-5">
-                    <a href="#" class="btn-main loadmore" data-video="yes">Load More</a>
-                  </p>
+                  <?php if($recent_vids->found_posts > 6): ?>
+                    <p class="text-center mt-5">
+                      <a href="#" class="btn-main loadmore" data-video="yes">Load More</a>
+                    </p>
+                  <?php endif; ?>
                 </div>
             <?php endif; ?>
           </section>

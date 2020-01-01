@@ -5,18 +5,13 @@
       <article class="entry-content">
         <?php
           if(have_posts()){
+            echo '<h1 class="page-title">Showing results for ' . get_search_query() . '</h1>';
+
             while(have_posts()){
               the_post();
-
-              if(is_singular()){
-                echo '<h1 class="page-title">' . esc_html(get_the_title()) . '</h1>';
-                the_content();
-              }
-              else{
-                get_template_part('partials/loop', 'generic');
-              }
+              get_template_part('partials/loop', 'generic');
             }
-            
+
             wp_pagenavi();
           }
           else{
