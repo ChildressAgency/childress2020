@@ -2,7 +2,15 @@
   <main id="main">
     <section class="main-content">
       <div class="container">
-        <?php get_template_part('partials/loop'); ?>
+        <?php
+          if(have_posts()){
+            while(have_posts()){
+              the_post();
+
+              the_content();
+            }
+          }
+        ?>
       </div>
     </section>
 
