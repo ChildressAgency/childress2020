@@ -94,9 +94,18 @@ jQuery(document).ready(function($){
 
   // ajax loadmore
   $('body').on('click', '.loadmore', function(){
-    var $this = $(this);
-    $this.text('Loading...');
-    var video = $this.data('video');
+    var $clickedButton = $(this);
+    $clickedButton.text('Loading...');
+    var video = $clickedButton.data('video');
+
+    var $loadMoreSection;
+    if(video == "no"){
+      $loadMoreSection = $('.recent-posts');
+    }
+    else{
+      $loadMoreSection = $('.recent-videos');
+    }
+
     var data = {
       'action': 'cai_ajax_load_more_posts',
       'page': cai_ajax_loadmore.page,
@@ -106,12 +115,12 @@ jQuery(document).ready(function($){
 
     $.post(cai_ajax_loadmore.ajaxurl, data, function(response){
       if(response != ''){
-        $('.recent-posts').append(response);
+        $loadMoreSection.append(response);
         cai_ajax_loadmore.page++;
-        $this.text('Load More');
+        $clickedButton.text('Load More');
       }
       else{
-        $('.loadmore').hide();
+        $clickedButton.hide();
       }
     });
   });
