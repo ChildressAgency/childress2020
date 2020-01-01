@@ -223,6 +223,16 @@ function cai_register_blocks(){
     ));
 
     acf_register_block_type(array(
+      'name' => 'image_svg',
+      'title' => esc_html__('Image SVG', 'cai'),
+      'description' => esc_html__('Add a regular image or SVG', 'cai'),
+      'category' => 'custom-blocks',
+      'mode' => 'auto',
+      'align' => 'full',
+      'render_template' => get_stylesheet_directory() . '/partials/blocks/image_svg.php'
+    ));
+
+    acf_register_block_type(array(
       'name' => 'disc_icons_section',
       'title' => esc_html__('Disc Icons Section', 'cai'),
       'description' => esc_html__('Add a section with disc icons on the left and text on the right.', 'cai'),
@@ -231,6 +241,17 @@ function cai_register_blocks(){
       'align' => 'full',
       'render_template' => get_stylesheet_directory() . '/partials/blocks/disc_icons_section.php',
       'enqueue_style' => get_stylesheet_directory_uri() . '/partials/blocks/disc_icons_section.css'
+    ));
+
+    acf_register_block_type(array(
+      'name' => 'flip_discs_section',
+      'title' => esc_html__('Flip Discs Section' , 'cai'),
+      'description' => esc_html__('Add a section with flipping discs.', 'cai'),
+      'category' => 'custom-blocks',
+      'mode' => 'auto',
+      'align' => 'full',
+      'render_template' => get_stylesheet_directory() . '/partials/blocks/flip_discs_section.php',
+      'enqueue_style' => get_stylesheet_directory_uri() . '/partials/blocks/flip_discs_section.css'
     ));
   }
 }

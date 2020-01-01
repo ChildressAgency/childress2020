@@ -1,4 +1,4 @@
-<?php if(have_rows('disc_icons')); ?>
+<?php if(have_rows('disc_icons')): ?>
 </div></section><?php //close container and previous section ?>
 
 <section class="disc-icon-section">

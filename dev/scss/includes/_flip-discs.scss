@@ -21,7 +21,7 @@
     transform-style: preserve-3d;
   }
 
-  &.flip-disc:hover{
+  &:hover{
     .flip-disc-title{
       transform: translateZ(40px);
     }
