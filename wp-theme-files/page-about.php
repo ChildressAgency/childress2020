@@ -14,110 +14,34 @@
       </div>
     </section>
 
-
+  <?php if(have_rows('team_members')): ?>
     <section id="our-team">
       <div class="container-fluid">
         <h2>OUR TEAM</h2>
         <div class="swiper-container">
           <div class="swiper-wrapper">
 
-            <div class="swiper-slide">
-              <div class="team">
-                <div class="team-inner">
-                  <div class="team-image">
-                    <img src="../wp-theme-files/images/team-placeholder.jpg" class="img-fluid d-block" alt="" />
-                  </div>
-                  <div class="team-bio">
-                    <h4>Team Name</h4>
-                    <p>Short bio of team member or maybe just their job title depending on how much space is available</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="team">
-                <div class="team-inner">
-                  <div class="team-image">
-                    <img src="../wp-theme-files/images/team-placeholder.jpg" class="img-fluid d-block" alt="" />
-                  </div>
-                  <div class="team-bio">
-                    <h4>Team Name</h4>
-                    <p>Short bio of team member or maybe just their job title depending on how much space is available</p>
+            <?php while(have_rows('team_members')): the_row(); ?>
+              <div class="swiper-slide">
+                <div class="team">
+                  <div class="team-inner">
+                    <div class="team-image">
+                      <?php 
+                        $member_image = get_sub_field('team_member_image');
+                        if(!$member_image){
+                          $member_image = get_field('default_team_member_image');
+                        }
+                      ?>
+                      <img src="<?php echo esc_url($member_image['url']); ?>" class="img-fluid d-block" alt="<?php echo esc_attr($member_image['alt']); ?>" />
+                    </div>
+                    <div class="team-bio">
+                      <h4><?php the_sub_field('team_member_name'); ?></h4>
+                      <p><?php the_sub_field('team_member_bio'); ?></p>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="team">
-                <div class="team-inner">
-                  <div class="team-image">
-                    <img src="../wp-theme-files/images/team-placeholder.jpg" class="img-fluid d-block" alt="" />
-                  </div>
-                  <div class="team-bio">
-                    <h4>Team Name</h4>
-                    <p>Short bio of team member or maybe just their job title depending on how much space is available</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="team">
-                <div class="team-inner">
-                  <div class="team-image">
-                    <img src="../wp-theme-files/images/team-placeholder.jpg" class="img-fluid d-block" alt="" />
-                  </div>
-                  <div class="team-bio">
-                    <h4>Team Name</h4>
-                    <p>Short bio of team member or maybe just their job title depending on how much space is available</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="team">
-                <div class="team-inner">
-                  <div class="team-image">
-                    <img src="../wp-theme-files/images/team-placeholder.jpg" class="img-fluid d-block" alt="" />
-                  </div>
-                  <div class="team-bio">
-                    <h4>Team Name</h4>
-                    <p>Short bio of team member or maybe just their job title depending on how much space is available</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="team">
-                <div class="team-inner">
-                  <div class="team-image">
-                    <img src="../wp-theme-files/images/team-placeholder.jpg" class="img-fluid d-block" alt="" />
-                  </div>
-                  <div class="team-bio">
-                    <h4>Team Name</h4>
-                    <p>Short bio of team member or maybe just their job title depending on how much space is available</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="team">
-                <div class="team-inner">
-                  <div class="team-image">
-                    <img src="../wp-theme-files/images/team-placeholder.jpg" class="img-fluid d-block" alt="" />
-                  </div>
-                  <div class="team-bio">
-                    <h4>Team Name</h4>
-                    <p>Short bio of team member or maybe just their job title depending on how much space is available</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <?php endwhile; ?>
 
           </div>
 
@@ -126,23 +50,25 @@
         </div>
       </div>
     </section>
+  <?php endif; ?>
 
     <section id="affiliates">
       <div class="container-fluid">
         <article class="half-width mb-5">
-          <h2>LET'S GET STARTED</h2>
-          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
+          <?php the_field('affiliates_section_content'); ?>
         </article>
-        <div class="affiliations">
-          <img src="../wp-theme-files/images/affiliate-icons/fred-chamber.png" class="img-fluid d-block mx-auto" alt="" />
-          <img src="../wp-theme-files/images/affiliate-icons/sdvosb.png" class="img-fluid d-block mx-auto" alt="" />
-          <img src="../wp-theme-files/images/affiliate-icons/orlando-chamber.png" class="img-fluid d-block mx-auto" alt="" />
-          <img src="../wp-theme-files/images/affiliate-icons/faba.png" class="img-fluid d-block mx-auto" alt="" />
-          <img src="../wp-theme-files/images/affiliate-icons/swam.png" class="img-fluid d-block mx-auto" alt="" />
-          <img src="../wp-theme-files/images/affiliate-icons/google-partner.png" class="img-fluid d-block mx-auto" alt="" />
-          <img src="../wp-theme-files/images/affiliate-icons/sharpspring.png" class="img-fluid d-block mx-auto" alt="" />
-          <img src="../wp-theme-files/images/affiliate-icons/tysons-chamber.png" class="img-fluid d-block mx-auto" alt="" />
-        </div>
+
+        <?php if(have_rows('affiliations')): ?>
+          <div class="affiliations">
+
+            <?php while(have_rows('affiliations')): the_row(); ?>
+              <?php $affiliate_image = get_sub_field('affiliate_image'); ?>
+              <img src="<?php echo esc_url($affiliate_image['url']); ?>" class="img-fluid d-block mx-auto" alt="<?php echo esc_attr($affiliate_image['alt']); ?>" />
+            <?php endwhile; ?>
+            
+          </div>
+        <?php endif; ?>
+
       </div>
     </section>
   </main>
