@@ -7,8 +7,11 @@
             <h1 class="page-title">Blog</h1>
             <?php
               $most_recent_post_id = '';
+              $most_recent_video_id = '';
               $video_category = get_category_by_slug('videos');
               $video_category_id = $video_category->term_id;
+              $blog_page = get_page_by_path('news-events');
+              $blog_page_id = $blog_page->ID;
 
               $most_recent = new WP_Query(array(
                 'post_type' => 'post',
@@ -29,10 +32,7 @@
                           $bg_image_url = get_the_post_thumbnail_url($most_recent_post_id, 'large');
                         }
                         else{
-                          $blog_page = get_page_by_path('news-events');
-                          $blog_page_id = $blog_page->ID;
-
-                          $bg_image_url = get_field('default_featured_image', $blog_page_id);
+                          $bg_image_url = get_field('post_default_featured_image', $blog_page_id);
                           $bg_image_css = 'background-size:contain;';
                         }
                       ?>
@@ -70,112 +70,79 @@
                 ?>
               </div>
               <p class="text-center mt-5">
-                <a href="#" class="loadmore" data-video="no">Load More</a>
+                <a href="#" class="btn-main loadmore" data-video="no">Load More</a>
               </p>
             </div>
 
             <?php
+              $most_recent_video = new WP_Query(array(
+                'post_type' => 'post',
+                'posts_per_page' => 1,
+                'post_status' => 'publish',
+                'cat' => $video_category_id
+              ));
 
-            <div class="videos">
-              <h1 class="page-title">Videos</h1>
-              <div class="most-recent-video">
-                <a href="#"><img src="../wp-theme-files/images/clapping-audience.jpg" class="img-fluid d-block mx-auto" alt="" /></a>
-              </div>
+              if($most_recent_video->have_posts()): ?>
+                <div id="videos">
+                  <h1 class="page-title">Videos</h1>
+                  <?php while($most_recent_video->have_posts()): $most_recent_video->the_post(); ?>
+                    <?php $most_recent_video_id = get_the_ID(); ?>
+                    <div class="most-recent-video">
+                      <?php 
+                        $vid_image_url = '';
+                        $vid_image_css = '';
+                        $vid_image_alt = '';
 
-              <div class="row text-center">
-                <div class="col-md-6 col-lg-4">
-                  <a href="#" class="video">
-                    <img src="../wp-theme-files/images/clapping-audience.jpg" class="img-fluid d-block mx-auto" alt="" />
-                    <span class="video-title"><h3>Title</h3></span>
-                  </a>
+                        if(has_post_thumbnail()){
+                          $video_post_id = get_the_ID();
+                          $vid_image_url = get_the_post_thumbnail_url($video_post_id, 'large');
+                          $vid_image_id = get_post_thumbnail_id($video_post_id);
+                          $vid_image_alt = get_post_meta($vid_image_id, '_wp_attachment_image_alt', true);
+                        }
+                        else{
+                          $default_vid_image = get_field('video_default_featured_image', $blog_page_id);
+                          $vid_image_url = $default_vid_image['url'];
+                          $vid_image_alt = $default_vid_image['alt'];
+                        }
+                      ?>
+                      <a href="#"><img src="<?php echo esc_url($vid_image_url); ?>" class="img-fluid d-block mx-auto" alt="<?php echo esc_attr($vid_image_alt); ?>" /></a>
+                    </div>
+                  <?php endwhile; ?>
+
+                  <div class="row text-center recent-videos">
+                    <?php
+                      $recent_vids = new WP_Query(array(
+                        'post_type' => 'post',
+                        'post_status' => 'publish',
+                        'posts_per_page' => 6,
+                        'post__not_in' => array($most_recent_video_id),
+                        'cat' => $video_category_id,
+                        'paged' => 1
+                      ));
+
+                      if($recent_vids->have_posts()){
+                        while($recent_vids->have_posts()){
+                          $recent_vids->the_post();
+
+                          get_template_part('partials/loop', 'recent_videos');
+                        }
+                      }
+                    ?>
+                  </div>
+                  <p class="text-center mt-5">
+                    <a href="#" class="btn-main loadmore" data-video="yes">Load More</a>
+                  </p>
                 </div>
-                <div class="col-md-6 col-lg-4">
-                  <a href="#" class="video">
-                    <img src="../wp-theme-files/images/clapping-audience.jpg" class="img-fluid d-block mx-auto" alt="" />
-                    <span class="video-title"><h3>Video Title</h3></span>
-                  </a>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                  <a href="#" class="video">
-                    <img src="../wp-theme-files/images/clapping-audience.jpg" class="img-fluid d-block mx-auto" alt="" />
-                    <span class="video-title"><h3>Video Title</h3></span>
-                  </a>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                  <a href="#" class="video">
-                    <img src="../wp-theme-files/images/clapping-audience.jpg" class="img-fluid d-block mx-auto" alt="" />
-                    <span class="video-title"><h3>Video Title</h3></span>
-                  </a>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                  <a href="#" class="video">
-                    <img src="../wp-theme-files/images/clapping-audience.jpg" class="img-fluid d-block mx-auto" alt="" />
-                    <span class="video-title"><h3>Video Title</h3></span>
-                  </a>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                  <a href="#" class="video">
-                    <img src="../wp-theme-files/images/clapping-audience.jpg" class="img-fluid d-block mx-auto" alt="" />
-                    <span class="video-title"><h3>Video Title</h3></span>
-                  </a>
-                </div>
-              </div>
-            </div>
+            <?php endif; ?>
           </section>
         </div>
+
         <div class="col-md-4 col-lg-3">
-          <section class="sidebar">
-            <div class="sidebar-widget">
-              <form action="" method="get">
-                <div class="input-group sidebar-search">
-                  <input type="text" id="search" class="form-control" name="s" placeholder="Search" />
-                  <div class="input-group-append">
-                    <button type="submit" class="btn-search" aria-label="Search"><i class="fas fa-search"></i></button>
-                  </div>
-                </div>
-              </form>
-            </div>
-
-            <div class="sidebar-widget">
-              <h3>latest</h3>
-            </div>
-
-            <div class="sidebar-widget">
-              <h3>events</h3>
-            </div>
-
-            <div class="sidebar-widget">
-              <h3>categories</h3>
-              <ul class="list-unstyled">
-                <li><a href="#">brand identity</a></li>
-                <li><a href="#">graphic design</a></li>
-                <li><a href="#">web design</a></li>
-                <li><a href="#">seo</a></li>
-                <li><a href="#">digital marketing</a></li>
-                <li><a href="#">social media</a></li>
-              </ul>
-            </div>
-
-            <div class="sidebar-widget">
-              <h3>archived articles</h3>
-            </div>
-          </section>
+          <?php get_sidebar('blog'); ?>
         </div>
       </div>
 
-      <section id="seo-analysis">
-        <div class="row">
-          <div class="col-md-7 col-lg-8">
-            <h2>SEO ANALYSIS</h2>
-            <p>Receive an in-depth analysis of your website and get a grade on how well your site is ranked for its searchable qualities. Based on your grade you can see the pain points of your website and what you can do to help correct the problem.</p>
-            <p><a href="#">Visit our page now to learn more and get started.</a></p>
-            <a href="#" class="btn-main">Learn More</a>
-          </div>
-          <div class="col-md-5 col-lg-4">
-            <img src="../wp-theme-files/images/seo-monitor.png" class="img-fluid d-block mx-auto mt-5 mt-md-0" alt="" />
-          </div>
-        </div>
-      </section>
+      <?php get_template_part('partials/section', 'seo_analysis'); ?>
     </div>
   </main>
 <?php get_footer();

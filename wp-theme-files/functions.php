@@ -181,6 +181,19 @@ function cai_services_footer_nav_fallback_menu(){ ?>
   </ul>
 <?php }
 
+add_action('widgets_init', 'cai_register_sidebars');
+function cai_register_sidebars(){
+  register_sidebar(array(
+    'name' => 'Blog Sidebar',
+    'id' => 'sidebar-blog',
+    'description' => 'Add widgets here to appear in your sidebar on blog posts and archive pages.',
+    'before_widget' => '<div class="sidebar-section">',
+    'after_widget' => '</div>',
+    'before_title' => '<h3>',
+    'after_title' => '</h3>'
+  ));
+}
+
 add_filter('block_categories', 'cai_custom_block_category', 10, 2);
 function cai_custom_block_category($categories, $post){
   return array_merge(
