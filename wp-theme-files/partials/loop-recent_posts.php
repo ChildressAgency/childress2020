@@ -9,10 +9,10 @@
         $bg_image_url = get_the_post_thumbnail_url($blog_post_id, 'large');
       }
       else{
-        $blog_page = get_page_by_path('news-event');
+        $blog_page = get_page_by_path('news-events');
         $blog_page_id = $blog_page->ID;
 
-        $bg_image_url = get_field('default_featured_image', $blog_page_id);
+        $bg_image_url = get_field('post_default_featured_image', $blog_page_id);
         $bg_image_css = 'background-size:contain;';
       }
     ?>
