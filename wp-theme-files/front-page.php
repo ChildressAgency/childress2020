@@ -19,17 +19,17 @@
         <ul class="client-list">
           <li>
             <a href="#">
-              <img src="../wp-theme-files/images/client-logo-placeholder.jpg" class="img-fluid d-block mx-auto" alt="" />
+              <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/client-logo-placeholder.jpg" class="img-fluid d-block mx-auto" alt="" />
             </a>
           </li>
           <li>
             <a href="#">
-              <img src="../wp-theme-files/images/client-logo-placeholder.jpg" class="img-fluid d-block mx-auto" alt="" />
+              <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/client-logo-placeholder.jpg" class="img-fluid d-block mx-auto" alt="" />
             </a>
           </li>
           <li>
             <a href="#">
-              <img src="../wp-theme-files/images/client-logo-placeholder.jpg" class="img-fluid d-block mx-auto" alt="" />
+              <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/client-logo-placeholder.jpg" class="img-fluid d-block mx-auto" alt="" />
             </a>
           </li>
         </ul>
