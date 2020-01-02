@@ -92,7 +92,7 @@
     ?>
     <section id="<?php echo is_front_page() ? 'hp-hero' : 'hero'; ?>" class="hero" style="background-image:url(<?php echo esc_url($hero_image); ?>);<?php echo esc_attr($hero_image_css); ?>">
       <div class="container">
-        <div class="hero-caption">
+        <div class="hero-caption" data-aos-easing="ease-out" data-aos-duration="1000" <?php echo is_front_page() ? 'data-aos="fade-down' : 'data-aos="fade-right"'; ?>>
           <?php if(is_front_page()): ?>
             <h1><span class="brand">Childress Agency</span>Digital Marketing Made Easy</h1>
             <a href="<?php echo esc_url(home_url('contact')); ?>" class="btn-main btn-lrg">We're ready when you are.</a>
