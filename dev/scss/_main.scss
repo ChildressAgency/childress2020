@@ -176,10 +176,12 @@ b{
     display: inline-block;
 
     &.years-count,
-    &.industries-count{
+    &.industries-count,
+    &.orange{
       background-color: $color-brand;
     }
-    &.clients-count{
+    &.clients-count,
+    &.blue{
       background-color: $color-alt-light;
     }
   }

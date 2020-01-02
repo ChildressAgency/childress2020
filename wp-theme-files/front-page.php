@@ -80,7 +80,10 @@
             <div class="col-lg-4">
               <div class="stat-counter">
                 <div class="counter-wrapper">
-                  <span class="count odometer" data-top_number="<?php the_sub_field('stat_number'); ?>"></span>
+                  <?php
+                    $bg_color = get_sub_field('stat_background_color');
+                  ?>
+                  <span class="count odometer <?php echo esc_attr($bg_color); ?>" data-top_number="<?php the_sub_field('stat_number'); ?>"></span>
                   <?php if(get_sub_field('show_plus_sign') == 1): ?>
                     <span class="counter-plus">+</span>
                   <?php endif; ?>
