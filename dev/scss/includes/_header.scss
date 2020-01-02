@@ -122,6 +122,10 @@
     }
   }
 
+  .nav-item{
+    text-align: center;
+  }
+
   .nav-item.active .nav-link,
   .nav-link:hover,
   .nav-link:focus{
@@ -135,14 +139,18 @@
   display: flex;
   justify-content: center;
 
-  nav{
+  .header-services-nav{
     padding-top: 0;
     padding-bottom: 0;
     display: flex;
     justify-content: space-around;
 
-    a{
+    li{
       padding: 10px 15px;
+      text-align: center;
+    }
+
+    a{
       color: #fff;
       font-size: 12px;
       text-transform: uppercase;
@@ -155,6 +163,11 @@
         overflow: hidden;
         visibility: hidden;
         display:block;
+      }
+
+      &:hover{
+        text-decoration: none;
+        font-family: $font-main-black;
       }
     }
   }
