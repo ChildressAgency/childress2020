@@ -1,5 +1,5 @@
   <section id="contact"
-    style="background-image:url(<?php echo get_stylesheet_directory_uri(); ?>/images/contact-section-bg.jpg); background-position:center center;">
+    style="background-image:url(<?php echo get_stylesheet_directory_uri(); ?>/images/contact-section-bg.jpg); background-position:center center;<?php if(is_page('contact')){ echo ' padding-top:135px;'; } ?>">
     <div class="container-fluid">
       <div class="row">
         <div class="col-lg-4 marketing-easy">
@@ -43,6 +43,7 @@
                     <span itemprop="postalCode">22401</span>
                   </p>
                 </div>
+              </div>
             </div>
 
             <?php if(have_rows('other_locations', $contact_page_id)): ?>
@@ -64,7 +65,9 @@
           </div>
         </div>
         <div class="col-lg-5">
-          <?php the_field('map_iframe', $contact_page_id); ?>
+          <div class="embed-responsive embed-responsive-4by3">
+            <?php the_field('map_iframe', $contact_page_id); ?>
+          </div>
         </div>
       </div>
     </div>
