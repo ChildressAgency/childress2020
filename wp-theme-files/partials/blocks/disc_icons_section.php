@@ -54,7 +54,7 @@
 
       <div class="col-md-4">
         <div class="disc-icon-section-caption">
-          <?php the_field('disc-icon-section-caption'); ?>
+          <?php the_field('disc_icon_section_caption'); ?>
         </div>
       </div>
     </div><?php //.row ?>
