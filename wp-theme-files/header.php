@@ -96,7 +96,7 @@
             <h1><span class="brand">Childress Agency</span>Digital Marketing Made Easy</h1>
             <a href="<?php echo esc_url(home_url('contact')); ?>" class="btn-main btn-lrg">We're ready when you are.</a>
           <?php else: ?>
-            <h2><?php echo echo_html($hero_caption); ?></h2>
+            <h2><?php echo apply_filters('the_content', $hero_caption); ?></h2>
           <?php endif; ?>
         </div>
       </div>
