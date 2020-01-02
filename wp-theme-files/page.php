@@ -1,8 +1,7 @@
 <?php get_header(); ?>
 <main id="main">
-  <div class="container">
-    <section class="main-content">
-      <article class="entry-content">
+  <section class="main-content">
+    <div class="container">
         <?php
           if(have_posts()){
             while(have_posts()){
@@ -16,8 +15,7 @@
             get_template_part('partials/loop', 'no_content');
           }
         ?>
-      </article>
-    </section>
-  </div>
+    </div>
+  </section>
 </main>
 <?php get_footer();

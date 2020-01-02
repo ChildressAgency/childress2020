@@ -1,3 +1,16 @@
+.dots-bg{
+  background-image: url(images/dot-bg.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 60px;
+  padding-bottom: 100px;
+}
+
+.dots-bg.dots-bg-dark{
+  background-image: url(images/dots-bg-2.png);
+}
+
 .flip-discs{
   display: flex;
   justify-content: space-around;

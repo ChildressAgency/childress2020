@@ -253,6 +253,28 @@ function cai_register_blocks(){
       'render_template' => get_stylesheet_directory() . '/partials/blocks/flip_discs_section.php',
       'enqueue_style' => get_stylesheet_directory_uri() . '/partials/blocks/flip_discs_section.css'
     ));
+
+    acf_register_block_type(array(
+      'name' => 'info_cards_section',
+      'title' => esc_html__('Info Cards Section', 'cai'),
+      'description' => esc_html__('Add a section of info cards.', 'cai'),
+      'category' => 'custom-blocks',
+      'mode' => 'auto',
+      'align' => 'full',
+      'render_template' => get_stylesheet_directory() . '/partials/blocks/info_cards_section.php',
+      'enqueue_style' => get_stylesheet_directory_uri() . '/partials/blocks/info_cards_section.css'
+    ));
+
+    acf_register_block_type(array(
+      'name' => 'percentage_cards_section',
+      'title' => esc_html__('Percentage Cards Section', 'cai'),
+      'description' => esc_html__('Add a section of percentage cards.', 'cai'),
+      'category' => 'custom-blocks',
+      'mode' => 'auto',
+      'align' => 'full',
+      'render_template' => get_stylesheet_directory() . '/partials/blocks/percentage_cards_section.php',
+      'enqueue_style' => get_stylesheet_directory_uri() . '/partials/blocks/info_cards_section.css'
+    ));
   }
 }
 

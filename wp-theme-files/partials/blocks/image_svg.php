@@ -4,5 +4,5 @@ if(get_field('image_file_type') == 'svg'){
 }
 else{
   $image = get_field('standard_image_file');
-  echo '<img src="' . esc_url($image['url']) . '" class="img-fluid d-block mx-auto" alt="' . esc_attr($image['alt']) . '" />'
+  echo '<img src="' . esc_url($image['url']) . '" class="img-fluid d-block mx-auto" alt="' . esc_attr($image['alt']) . '" />';
 }
