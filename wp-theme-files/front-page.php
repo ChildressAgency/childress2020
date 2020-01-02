@@ -38,39 +38,27 @@
     </section>
 
   <?php 
-    //$testimonials_page = get_page_by_path('testimonials');
-    //$testimonials_page_id = $testimonials_page->ID;
-    //if(have_rows('testimonials', $testimonials_page_id)): 
-
-    $testimonials = new WP_Query(array(
-      'post_type' => 'page',
-      'posts_per_page' => -1,
-      'meta_query' => array(
-        array(
-          'key' => 'testimonials_$_feature_on_homepage',
-          'compare' => '=',
-          'value' => 1
-        )
-      )
-    ));
-
-    if($testimonials): ?>
+    $testimonials_page = get_page_by_path('testimonials');
+    $testimonials_page_id = $testimonials_page->ID;
+    if(have_rows('testimonials', $testimonials_page_id)): ?>
 
       <section id="testimonials">
         <div class="container-fluid">
         <div class="swiper-container">
           <div class="swiper-wrapper">
 
-            <?php foreach($testimonials as $testimonial): ?>
-              <div class="testimonial swiper-slide">
-                <div class="testimonial-bubble">
-                  <blockquote>
-                    <?php echo cai_testimonial_excerpt($testimonial['testimonial']); ?>
-                    <cite>&mdash; <?php echo esc_html__($testimonial['testimonial_author']); ?></cite>
-                  </blockquote>
+            <?php while(have_rows('testimonials', $testimonials_page_id)): the_row(); ?>
+              <?php if(get_sub_field('feature_on_homepage') == 1): ?>
+                <div class="testimonial swiper-slide">
+                  <div class="testimonial-bubble">
+                    <blockquote>
+                      <?php echo cai_testimonial_excerpt(get_sub_field('testimonial')); ?>
+                      <cite>&mdash; <?php echo esc_html__(get_sub_field('testimonial_author')); ?></cite>
+                    </blockquote>
+                  </div>
                 </div>
-              </div>
-            <?php endforeach; ?>
+              <?php endif; ?>
+            <?php endwhile; ?>
 
           </div>
 
