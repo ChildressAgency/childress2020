@@ -14,7 +14,6 @@
 </head>
 
 <body <?php body_class(); ?>>
-  <?php get_template_part('partials/sprites.svg'); ?>
   <header id="header">
     <nav class="navbar navbar-expand-lg navbar-dark">
       <div class="container-fluid">
