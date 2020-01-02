@@ -10,7 +10,7 @@
 if(!defined('ABSPATH')){ exit; }
 
 define('CAI_PLUGIN_DIR', dirname(__FILE__));
-define('CAI_PLUGIN_URL', plugin_dir_url(__FILE__);
+define('CAI_PLUGIN_URL', plugin_dir_url(__FILE__));
 
 /**
  * Load ACF if not already loaded

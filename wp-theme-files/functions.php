@@ -164,7 +164,7 @@ function cai_services_sub_nav_fallback_menu(){ ?>
       <a href="<?php echo esc_url(home_url('graphic-design')); ?>" title="<?php echo esc_attr__('Graphic Design', 'cai'); ?>"><?php echo esc_html__('Graphic Design', 'cai'); ?></a>
       <a href="<?php echo esc_url(home_url('web-design')); ?>" title="<?php echo esc_attr__('Web Design', 'cai'); ?>"><?php echo esc_html__('Web Design', 'cai'); ?></a>
       <a href="<?php echo esc_url(home_url('seo')); ?>" title="<?php echo esc_attr__('SEO', 'cai'); ?>"><?php echo esc_html__('SEO', 'cai'); ?></a>
-      <a href="<?php echo esc_url(home_url('digital-marketing')); ?>" title="<?php echo esc_attr_('Digital Marketing', 'cai'); ?>"><?php echo esc_html__'Digital Marketing', 'cai'); ?></a>
+      <a href="<?php echo esc_url(home_url('digital-marketing')); ?>" title="<?php echo esc_attr_('Digital Marketing', 'cai'); ?>"><?php echo esc_html__('Digital Marketing', 'cai'); ?></a>
       <a href="<?php echo esc_url(home_url('social-media')); ?>" title="<?php echo esc_attr__('Social Media', 'cai'); ?>"><?php echo esc_html__('Social Media', 'cai'); ?></a>
     </nav>
   </div>
@@ -310,7 +310,7 @@ function cai_load_more_posts(){
   $template_part = '';
 
   if($video == 'no'){
-    $more_posts_args = arry(
+    $more_posts_args = array(
       'post_type' => 'post',
       'post_status' => 'publish',
       'posts_per_page' => 6,
