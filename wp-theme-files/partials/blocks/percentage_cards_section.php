@@ -12,7 +12,7 @@
             <span class="color-percentage"><?php the_sub_field('percentage_number'); ?><sup>%</sup></span>
           </div>
           <div class="card-body" data-aos="fade-up" data-aos-anchor="#color-facts" data-aos-offset="500">
-            <p><?php the_sub_field('info_card_description'); ?></p>
+            <p><?php the_sub_field('percentage_card_description'); ?></p>
           </div>
         </div>
 
