@@ -1,5 +1,5 @@
 .dots-bg{
-  background-image: url(images/dot-bg.jpg);
+  background-image: url(../../images/dot-bg.jpg);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -8,7 +8,7 @@
 }
 
 .dots-bg.dots-bg-dark{
-  background-image: url(images/dots-bg-2.png);
+  background-image: url(../../images/dots-bg-2.png);
 }
 
 .flip-discs{
