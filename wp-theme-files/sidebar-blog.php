@@ -3,7 +3,7 @@
  * Sidebar for blog and archive pages
  */
 
-if(!is_active_sidebar('sidebar_blog')){ return; }
+if(!is_active_sidebar('sidebar-blog')){ return; }
 ?>
 
 <section class="sidebar">

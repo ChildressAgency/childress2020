@@ -165,7 +165,8 @@
         display:block;
       }
 
-      &:hover{
+      &:hover,
+      &:focus{
         text-decoration: none;
         font-family: $font-main-black;
       }

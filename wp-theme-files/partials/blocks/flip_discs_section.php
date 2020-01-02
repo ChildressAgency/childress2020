@@ -37,5 +37,8 @@
       <?php endwhile; ?>
 
     </div><?php //.flip-discs ?>
-<?php //this container and section will be closed by previous section's opening section and container ?>
+  </div>
+</section>
+<section class="main-content">
+  <div class="container">
 <?php endif; ?>

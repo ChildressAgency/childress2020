@@ -33,7 +33,7 @@
                         }
                         else{
                           $bg_image_url = get_field('post_default_featured_image', $blog_page_id);
-                          $bg_image_css = 'background-size:contain;';
+                          $bg_image_css = get_field('post_default_featured_image_css', $blog_page_id);
                         }
                       ?>
                       <div class="post-image" style="background-image:url(<?php echo esc_url($bg_image_url); ?>);<?php echo esc_attr($bg_image_css); ?>"></div>

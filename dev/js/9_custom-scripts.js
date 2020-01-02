@@ -93,7 +93,8 @@ jQuery(document).ready(function($){
   });
 
   // ajax loadmore
-  $('body').on('click', '.loadmore', function(){
+  $('body').on('click', '.loadmore', function(e){
+    e.preventDefault();
     var $clickedButton = $(this);
     $clickedButton.text('Loading...');
     var video = $clickedButton.data('video');
@@ -110,7 +111,7 @@ jQuery(document).ready(function($){
       'action': 'cai_ajax_load_more_posts',
       'page': cai_ajax_loadmore.page,
       'video': video,
-      'nonce': cai_ajax_loadmore.nonce
+      'security': cai_ajax_loadmore.security
     };
 
     $.post(cai_ajax_loadmore.ajaxurl, data, function(response){

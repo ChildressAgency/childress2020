@@ -44,7 +44,7 @@ function cai_scripts(){
     'cai_ajax_loadmore',
     array(
       'ajaxurl' => admin_url('admin-ajax.php'),
-      'nonce' => wp_create_nonce('cai_ajax_load_more_posts'),
+      'security' => wp_create_nonce('cai_ajax_load_more_posts'),
       'page' => 2
     )
   );
@@ -295,12 +295,12 @@ function cai_posts_where($where){
   return $where;
 }
 
-add_action('wp_ajax_cai_ajax_load_more_posts', 'cai_load_more_posts');
-add_action('wp_ajax_nopriv_cai_ajax_load_more_posts', 'cai_load_more_posts');
-function cai_load_more_posts(){
+add_action('wp_ajax_cai_ajax_load_more_posts', 'cai_ajax_load_more_posts');
+add_action('wp_ajax_nopriv_cai_ajax_load_more_posts', 'cai_ajax_load_more_posts');
+function cai_ajax_load_more_posts(){
   //https://artisansweb.net/load-wordpress-post-ajax/
   //https://rudrastyh.com/wordpress/load-more-posts-ajax.html
-  check_ajax_referrer('cai_ajax_load_more_posts');
+  check_ajax_referer('cai_ajax_load_more_posts', 'security');
 
   $paged = $_POST['page'];
   $video = $_POST['video'];

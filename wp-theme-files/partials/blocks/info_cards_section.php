@@ -20,7 +20,7 @@
 
               $info_card_top_text = get_sub_field('info_card_top_text');
               if($info_card_top_text){
-                echo '<h3 class="card-title">' . esc_html($info_card_top_text) . '</h3>';
+                echo '<h3 class="card-title">' . apply_filters('the_content', $info_card_top_text) . '</h3>';
               }
             ?>
           </div>
@@ -31,6 +31,8 @@
 
       <?php endwhile; ?>
     </div><?php // .card-deck ?>
-
-<?php //this container and section will be closed by previous section's opening section and container ?>
+  </div>
+</section>
+<section class="main-content">
+  <div class="container">
 <?php endif; ?>

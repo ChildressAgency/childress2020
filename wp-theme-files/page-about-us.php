@@ -1,18 +1,14 @@
 <?php get_header(); ?>
   <main id="main">
-    <section id="main-content">
-      <div class="container">
         <?php 
           if(have_posts()){
             while(have_posts()){
               the_post();
 
-              the_content();
+              get_template_part('partials/loop', 'page');
             }
           }
         ?>
-      </div>
-    </section>
 
   <?php if(have_rows('team_members')): ?>
     <section id="our-team">
