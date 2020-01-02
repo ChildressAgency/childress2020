@@ -57,10 +57,10 @@
           'container_id' => 'services-nav',
           'container_class' => '',
           'menu_id' => '',
-          'menu_class' => 'nav services-nav',
+          'menu_class' => 'nav header-services-nav',
           'echo' => true,
           'fallback_cb' => 'cai_services_sub_nav_fallback_menu',
-          'items_wrap' => '<nav id="%1$s" class="%2$s">%3$s</nav>',
+          'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
           'depth' => 1,
         );
         wp_nav_menu($services_sub_nav_args);
@@ -68,7 +68,7 @@
     ?>
   </header>
 
-  <?php if(!is_page('services')): ?>
+  <?php if(!is_page('services') && !is_page('contact')): ?>
     <?php
       if(is_home() || is_singular('post')){
         $blog_page = get_page_by_path('news-events');
