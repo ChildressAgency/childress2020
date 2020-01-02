@@ -207,7 +207,7 @@
                     <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/sdvosb.jpg" class="img-fluid d-block mx-auto" alt="Service Disabled Veteran Owned Small Business" />
                   </div>
 
-                  <div>
+                  <div class="affiliate-code">
                     <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/swam.jpg" class="img-fluid d-block mx-auto" alt="SWaM Certified" />
                   </div>
                 </div>
