@@ -36,8 +36,8 @@ function cai_load_textdomain(){
   load_plugin_textdomain('cai', false, basename(CAI_PLUGIN_DIR) . '/languages');
 }
 
-add_action('acf-init', 'cai_acf_options_page');
-function cai_acf_option_page(){
+add_action('acf/init', 'cai_acf_options_page');
+function cai_acf_options_page(){
   acf_add_options_page(array(
     'page_title' => esc_html__('General Settings', 'cai'),
     'menu_title' => esc_html__('General Settings', 'cai'),
