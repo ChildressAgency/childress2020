@@ -79,7 +79,7 @@
     <section id="upper-footer">
       <div class="container-fluid">
         <div class="row">
-          <div class="col-md-6">
+          <div class="col-lg-6">
             <div class="row">
               <div class="col-sm-8">
                 <?php
@@ -107,7 +107,7 @@
                 <?php echo do_shortcode(get_field('newsletter_form_shortcode', 'option')); ?>
               </div>
               <div class="col-sm-4">
-                <h3>Services</h3>
+                <h3 class="mt-5 mt-md-0">Services</h3>
                 <?php
                   $services_footer_nav_args = array(
                     'theme_location' => 'services-nav', 
@@ -127,11 +127,11 @@
               </div>
             </div>
           </div>
-          <div class="col-md-6">
+          <div class="col-lg-6">
             <div class="row">
               <div class="col-sm-7">
                 <?php if(have_rows('locations_phone_numbers', 'option')): ?>
-                  <h3>Contact</h3>
+                  <h3 class="mt-5 mt-lg-0">Contact</h3>
                   <?php while(have_rows('locations_phone_numbers', 'option')): the_row(); ?>
                     <div itemscope itemtype="https://schema.org/LocalBusiness">
                       <p>
@@ -145,8 +145,8 @@
                   <?php endwhile; ?>
                 <?php endif; ?>
               </div>
-              <div class="col-md-5">
-                <h3>Headquarters</h3>
+              <div class="col-sm-5">
+                <h3 class="mt-5 mt-lg-0">Headquarters</h3>
                 <div itemscope itemtype="https://schema.org/LocalBusiness">
                   <div itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
                     <p>
