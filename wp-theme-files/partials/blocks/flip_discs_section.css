@@ -20,7 +20,7 @@
 .flip-disc{
   height: 215px;
   width: 215px;
-  perspective: 1000px;
+  perspective: 400px;
   margin-top: 70px;
 }
 
@@ -29,15 +29,11 @@
   width: 100%;
   height: 100%;
   text-align: center;
-  background-color: #f19024;
   border-radius: 50%;
   transition: transform .8s ease;
   transform-style: preserve-3d;
 }
 
-.flip-disc:hover .flip-disc-title{
-  transform: translateZ(40px);
-}
 .flip-disc:hover .flip-disc-inner{
   transform: rotateY(180deg);
 }
@@ -57,6 +53,7 @@
   justify-content: center;
   align-items: center;
   transition: transform .3s ease;
+  background-color: #f19024;
 }
 
 .flip-disc .flip-disc-title h3{
