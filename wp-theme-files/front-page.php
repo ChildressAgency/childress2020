@@ -10,28 +10,7 @@
           }
         ?>
 
-    <section id="clients">
-      <div class="container">
-        <ul class="client-list">
-          <li>
-            <a href="#">
-              <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/client-logo-placeholder.jpg" class="img-fluid d-block mx-auto" alt="" />
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/client-logo-placeholder.jpg" class="img-fluid d-block mx-auto" alt="" />
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/client-logo-placeholder.jpg" class="img-fluid d-block mx-auto" alt="" />
-            </a>
-          </li>
-        </ul>
-        <a href="#" class="btn-main">Discover our clients</a>
-      </div>
-    </section>
+  <?php get_template_part('partials/loop', 'clients'); ?>
 
   <?php 
     $testimonials_page = get_page_by_path('testimonials');
