@@ -107,7 +107,7 @@
                           $vid_image_alt = $default_vid_image['alt'];
                         }
                       ?>
-                      <a href="#"><img src="<?php echo esc_url($vid_image_url); ?>" class="img-fluid d-block mx-auto" alt="<?php echo esc_attr($vid_image_alt); ?>" /></a>
+                      <a href="<?php the_permalink(); ?>"><img src="<?php echo esc_url($vid_image_url); ?>" class="img-fluid d-block mx-auto" alt="<?php echo esc_attr($vid_image_alt); ?>" /></a>
                     </div>
                   <?php endwhile; ?>
 

@@ -169,16 +169,16 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-3">
-            <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo-color.png" class="img-fluid d-block" alt="Childress Agency Logo" />
+            <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo-color.png" class="img-fluid d-block mx-auto ml-md-0" alt="Childress Agency Logo" />
           </div>
           <div class="col-md-9">
             <div class="row">
-              <div class="col-sm-4">
-                <p class="text-right">&copy; <?php echo date('Y'); ?> The Childress Agency, Inc.<br />All Rights Reserved</p>
+              <div class="col-md-4">
+                <p class="text-center text-md-right">&copy; <?php echo date('Y'); ?> The Childress Agency, Inc.<br />All Rights Reserved</p>
               </div>
-              <div class="col-sm-8">
-                <div class="affiliations">
-                  <div class="affiliate-code">
+              <div class="col-md-8">
+                <div class="row text-center">
+                  <div class="col-sm-6">
                     <!-- google partner code -->
                     <script src="https://apis.google.com/js/platform.js" async defer></script>
 				            <div class="g-partnersbadge" data-agency-id="3546559613"></div>
@@ -186,7 +186,7 @@
                     <!-- end google partner code -->
                   </div>
 
-                  <div class="affiliate-code">
+                  <div class="col-sm-6">
                     <!-- sharpspring partner code -->
                     <style>
                       .ss-partner-certification-badge img{
@@ -206,11 +206,11 @@
                     <!-- end sharpspring partner code -->
                   </div>
 
-                  <div class="affiliate-code">
+                  <div class="col-sm-6 mt-4">
                     <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/sdvosb.jpg" class="img-fluid d-block mx-auto" alt="Service Disabled Veteran Owned Small Business" />
                   </div>
 
-                  <div class="affiliate-code">
+                  <div class="col-sm-6 mt-4">
                     <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/swam.jpg" class="img-fluid d-block mx-auto" alt="SWaM Certified" />
                   </div>
                 </div>
