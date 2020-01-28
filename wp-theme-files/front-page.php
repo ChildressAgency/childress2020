@@ -47,7 +47,7 @@
   <?php endif; ?>
 
   <?php if(have_rows('stats')): ?>
-    <section id="stats">
+    <section id="stats" class="odo">
       <div class="container">
         <div class="row">
           <?php while(have_rows('stats')): the_row(); ?>
