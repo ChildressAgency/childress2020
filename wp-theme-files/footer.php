@@ -207,11 +207,11 @@
                   </div>
 
                   <div class="col-sm-6 mt-4">
-                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/sdvosb.jpg" class="img-fluid d-block mx-auto" alt="Service Disabled Veteran Owned Small Business" />
+                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/sdvosb_120x120.png" class="img-fluid d-block mx-auto" alt="Service Disabled Veteran Owned Small Business" />
                   </div>
 
                   <div class="col-sm-6 mt-4">
-                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/swam.jpg" class="img-fluid d-block mx-auto" alt="SWaM Certified" />
+                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/swam-certified-120.jpg" class="img-fluid d-block mx-auto" alt="SWaM Certified" style="max-width:180px;" />
                   </div>
                 </div>
               </div>
