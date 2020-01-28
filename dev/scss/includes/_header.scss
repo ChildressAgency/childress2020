@@ -41,6 +41,12 @@
       color: #fff;
       text-transform: uppercase;
       transition: all .3s ease;
+      
+      &:hover,
+      &:focus{
+        text-decoration: none;
+        color: #fff;
+      }
     }
   }
 
