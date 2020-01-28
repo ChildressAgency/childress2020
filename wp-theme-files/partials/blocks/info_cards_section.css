@@ -46,10 +46,15 @@
   color: #f19024;
   display: block;
   white-space: nowrap;
+  line-height: 1em;
 }
 
 .dots-bg#color-facts .card-top{
   height: 140px;
+}
+
+.dots-bg#color-facts .card-body{
+  padding-top: 0;
 }
 
 .dots-bg.dots-bg-dark{
