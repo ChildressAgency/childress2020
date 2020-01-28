@@ -19,7 +19,7 @@ jQuery(document).ready(function($){
 
   // stats (using odometer)
   $window.on('scroll', function () {
-    if (isInViewport($('#stats'), 100)) {
+    if (isInViewport($('.odo'), 100)) {
       $('.count').each(function (index) {
         var topNumber = $(this).data('top_number');
         $(this).text(topNumber);
