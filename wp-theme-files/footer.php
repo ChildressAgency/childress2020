@@ -221,6 +221,17 @@
       </div>
     </section>
   </footer>
+    <div id="call-chat">
+      <a href="tel:5404125199" class="call-chat_call">
+        <div class="black-circle"></div>
+        <div class="button"></div>
+        <div class="front-circle"></div>
+        <svg class="phone">
+          <use xlink:href="#icon-phone" />
+        </svg>
+        </i>
+      </a>
+    </div>
     <?php get_template_part('partials/sprites.svg'); ?>
   <?php wp_footer(); ?>
 </body>

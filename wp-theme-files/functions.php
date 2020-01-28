@@ -78,7 +78,7 @@ add_action('wp_enqueue_scripts', 'cai_styles');
 function cai_styles(){
   wp_register_style(
     'fontawesome',
-    'https://use.fontawesome.com/releases/v5.6.3/css/all.css'
+    'https://use.fontawesome.com/releases/v5.12.0/css/all.css'
   );
 
   wp_register_style(
@@ -90,7 +90,7 @@ function cai_styles(){
   wp_enqueue_style('cai-css');
 }
 
-add_filter('style_loader_tag', 'cai_add_css_meta', 10, 2);
+//add_filter('style_loader_tag', 'cai_add_css_meta', 10, 2);
 function cai_add_css_meta($link, $handle){
   switch($handle){
     case 'fontawesome':
