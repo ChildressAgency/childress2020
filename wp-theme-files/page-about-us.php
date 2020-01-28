@@ -50,7 +50,7 @@
 
     <section id="affiliates">
       <div class="container-fluid">
-        <article class="half-width mb-5">
+        <article class="center-align mb-5">
           <?php the_field('affiliates_section_content'); ?>
         </article>
 
