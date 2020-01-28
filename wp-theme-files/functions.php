@@ -76,17 +76,17 @@ function cai_add_script_meta($tag, $handle){
 
 add_action('wp_enqueue_scripts', 'cai_styles');
 function cai_styles(){
-  wp_register_style(
-    'fontawesome',
-    'https://use.fontawesome.com/releases/v5.12.0/css/all.css'
-  );
+  //wp_register_style(
+  //  'fontawesome',
+  //  'https://use.fontawesome.com/releases/v5.12.0/css/all.css'
+  //);
 
   wp_register_style(
     'cai-css',
     get_stylesheet_directory_uri() . '/style.css'
   );
 
-  wp_enqueue_style('fontawesome');
+  //wp_enqueue_style('fontawesome');
   wp_enqueue_style('cai-css');
 }
 
