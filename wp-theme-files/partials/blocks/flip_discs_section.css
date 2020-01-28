@@ -91,3 +91,7 @@
   text-align: center;
   margin-top: 20px;
 }
+
+.flip-disc .disc-icon{
+  max-width:170px;
+}
