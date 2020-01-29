@@ -7,6 +7,7 @@
       if(has_post_thumbnail()){
         $blog_post_id = get_the_ID();
         $bg_image_url = get_the_post_thumbnail_url($blog_post_id, 'large');
+        $bg_image_css = 'background-position:center center;';
       }
       else{
         $blog_page = get_page_by_path('news-events');
