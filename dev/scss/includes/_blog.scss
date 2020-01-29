@@ -59,6 +59,14 @@
   }
 }
 
+@include media-breakpoint-down(sm){
+  .post-summary{
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 .sidebar{
   margin-top: 100px;
 }
