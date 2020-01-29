@@ -81,7 +81,7 @@
         <div class="row">
           <div class="col-lg-6">
             <div class="row">
-              <div class="col-sm-8">
+              <div class="col-sm-7">
                 <?php
                   $facebook = get_field('facebook', 'option');
                   $instagram = get_field('instagram', 'option');
@@ -127,7 +127,7 @@
               </div>
             </div>
           </div>
-          <div class="col-lg-6">
+          <div class="col-lg-5">
             <div class="row">
               <div class="col-sm-7">
                 <?php if(have_rows('locations_phone_numbers', 'option')): ?>
