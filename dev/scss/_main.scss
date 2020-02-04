@@ -449,8 +449,8 @@ article.center-align{
 #call-chat{
   position: fixed;
   display: block;
-  bottom: 50px;
-  right: 50px;
+  bottom: 115px;
+  right: 40px;
   transform: translate(-50%, -50%);
   z-index: 999999;
 
@@ -564,6 +564,9 @@ article.center-align{
 }
 
 #positions-accordion{
+  .card-header{
+    position: relative;
+  }
   .view-more{
     position: absolute;
     bottom: 1px;
