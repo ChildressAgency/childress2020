@@ -5,18 +5,21 @@
       <div class="col-md-8 col-lg-9">
         <section class="main-content">
           <article class="entry-content">
+            <div class="row">
             <?php
               if(have_posts()){
                 while(have_posts()){
                   the_post();
-                  get_template_part('partials/loop', 'generic');
+                  get_template_part('partials/loop', 'recent_posts');
                 }
-                wp_pagenavi();
+                //wp_pagenavi();
               }
               else{
                 get_template_part('partials/loop', 'no_content');
               }
             ?>
+            </div>
+            <?php wp_pagenavi(); ?>
           </article>
         </section>
       </div>
