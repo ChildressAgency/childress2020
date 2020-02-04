@@ -13,7 +13,7 @@
   <?php if(have_rows('team_members')): ?>
     <section id="our-team">
       <div class="container-fluid">
-        <h2>OUR TEAM</h2>
+        <h2>LEADERSHIP</h2>
         <div class="swiper-container">
           <div class="swiper-wrapper">
 
