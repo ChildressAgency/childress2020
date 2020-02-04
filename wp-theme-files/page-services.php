@@ -29,7 +29,7 @@
             <?php 
               $service_link = get_sub_field('service_link');
               if($service_link): ?>
-                <a href="<?php echo esc_url($service_link['url']); ?>" class="btn-main">Find Out More</a>
+                <a href="<?php echo esc_url($service_link['url']); ?>" class="btn-main"><?php echo esc_html($service_link['title']); ?></a>
             <?php endif; ?>
           </div>
         </div>
