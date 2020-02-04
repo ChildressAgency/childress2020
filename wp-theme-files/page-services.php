@@ -1,11 +1,11 @@
 <?php get_header(); ?>
   <main id="main" class="service-page">
-    <div class="container-fluid">
+    <div class="container-fluid clearfix">
       <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/cloud-four-circles.png" class="service-page-header-img" alt="" />
       <h1 class="page-title">Our Services</h1>
       <div class="service-line"></div>
     </div>
-    <div class="clearfix"></div>
+    <!--<div class="clearfix"></div>-->
     <?php if(have_rows('services')): $i = 1; while(have_rows('services')): the_row(); ?>
       <div class="row no-gutters<?php echo ($i % 2 == 0) ? ' text-right' : ' text-left'; ?>">
         <div class="col-md-6 image-side<?php if($i % 2 == 0){ echo ' order-md-last'; } ?>" style="background-image:url(<?php the_sub_field('service_image'); ?>); <?php the_sub_field('service_image_css'); ?>">
