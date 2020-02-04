@@ -2,18 +2,61 @@
 <html lang="en">
 
 <head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-30535612-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-30535612-1');
+  </script>
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <meta http-equiv="cache-control" content="public">
   <meta http-equiv="cache-control" content="private">
 
+  <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
   <title><?php echo esc_html(bloginfo('name')); ?></title>
 
   <?php wp_head(); ?>
+  <script type="text/javascript">
+      var _ss = _ss || [];
+      _ss.push(['_setDomain', 'https://koi-3QNKNGNIX6.marketingautomation.services/net']);
+      _ss.push(['_setAccount', 'KOI-461EIL3BMQ']);
+      _ss.push(['_trackPageView']);
+    (function() {
+      var ss = document.createElement('script');
+      ss.type = 'text/javascript'; ss.async = true;
+      ss.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'koi-3QNKNGNIX6.marketingautomation.services/client/ss.js?ver=2.2.1';
+      var scr = document.getElementsByTagName('script')[0];
+      scr.parentNode.insertBefore(ss, scr);
+    })();
+  </script>
 </head>
 
 <body <?php body_class(); ?>>
+  	<!-- Hotjar Tracking Code for http://childressagency.com/ --> <script> (function(h,o,t,j,a,r){ h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)}; h._hjSettings={hjid:1199441,hjsv:6}; a=o.getElementsByTagName('head')[0]; r=o.createElement('script');r.async=1; r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv; a.appendChild(r); })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv='); </script>
+
   <header id="header">
     <nav class="navbar navbar-expand-lg navbar-dark">
       <div class="container-fluid">

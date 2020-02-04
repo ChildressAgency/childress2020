@@ -8,6 +8,19 @@
         </div>
         <div class="col-lg-8">
           <?php echo do_shortcode(get_field('contact_form_shortcode', 'option')); ?>
+       		<script>
+      			var wpcf7Elm = jQuery('#2650').closest('.wpcf7')[0];
+			      wpcf7Elm.addEventListener( 'wpcf7mailsent', function( event ){
+               __ss_noform.push(['submit', null, '811714e0-9dbc-49d2-ad51-586093d6b12e']); 
+            },false );
+		      </script>
+		      <script type="text/javascript">
+		        var __ss_noform = __ss_noform || [];
+    		    __ss_noform.push(['baseURI', 'https://app-3QNKNGNIX6.marketingautomation.services/webforms/receivePostback/MzawMDG3MDMzBgA/']);
+    		    __ss_noform.push(['form', '2650', '811714e0-9dbc-49d2-ad51-586093d6b12e']);
+			      __ss_noform.push(['submitType', 'manual']);
+		      </script>
+		      <script type="text/javascript" src="https://koi-3QNKNGNIX6.marketingautomation.services/client/noform.js?ver=1.24" ></script>
         </div>
       </div>
     </div>
@@ -92,15 +105,15 @@
                 <h3>Stay Connected</h3>
                 <div class="social">
                   <?php if($facebook): ?>
-                    <a href="<?php echo esc_url($facebook); ?>" id="facebook" aria-label="Facebook"><span class="sr-only">Facebook</span></a>
+                    <a href="<?php echo esc_url($facebook); ?>" id="facebook" aria-label="Facebook" target="_blank"><span class="sr-only">Facebook</span></a>
                   <?php endif; if($instagram): ?>
-                    <a href="<?php echo esc_url($instagram); ?>" id="instagram" aria-label="Instagram"><span class="sr-only">Instagram</span></a>
+                    <a href="<?php echo esc_url($instagram); ?>" id="instagram" aria-label="Instagram" target="_blank"><span class="sr-only">Instagram</span></a>
                   <?php endif; if($twitter): ?>
-                    <a href="<?php echo esc_url($twitter); ?>" id="twitter" aria-label="Twitter"><span class="sr-only">Twitter</span></a>
+                    <a href="<?php echo esc_url($twitter); ?>" id="twitter" aria-label="Twitter" target="_blank"><span class="sr-only">Twitter</span></a>
                   <?php endif; if($linkedin): ?>
-                    <a href="<?php echo esc_url($linkedin); ?>" id="linkedin" aria-label="LinkedIn"><span class="sr-only">LinkedIn</span></a>
+                    <a href="<?php echo esc_url($linkedin); ?>" id="linkedin" aria-label="LinkedIn" target="_blank"><span class="sr-only">LinkedIn</span></a>
                   <?php endif; if($youtube): ?>
-                    <a href="<?php echo esc_url($youtube); ?>" id="youtube" aria-label="YouTube"><span class="sr-only">YouTube</span></a>
+                    <a href="<?php echo esc_url($youtube); ?>" id="youtube" aria-label="YouTube" target="_blank"><span class="sr-only">YouTube</span></a>
                   <?php endif; ?>
                 </div>
                 <p class="mt-5">Keep up to date with our weekly newsletter.</p>
