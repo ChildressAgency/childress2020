@@ -1,0 +1,25 @@
+<div class="application">
+  <div class="form-group">
+    <label for="your-name" class="control-label">full name*</label>
+    [text* your-name id:your-name class:form-control]
+  </div>
+  <div class="form-group">
+    <label for="your-email" class="control-label">email*</label>
+    [email* your-email id:your-email class:form-control]
+  </div>
+  <div class="form-group">
+    <label for="subject" class="control-label">position applying for</label>
+    [text subject id:subject class:form-control default:get]
+  </div>
+  <div class="form-group">
+    <label for="message" class="control-label">message / cover letter</label>
+    [textarea message id:message class:form-control]
+  </div>
+  <div class="form-group">
+    <label for="resume" class="control-label" style="display:block;">upload your resume</label>
+    [file resume id:resume filetypes:pdf|doc|docx]
+  </div>
+  <div class="form-group">
+    [submit class:btn-main class:mt-4 "Send"]
+  </div>
+</div>

@@ -562,3 +562,17 @@ article.center-align{
     width: 55px;
   }
 }
+
+#positions-accordion{
+  .view-more{
+    position: absolute;
+    bottom: 1px;
+    right: 5px;
+  }
+  .view-more-caret{
+    height: 25px;
+    width: 25px;
+    margin-left: 5px;
+    margin-bottom: 5px;
+  }
+}
