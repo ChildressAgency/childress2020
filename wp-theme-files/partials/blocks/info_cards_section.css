@@ -1,0 +1,76 @@
+.dots-bg{
+  background-image: url(../../images/dot-bg.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 60px;
+  padding-bottom: 100px;
+}
+
+.dots-bg h2{
+  font-family: "sansationbold", sans-serif;
+  color: #fff;
+  text-align: center;
+  font-size: 70px;
+}
+
+.dots-bg .card{
+  text-align: center;
+  background-color: transparent;
+  border: none;
+  color: #fff;
+}
+
+.dots-bg .card-top{
+  height: 290px;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+}
+
+.dots-bg .card-top svg,
+.dots-bg .card-top img{
+  height: 100%;
+  width: 100%;
+}
+
+.dots-bg .card-top h3{
+  margin-top: 15px;
+  font-size: 32px;
+  font-family: "Avenir LT W01_55 Roman1475520", sans-serif;
+}
+
+.dots-bg .card-top .color-percentage{
+  font-family: "Avenir LT W01_45 Book1475508", sans-serif;
+  font-size: 100px;
+  color: #f19024;
+  display: block;
+  white-space: nowrap;
+  line-height: 1em;
+}
+
+.dots-bg#color-facts .card-top{
+  height: 140px;
+}
+
+.dots-bg#color-facts .card-body{
+  padding-top: 0;
+}
+
+.dots-bg.dots-bg-dark{
+  background-image: url(../../images/dots-bg-2.png);
+}
+
+@media (min-width: 576px) and (max-width: 767px){
+  .dots-bg .card-deck .card{
+    flex: unset;
+    width: 100%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px){
+  .dots-bg#color-facts .card-deck .card{
+    flex: unset;
+    width: 100%;
+  }
+}

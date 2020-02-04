@@ -1,0 +1,97 @@
+.dots-bg{
+  background-image: url(../../images/dot-bg.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 60px;
+  padding-bottom: 100px;
+}
+
+.dots-bg.dots-bg-dark{
+  background-image: url(../../images/dots-bg-2.png);
+}
+
+.flip-discs{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.flip-disc{
+  height: 215px;
+  width: 215px;
+  perspective: 400px;
+  margin-top: 70px;
+}
+
+.flip-disc .flip-disc-inner{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  border-radius: 50%;
+  transition: transform .8s ease;
+  transform-style: preserve-3d;
+}
+
+.flip-disc:hover .flip-disc-inner{
+  transform: rotateY(180deg);
+}
+
+.flip-disc .flip-disc-title,
+.flip-disc .flip-disc-content{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  backface-visibility: hidden;
+  border-radius: 50%;
+  padding: 15px;
+}
+
+.flip-disc .flip-disc-title{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform .3s ease;
+  background-color: #f19024;
+}
+
+.flip-disc .flip-disc-title h3{
+  font-family: "sansationbold", sans-serif;
+  color: #fff;
+  font-size: 28px;
+}
+
+.flip-disc .flip-disc-content{
+  background-color: #02203e;
+  color: #fff;
+  transform: rotateY(180deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.flip-disc .flip-disc-content h4{
+  font-family: "sansationbold", sans-serif;
+  color: #fff;
+  font-size: 22px;
+  text-transform: uppercase;
+}
+
+.flip-disc .flip-disc-content p{
+  color: #fff;
+  font-size: 14px;
+}
+
+.flip-disc .flip-disc-caption{
+  font-size: 28px;
+  font-family: "Avenir LT W01_85 Heavy1475544", sans-serif;
+  color: #f19024;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.flip-disc .disc-icon{
+  max-width:170px;
+}

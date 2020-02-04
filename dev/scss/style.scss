@@ -1,0 +1,46 @@
+/*!
+  Theme Name: Childress Agency 2020
+  Theme Author: The Childress Agency
+  Theme Autor URI: https://childressagency.com
+  Version: 1.0
+*/
+
+/*!
+This CSS resource incorporates links to font software which is the valuable copyrighted
+property of Monotype Imaging and/or its suppliers. You may not attempt to copy, install,
+redistribute, convert, modify or reverse engineer this font software. Please contact Monotype
+Imaging with any questions regarding Web Fonts:  http://www.fonts.com
+*/
+
+/********************************
+* custom variables and bootstrap
+* variable overrides
+********************************/
+@import "variables";
+
+/*******************************
+* bootstrap and other vendor scss files
+*******************************/
+@import "includes/bootstrap";
+@import "includes/swiper";
+@import "includes/aos";
+@import "includes/odometer";
+
+/******************************
+* main scss file with gobal
+* styles
+******************************/
+@import "main";
+
+/*******************************
+* scss partial files
+*******************************/
+@import "includes/disc-icon";
+@import "includes/flip-discs";
+@import "includes/team";
+@import "includes/testimonials";
+
+@import "includes/header";
+@import "includes/hero";
+@import "includes/footer";
+@import "includes/blog";
