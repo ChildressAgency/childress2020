@@ -25,6 +25,12 @@ h3{
   line-height: 1em;
 }
 
+@include media-breakpoint-down(sm){
+  h1{
+    font-size: 52px;
+  }
+}
+
 a{
   color: $color-alt;
   font-family: $font-main-heavy;
