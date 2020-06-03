@@ -321,10 +321,6 @@ article.center-align{
 }
 
 @include media-breakpoint-down(xs){
-  .service-page{
-    padding-top: 285px;
-  }
-
   .service-page-header-img{
     width: 20%;
   }
@@ -341,6 +337,9 @@ article.center-align{
     .image-side{
       height: 465px;
     }
+  }
+  .services-main{
+    padding-top: 160px;
   }
 }
 
@@ -585,5 +584,50 @@ article.center-align{
     width: 25px;
     margin-left: 5px;
     margin-bottom: 5px;
+  }
+}
+
+.services-main{
+  .mobile-background{
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
+}
+
+@include media-breakpoint-down(sm){
+  .services-main{
+    .service-desc{
+      color: #fff;
+      position: relative;
+      z-index: 9;
+
+      h2{
+        color: #fff;
+      }
+
+      a{
+        color: #fff;
+      }
+
+      .btn-main{
+        color: #fff;
+      }
+    }
+  }
+}
+
+@media (max-width:465px){
+  .services-main{
+    padding-top: 300px;
+  }
+}
+@media (min-width:466px) and (max-width:584px){
+  .services-main{
+    padding-top: 215px;
   }
 }

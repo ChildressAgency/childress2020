@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-  <main id="main" class="service-page">
+  <main id="main" class="service-page services-main">
     <div class="container-fluid clearfix">
       <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/cloud-four-circles.png" class="service-page-header-img" alt="" />
       <h1 class="page-title">Our Services</h1>
@@ -8,10 +8,12 @@
     <!--<div class="clearfix"></div>-->
     <?php if(have_rows('services')): $i = 1; while(have_rows('services')): the_row(); ?>
       <div class="row no-gutters<?php echo ($i % 2 == 0) ? ' text-right' : ' text-left'; ?>">
-        <div class="col-md-6 image-side<?php if($i % 2 == 0){ echo ' order-md-last'; } ?>" style="background-image:url(<?php the_sub_field('service_image'); ?>); <?php the_sub_field('service_image_css'); ?>">
+        <div class="col-md-6 d-none d-md-block image-side<?php if($i % 2 == 0){ echo ' order-md-last'; } ?>" style="background-image:url(<?php the_sub_field('service_image'); ?>); <?php the_sub_field('service_image_css'); ?>">
           <div class="blue-overlay"></div>
         </div>
         <div class="col-md-6 text-side<?php if($i % 2 == 0){ echo ' order-md-first'; } ?>">
+          <div class="mobile-background d-block d-md-none" style="background-image:url(<?php the_sub_field('service_image'); ?>); <?php the_sub_field('service_image_css'); ?>"></div>
+          <div class="blue-overlay d-block d-md-none"></div>
           <div class="service-desc" data-aos="fade-up" data-aos-offset="250">
             <div class="disc-icon-bg"data-aos="zoom-in" data-aos-offset="250" data-aos-delay="500">
               <?php
