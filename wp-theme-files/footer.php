@@ -1,4 +1,4 @@
-  <section id="contact" style="background-color:#02203e;<?php if(is_page('contact')){ echo ' padding-top:135px;'; } ?>">
+  <section id="contact" style="background-color:#02203e;<?php if(is_page('contact')){ echo ' padding-top:200px;'; } ?>">
     <div class="container-fluid">
       <div class="row">
         <div class="col-lg-4 marketing-easy">
