@@ -25,6 +25,12 @@ h3{
   line-height: 1em;
 }
 
+@include media-breakpoint-down(sm){
+  h1{
+    font-size: 40px;
+  }
+}
+
 a{
   color: $color-alt;
   font-family: $font-main-heavy;
@@ -315,10 +321,6 @@ article.center-align{
 }
 
 @include media-breakpoint-down(xs){
-  .service-page{
-    padding-top: 285px;
-  }
-
   .service-page-header-img{
     width: 20%;
   }
@@ -335,6 +337,9 @@ article.center-align{
     .image-side{
       height: 465px;
     }
+  }
+  .services-main{
+    padding-top: 160px;
   }
 }
 
@@ -365,10 +370,11 @@ article.center-align{
 }
 
 .dots-bg{
-  background-image: url(images/dot-bg.jpg);
+  /*background-image: url(images/dot-bg.jpg);
   background-position: center center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover;*/
+  background-color: $color-alt;
   padding-top: 60px;
   padding-bottom: 100px;
 
@@ -434,7 +440,8 @@ article.center-align{
   }
 
   &.dots-bg-dark{
-    background-image: url(images/dots-bg-2.png);
+    /*background-image: url(images/dots-bg-2.png);*/
+    background-color: $color-alt;
   }
 }
 
@@ -476,7 +483,7 @@ article.center-align{
       transform: translate(-50%, -50%);
       height: 45px;
       width: 45px;
-      background-color: $color-brand-gray;
+      background-color: $color-alt;
       border-radius: 75px;
       animation: ring 2s infinite;
     }
@@ -577,5 +584,50 @@ article.center-align{
     width: 25px;
     margin-left: 5px;
     margin-bottom: 5px;
+  }
+}
+
+.services-main{
+  .mobile-background{
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
+}
+
+@include media-breakpoint-down(sm){
+  .services-main{
+    .service-desc{
+      color: #fff;
+      position: relative;
+      z-index: 9;
+
+      h2{
+        color: #fff;
+      }
+
+      a{
+        color: #fff;
+      }
+
+      .btn-main{
+        color: #fff;
+      }
+    }
+  }
+}
+
+@media (max-width:465px){
+  .services-main{
+    padding-top: 300px;
+  }
+}
+@media (min-width:466px) and (max-width:584px){
+  .services-main{
+    padding-top: 215px;
   }
 }

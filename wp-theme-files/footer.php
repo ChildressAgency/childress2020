@@ -1,5 +1,4 @@
-  <section id="contact"
-    style="background-image:url(<?php echo get_stylesheet_directory_uri(); ?>/images/contact-section-bg.jpg); background-position:center center;<?php if(is_page('contact')){ echo ' padding-top:135px;'; } ?>">
+  <section id="contact" style="background-color:#02203e;<?php if(is_page('contact')){ echo ' padding-top:200px;'; } ?>">
     <div class="container-fluid">
       <div class="row">
         <div class="col-lg-4 marketing-easy">
@@ -116,8 +115,8 @@
                     <a href="<?php echo esc_url($youtube); ?>" id="youtube" aria-label="YouTube" target="_blank"><span class="sr-only">YouTube</span></a>
                   <?php endif; ?>
                 </div>
-                <p class="mt-5">Keep up to date with our weekly newsletter.</p>
-                <?php echo do_shortcode(get_field('newsletter_form_shortcode', 'option')); ?>
+                <!--<p class="mt-5">Keep up to date with our weekly newsletter.</p>-->
+                <?php //echo do_shortcode(get_field('newsletter_form_shortcode', 'option')); ?>
               </div>
               <div class="col-sm-4">
                 <h3 class="mt-5 mt-md-0">Services</h3>
@@ -181,55 +180,51 @@
     <section id="lower-footer">
       <div class="container-fluid">
         <div class="row">
-          <div class="col-md-3">
-            <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo-color.png" class="img-fluid d-block mx-auto ml-md-0" alt="Childress Agency Logo" />
+          <div class="col-xl-3 text-center mt-4">
+            <!--<img src="<?php //echo get_stylesheet_directory_uri(); ?>/images/logo-color.png" class="img-fluid d-block mx-auto ml-md-0" alt="Childress Agency Logo" />-->
+            <svg class="logo-color-name">
+              <use xlink:href="#logo-color-name" />
+            </svg>
           </div>
-          <div class="col-md-9">
+          <div class="col-xl-9">
             <div class="row">
-              <div class="col-md-4">
-                <p class="text-center text-md-right">&copy; <?php echo date('Y'); ?> The Childress Agency, Inc.<br />All Rights Reserved</p>
+              <div class="col-md-6 col-xl-3 mt-4 text-center">
+                <!-- google partner code -->
+                <script src="https://apis.google.com/js/platform.js" async defer></script>
+                <div class="g-partnersbadge" data-agency-id="3546559613"></div>
+                <!-- Add the code snippet above to the sites listed to display your badge: http://www.childressagency.com -->
+                <!-- end google partner code -->
               </div>
-              <div class="col-md-8">
-                <div class="row text-center">
-                  <div class="col-sm-6">
-                    <!-- google partner code -->
-                    <script src="https://apis.google.com/js/platform.js" async defer></script>
-				            <div class="g-partnersbadge" data-agency-id="3546559613"></div>
-                    <!-- Add the code snippet above to the sites listed to display your badge: http://www.childressagency.com -->
-                    <!-- end google partner code -->
-                  </div>
-
-                  <div class="col-sm-6">
-                    <!-- sharpspring partner code -->
-                    <style>
-                      .ss-partner-certification-badge img{
-                        max-width: 100% !important;
-                        height: auto !important;
-                      }
-                    </style>
-                    <div class="ss-partner-certification-badge" data-badge-shape="ribbon" data-badge-width="300"></div>
-                    <script type="text/javascript">
-                      var ss_cid = 'MzawMDG3MDMzBgA';
-                      var ss_domain = 'https://koi-3QNKNGNIX6.marketingautomation.services/';
-                    </script>
-                    <script type="text/javascript" src="https://koi-3QNKNGNIX6.marketingautomation.services/client/partner-cert.js" async></script>
-                    <noscript>
-                      <a href="https://sharpspring.com" target="_blank"></a>
-                    </noscript>
-                    <!-- end sharpspring partner code -->
-                  </div>
-
-                  <div class="col-sm-6 mt-4">
-                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/sdvosb_120x120.png" class="img-fluid d-block mx-auto" alt="Service Disabled Veteran Owned Small Business" />
-                  </div>
-
-                  <div class="col-sm-6 mt-4">
-                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/swam-certified-120.jpg" class="img-fluid d-block mx-auto" alt="SWaM Certified" style="max-width:180px;" />
-                  </div>
-                </div>
+              <div class="col-md-6 col-xl-3 mt-4 text-center">
+                <!-- sharpspring partner code -->
+                <style>
+                  .ss-partner-certification-badge img{
+                    max-width: 100% !important;
+                    height: auto !important;
+                  }
+                </style>
+                <div class="ss-partner-certification-badge" data-badge-shape="ribbon" data-badge-width="300"></div>
+                <script type="text/javascript">
+                  var ss_cid = 'MzawMDG3MDMzBgA';
+                  var ss_domain = 'https://koi-3QNKNGNIX6.marketingautomation.services/';
+                </script>
+                <script type="text/javascript" src="https://koi-3QNKNGNIX6.marketingautomation.services/client/partner-cert.js" async></script>
+                <noscript>
+                  <a href="https://sharpspring.com" target="_blank"></a>
+                </noscript>
+                <!-- end sharpspring partner code -->
+              </div>
+              <div class="col-md-6 col-xl-3 mt-4 text-center">
+                <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/sdvosb_120x120.png" class="img-fluid d-block mx-auto" alt="Service Disabled Veteran Owned Small Business" />
+              </div>
+              <div class="col-md-6 col-xl-3 mt-4 text-center">
+                <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/swam-certified-120.jpg" class="img-fluid d-block mx-auto" alt="SWaM Certified" style="max-width:180px; width:100%;" />
               </div>
             </div>
           </div>
+        </div>
+        <div class="copyright text-center mt-5">
+          <p>&copy; <?php echo date('Y'); ?> The Childress Agency, Inc.<br />All Rights Reserved</p>
         </div>
       </div>
     </section>
