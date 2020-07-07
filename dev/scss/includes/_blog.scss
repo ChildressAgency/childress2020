@@ -1,105 +1,105 @@
-.most-recent{
+.most-recent {
   margin-top: 40px;
   margin-bottom: 40px;
   background-color: #f2f2f2;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
 
-  .post-image{
+  .post-image {
     min-height: 335px;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
   }
 
-  .text-side{
+  .text-side {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
     padding: 15px 30px;
 
-    h2{
+    h2 {
       font-size: 30px;
     }
 
-    .btn-main{
+    .btn-main {
       margin-top: 25px;
     }
   }
 
-  &:hover{
+  &:hover {
     box-shadow: 5px 5px 20px #aaa;
   }
 }
 
-.post-summary{
+.post-summary {
   background-color: #f2f2f2;
   margin-top: 40px;
   display: flex;
   flex-direction: column;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
 
-  &:hover{
+  &:hover {
     box-shadow: 5px 5px 20px #aaa;
   }
 
-  .post-image{
+  .post-image {
     background-repeat: no-repeat;
     background-size: cover;
     height: 160px;
   }
 
-  .post-body{
+  .post-body {
     padding: 15px;
     flex: 1 1 auto;
   }
 
-  .post-footer{
+  .post-footer {
     padding: 15px;
   }
 }
 
-@include media-breakpoint-down(sm){
-  .post-summary{
+@include media-breakpoint-down(sm) {
+  .post-summary {
     max-width: 300px;
     margin-left: auto;
     margin-right: auto;
   }
 }
 
-.sidebar{
+.sidebar {
   margin-top: 100px;
 }
 
-@include media-breakpoint-up(md){
-  .sidebar{
+@include media-breakpoint-up(md) {
+  .sidebar {
     padding-left: 40px;
   }
 }
 
-.sidebar-section{
+.sidebar-section {
   margin-bottom: 25px;
 
-  h3{
+  h3 {
     font-size: 20px;
     text-transform: lowercase;
   }
 
-  ul{
-    a{
+  ul {
+    a {
       font-family: $font-main;
       text-transform: lowercase;
 
       &:hover,
-      &:focus{
+      &:focus {
         font-family: $font-main-heavy;
       }
     }
   }
 }
 
-.sidebar-search{
-  .form-control{
+.sidebar-search {
+  .form-control {
     background-color: #ccc;
     border-top-left-radius: 25px;
     border-bottom-left-radius: 25px;
@@ -107,7 +107,7 @@
     color: #fff;
   }
 
-  .btn-search{
+  .btn-search {
     border: none;
     background-color: #ccc;
     padding-right: 15px;
@@ -117,32 +117,32 @@
   }
 }
 
-#videos{
+#videos {
   margin-top: 80px;
 }
 
-.most-recent-video{
+.most-recent-video {
   margin-top: 40px;
 }
 
-.video{
+.video {
   display: inline-block;
   margin-top: 40px;
   position: relative;
 
-  .video-title{
+  .video-title {
     position: absolute;
     height: 100%;
     width: 100%;
     top: 0;
     left: 0;
-    background-color: rgba(2, 32, 62, .8);
+    background-color: rgba(2, 32, 62, 0.8);
     z-index: 1;
     opacity: 0;
-    transition: all .3s ease;
+    transition: all 0.3s ease;
     padding: 15px;
 
-    h3{
+    h3 {
       position: absolute;
       z-index: 5;
       color: #fff;
@@ -155,39 +155,39 @@
     }
   }
 
-  &:hover{
-    .video-title{
+  &:hover {
+    .video-title {
       opacity: 1;
     }
   }
 }
 
-#seo-analysis{
-  h2{
+#seo-analysis {
+  h2 {
     font-size: 75px;
   }
 }
 
-.alignnone{
+.alignnone {
   display: block;
   max-width: 100%;
   height: auto;
   margin: 25px;
 }
-.aligncenter{
+.aligncenter {
   display: block;
   max-width: 100%;
   height: auto;
   margin: 25px auto;
 }
-.alignright{
+.alignright {
   float: right;
   display: block;
   max-width: 100%;
   height: auto;
   margin: 25px 0 25px 25px;
 }
-.alignleft{
+.alignleft {
   float: left;
   display: block;
   max-width: 100%;
@@ -195,7 +195,7 @@
   margin: 25px 25px 25px 0;
 }
 
-.blog-pagination{
+.blog-pagination {
   margin-top: 60px;
   display: flex;
   justify-content: space-around;

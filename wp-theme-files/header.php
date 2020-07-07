@@ -139,7 +139,9 @@
       <div class="container">
         <div class="hero-caption" data-aos-easing="ease-out" data-aos-duration="1000" <?php echo is_front_page() ? 'data-aos="fade-down"' : 'data-aos="fade-right"'; ?>>
           <?php if(is_front_page()): ?>
-            <h1><span class="brand">Childress Agency</span>Web Design &<br />Digital Marketing</h1>
+            <h1>Let's grow<br />your business</h1>
+            <h3>through powerful websites & <br />
+            digital marketing strategies.</h3>
             <a href="<?php echo esc_url(home_url('contact')); ?>" class="btn-main btn-lrg">We're ready when you are.</a>
           <?php else: ?>
             <h2><?php echo wp_kses_post($hero_caption); ?></h2>
