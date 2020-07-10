@@ -1,5 +1,8 @@
 <?php get_header(); ?>
   <main id="main">
+    
+
+
         <?php
           if(have_posts()){
             while(have_posts()){
@@ -9,7 +12,7 @@
             }
           }
         ?>
-
+        
   <?php get_template_part('partials/loop', 'clients'); ?>
 
   <?php 

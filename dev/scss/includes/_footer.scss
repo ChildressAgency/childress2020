@@ -196,33 +196,47 @@
 #contact {
   margin-top: 60px;
 
-  .get-started {
+  .first-angle {
     display: flex;
     flex-direction: column;
   }
   .call {
     color: white;
-  }
-  .contact-left {
     position: absolute;
-    z-index: -1;
-    bottom: -50%;
-    background-color: #02203e;
-    height: 113%;
-    width: 41%;
-    left: 0;
-    top: 45%;
-    transform: skew(0deg, 7deg);
+    bottom: 7%;
+    right: 9%;
+  }
+  .second-angle {
+  }
+}
+
+.footer {
+  display: flex;
+  margin: auto;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.copyright {
+  min-width: 256px;
+}
+
+@media (max-width: 384px) {
+  .second-angle {
+    display: none;
+  }
+}
+
+@media (max-width: 1335px) {
+  .contact-left {
+    display: none;
   }
   .contact-right {
-    position: absolute;
-    z-index: -2;
-    bottom: -50%;
-    background-color: #02203e;
-    height: 149%;
-    width: 60%;
-    right: 0;
-    top: 5%;
-    transform: skew(0deg, -20deg);
+    display: none;
+  }
+}
+
+@media (max-width: 1400px) {
+  .footer {
   }
 }
