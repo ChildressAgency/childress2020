@@ -33,7 +33,6 @@
         <div class="container-fluid">
           <div class="brand">
             <a href="#" class="logo">
-              <!--<img src="../wp-theme-files/images/logo.png" class="img-fluid d-block" alt="Childress Agency Logo" />-->
               <svg>
                 <use xlink:href="#logo" />
               </svg>
@@ -139,8 +138,7 @@
             <div class="col-md-6">
               <div class="row">
                 <div class="col-md-6 col-xl-3 mt-4">
-                  <div id="badge"  style="width:320px; height:150px;background-repeat: no-repeat;
-                  background-size: 100% 100%;background-image:url(../wp-theme-files/images/google-partner.jpg"></div>
+                  <div id="badge"></div>
                 </div>
               </div>  
               <div class="row">
@@ -303,8 +301,7 @@
   <section id="case-study">
     <div class="container-fluid">
       <div class="row">
-         <div class="col-lg-3 d-flex case-study-list" style="width:400px; height:400px;
-         background: url(../wp-theme-files/images/Space_Museum.jpg) center center no-repeat;">
+         <div class="col-lg-3 d-flex case-study space_museum">
           <a href="#">
             <img
               src="../wp-theme-files/images/USAF_Missile_Logo (white).png"
@@ -313,7 +310,7 @@
              />
           </a>
         </div>
-         <div class="col-lg-3 d-flex case-study" style="width:400px; height:400px;
+         <div class="col-lg-3 d-flex case-study loving_air" style="width:400px; height:400px;
            background: url(../wp-theme-files/images/Loving_Air.jpg) center center no-repeat;">
             <a href="#">
               <img
@@ -323,8 +320,7 @@
               />
             </a>
           </div>
-          <div class="col-lg-3 d-flex case-study" style="width:400px; height:400px;
-          background: url(../wp-theme-files/images/Simply_Home.jpg) center center no-repeat;">
+          <div class="col-lg-3 d-flex case-study simply_home">
             <a href="#">
               <img
                 src="../wp-theme-files/images/Simply Home logo (white).png"
@@ -333,8 +329,7 @@
               />
             </a>
           </div>
-          <div class="col-lg-3 d-flex case-study" style="width:400px; height:400px;
-          background: url(../wp-theme-files/images/Davis_Defense.jpg) center center no-repeat;">
+          <div class="col-lg-3 d-flex case-study davis_defense">
             <a href="#">
               <img
                 src="../wp-theme-files/images/Davis Defense Group logo (white).png"
@@ -348,10 +343,19 @@
         </div>
       </section>
 
-
-
-      <section id="learn">
-        <h1 class="text-center">Slider</h1>
+      <section id="learn_more">
+        <!-- Slider main container -->
+        <div class="swiper-container">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+             <!-- Slides -->
+           <div class="swiper-slide">Slide 1</div>
+           <div class="swiper-slide">Slide 2</div>
+           <div class="swiper-slide">Slide 3</div>      
+          </div>
+         <!-- If we need pagination -->
+           <div class="swiper-pagination"></div>
+           <h1 class="text-center">Slider</h1>
       </section>    
 
       <section id="news-chats">
@@ -442,21 +446,17 @@
     </main>
 
     <section id="contact">
-      <div class="container-fluid" style="z-index:10" >
-        <div class="#" style="display:flex">
-          <div class="first-angle get-started" style="background-image: url(../wp-theme-files/images/Contact_left.jpg);height:717px;width:38%; background-position: center center; background-repeat: no-repeat;">
-             <h2>Ready to get started?</h2>
-             <p>Leave us some information so we can get started TODAY.</p>
-             <h2 class="call" style="">Call today:<br/> ###-###-####</h2>
-          </div>
-          <div class="second-angle" style="background-image: url(../wp-theme-files/images/Contact_right.jpg);height:717px;width:88%; background-position: center center; background-repeat: no-repeat;">
-            
-          </div>   
-        </div>
+      <div class="container-fluid contact-container">
+        <div class="shape">
+          <h2>Ready to get started?</h2>
+          <p>Leave us some information so we can get started TODAY.</p>
+          <h2 class="call">Call today:<br/> ###-###-####</h2>
+        <div></div>  
+        </div>            
       </div> 
     </section>
 
-    <footer id="footer" style="background-color: #fff;">
+    <footer id="footer">
       <section class="footer">
         <div class="container-fluid">
           <div class="row">

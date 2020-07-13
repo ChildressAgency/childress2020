@@ -1,4 +1,4 @@
-.hero{
+.hero {
   position: relative;
   height: 900px;
   background-repeat: no-repeat;
@@ -7,7 +7,7 @@
   align-items: flex-end;
   overflow: hidden;
 
-  .angle-left{
+  .angle-left {
     position: absolute;
     bottom: -50%;
     width: 46%;
@@ -19,7 +19,7 @@
     transform-origin: 100% 0;
   }
 
-  .angle-right{
+  .angle-right {
     position: absolute;
     bottom: -50%;
     width: 60%;
@@ -32,79 +32,87 @@
   }
 }
 
-.hero-caption{
+.hero-caption {
   position: relative;
   z-index: 9;
   padding-bottom: 115px;
 
-  h1{
+  h1 {
     font-size: 65px;
     color: #fff;
 
-    .brand{
+    .brand {
       font-family: $font-brand-bold;
       color: $color-brand;
       display: block;
     }
   }
 
-  @include media-breakpoint-down(sm){
-    h1{
+  @include media-breakpoint-down(sm) {
+    h1 {
       font-size: 52px;
     }
 
-    .btn-main.btn-lrg{
+    .btn-main.btn-lrg {
       font-size: 20px;
     }
   }
 
-  .btn-main{
+  .btn-main {
     color: #fff;
   }
 }
 
-#hero{
-  .hero-caption{
+#badge {
+  width: 320px;
+  height: 150px;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-image: url(../wp-theme-files/images/google-partner.jpg);
+}
+
+#hero {
+  .hero-caption {
     margin-left: auto;
     margin-right: 0;
 
-    h2{
+    h2 {
       font-size: 104px;
       color: #fff;
       text-align: right;
       text-transform: lowercase;
 
-      span{
+      span {
         color: $color-brand;
       }
     }
 
-    @include media-breakpoint-down(sm){
-      h2{
+    @include media-breakpoint-down(sm) {
+      h2 {
         font-size: 65px;
       }
     }
   }
 }
 
-@include media-breakpoint-up(lg){
-  .hero-caption{
-    max-width:75%;
+@include media-breakpoint-up(lg) {
+  .hero-caption {
+    max-width: 75%;
   }
 }
 
-@include media-breakpoint-down(sm){
-  .hero{
+@include media-breakpoint-down(sm) {
+  .hero {
     height: auto;
     padding-top: 300px;
 
-    .hero-caption{
+    .hero-caption {
       padding-bottom: 0;
     }
   }
 
-  .page-template-services{
-    .service-page{
+  .page-template-services {
+    .service-page {
       padding-top: 0;
     }
   }

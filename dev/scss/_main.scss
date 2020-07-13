@@ -158,6 +158,36 @@ b {
   }
 }
 
+#case-study {
+  .case-study {
+    width: 400px;
+    height: 400px;
+  }
+  .space_museum {
+    background: url(../wp-theme-files/images/Space_Museum.jpg) center center
+      no-repeat;
+  }
+  .loving_air {
+    background: url(../wp-theme-files/images/Loving_Air.jpg) center center
+      no-repeat;
+  }
+  .simply_home {
+    background: url(../wp-theme-files/images/Simply_Home.jpg) center center
+      no-repeat;
+  }
+  .davis_defense {
+    background: url(../wp-theme-files/images/Davis_Defense.jpg) center center
+      no-repeat;
+  }
+}
+
+#learn_more {
+  .swiper-container {
+    width: 600px;
+    height: 300px;
+  }
+}
+
 .stat-counter {
   text-align: center;
 

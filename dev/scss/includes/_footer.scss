@@ -195,48 +195,33 @@
 
 #contact {
   margin-top: 60px;
+  .contact-container {
+    .shape {
+      background-image: url(../wp-theme-files/images/Contact_bckg.jpg);
+      background-position: center center;
+      background-repeat: no-repeat;
+    }
+  }
+}
 
-  .first-angle {
+#footer {
+  background-color: #fff;
+  .footer {
     display: flex;
-    flex-direction: column;
-  }
-  .call {
-    color: white;
-    position: absolute;
-    bottom: 7%;
-    right: 9%;
-  }
-  .second-angle {
+    margin: auto;
+    justify-content: space-between;
+    flex-wrap: wrap;
   }
 }
-
-.footer {
-  display: flex;
-  margin: auto;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
 .copyright {
   min-width: 256px;
 }
 
 @media (max-width: 384px) {
+  .first-angle {
+    width: 100%;
+  }
   .second-angle {
     display: none;
-  }
-}
-
-@media (max-width: 1335px) {
-  .contact-left {
-    display: none;
-  }
-  .contact-right {
-    display: none;
-  }
-}
-
-@media (max-width: 1400px) {
-  .footer {
   }
 }
