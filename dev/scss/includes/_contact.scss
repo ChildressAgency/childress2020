@@ -1,8 +1,16 @@
 #contact {
   .contact-container {
     .top_contact {
-      .contact-info {
-        color: #fff;
+      .contact_info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        h2 {
+          font-size: 50px;
+          font-family: "Avenir LT W01_55 Roman1475520", sans-serif;
+          color: #1277d6;
+          line-height: 1em;
+        }
       }
       background-image: url(../wp-theme-files/images/Contact_bckg.png);
       background-position: center center;
