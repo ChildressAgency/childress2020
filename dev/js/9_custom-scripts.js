@@ -2,8 +2,6 @@
  * theme custom scripts
  */
 
-//const { default: Swiper } = require("swiper");
-
 jQuery(document).ready(function ($) {
   var $window = $(window);
 
@@ -158,25 +156,3 @@ function isInViewport(element, offset) {
   return bottom > viewportTop && top < viewportBottom;
 }
 
-// swiper events //
-var mySwiper = new Swiper("#learn_more .swiper-container", {
-  // Optional parameters
-  direction: "vertical",
-  loop: true,
-
-  // If we need pagination
-  pagination: {
-    el: ".swiper-pagination",
-  },
-
-  // Navigation arrows
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-
-  // And if we need scrollbar
-  scrollbar: {
-    el: ".swiper-scrollbar",
-  },
-});
