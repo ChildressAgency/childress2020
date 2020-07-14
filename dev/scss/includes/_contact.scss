@@ -1,0 +1,42 @@
+#contact {
+  .contact-container {
+    .top_contact {
+      .contact_info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        h2 {
+          font-size: 50px;
+          font-family: "Avenir LT W01_55 Roman1475520", sans-serif;
+          color: #1277d6;
+          line-height: 1em;
+        }
+      }
+      background-image: url(../wp-theme-files/images/Contact_bckg.png);
+      background-position: center center;
+      background-repeat: no-repeat;
+      height: 33rem;
+      .contact-form {
+        max-width: 560px;
+        float: right;
+        color: #666;
+        font-family: $font-brand-bold;
+        font-size: 48px;
+        text-transform: uppercase;
+      }
+    }
+    .bottom_contact {
+      background-color: #02203e;
+      height: 10rem;
+      .call_box {
+        position: relative;
+        width: 35%;
+        color: white;
+        h2.call {
+          position: absolute;
+          right: 0;
+        }
+      }
+    }
+  }
+}

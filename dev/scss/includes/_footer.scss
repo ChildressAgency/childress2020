@@ -25,12 +25,6 @@
   }
 }
 
-p {
-  font-family: $font-main-black;
-  font-size: 22px;
-  color: #fff;
-}
-
 .control-label {
   margin-bottom: 0;
   color: $color-brand;
@@ -147,69 +141,6 @@ span.wpcf7-list-item {
   }
 }
 
-#contact-info {
-  color: #fff;
-
-  .container-fluid {
-    position: relative;
-    z-index: 5;
-  }
-
-  h3 {
-    font-size: 48px;
-  }
-
-  h4 {
-    font-family: $font-main-black;
-    color: $color-brand;
-  }
-
-  .loc-city {
-    font-size: 20px;
-    color: $color-brand;
-    font-family: $font-main-heavy;
-    margin-bottom: 0;
-    margin-top: 25px;
-  }
-
-  a {
-    color: #fff;
-  }
-}
-
-#contact {
-  margin-top: 60px;
-  .contact-container {
-    .top_contact {
-      background-image: url(../wp-theme-files/images/Contact_bckg.png);
-      background-position: center center;
-      background-repeat: no-repeat;
-      height: 33rem;
-      .contact-form {
-        max-width: 560px;
-        float: right;
-        color: #666;
-        font-family: $font-brand-bold;
-        font-size: 48px;
-        text-transform: uppercase;
-      }
-    }
-    .bottom_contact {
-      background-color: #02203e;
-      height: 10rem;
-      .call_box {
-        position: relative;
-        width: 35%;
-        color: white;
-        h2.call {
-          position: absolute;
-          right: 0;
-        }
-      }
-    }
-  }
-}
-
 #footer {
   background-color: #fff;
   .footer {
@@ -221,13 +152,4 @@ span.wpcf7-list-item {
 }
 .copyright {
   min-width: 256px;
-}
-
-@media (max-width: 384px) {
-  .first-angle {
-    width: 100%;
-  }
-  .second-angle {
-    display: none;
-  }
 }
