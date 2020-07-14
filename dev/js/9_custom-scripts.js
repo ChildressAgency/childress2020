@@ -120,6 +120,27 @@ jQuery(document).ready(function ($) {
   }
   /* end step slider */
 
+  var caseStudies = new Swiper('#case-studies .swiper-container', {
+    autoplay: false,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev'
+    },
+    slidesPerView: 1,
+    spaceBetween: 50,
+    grabCursor: true,
+    breakpoints: {
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 50
+      },
+      992: {
+        slidesPerView: 4,
+        spaceBetween: 20
+      }
+    }
+  });
+
   // contact form custom checkboxes //
   $('.disc-icon-checkbox input[type="checkbox"]').on("click", function () {
     var $serviceIconBg = $(this).closest(".service").siblings(".disc-icon-bg");

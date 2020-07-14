@@ -1,0 +1,42 @@
+#case-studies{
+  .swiper-container{
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+  .case-study-link{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 350px;
+    max-width: 350px;
+    padding: 25px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    margin-left: auto;
+    margin-right: auto;
+
+    img{
+      max-width:75%;
+      position: relative;
+      z-index: 5;
+    }
+
+    &:before{
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: $color-alt-light;
+      z-index: 1;
+      opacity: 0;
+      transition: opacity .3s ease;
+    }
+    &:hover:before{
+      opacity: .6;
+    }
+  }
+}
