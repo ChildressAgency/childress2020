@@ -1,0 +1,87 @@
+.step-slider{
+  background-color: #e6e6e6;
+  position: relative;
+
+  h2{
+    font-size: 68px;
+    text-align: center;
+    margin-bottom: 40px;
+    color: $color-alt-light;
+    font-family: $font-main;
+  }
+
+  .swiper-wrapper{
+    margin-top: 175px;
+  }
+
+  .progress{
+    height: 10px;
+    background-color: #fff;
+  }
+
+  .progress-bar{
+    background-color: $color-alt;
+  }
+
+  .swiper-container-horizontal>.swiper-pagination-bullets{
+    bottom: auto;
+    top: 40px;
+    display:flex;
+    justify-content: space-around;
+  }
+
+  .swiper-pagination-bullet{
+    height: 60px;
+    width: 60px;
+    color: #333;
+    font-size: 40px;
+    background-color: #fff;
+    opacity: 1;
+    transition: all .3s ease;
+
+    .slide-title{
+      display: block;
+      font-size: 14px;
+      text-align: center;
+      transform: translateX(-32%);
+      width: 250%;
+      margin-top: 10px;
+    }
+
+    &.swiper-pagination-bullet-active{
+      height: 75px;
+      width: 75px;
+      color: #fff;
+      font-size: 50px;
+      background-color: $color-alt-light;
+      position: relative;
+
+      &:before{
+        content: "";
+        position: absolute;
+        top: -25px;
+        left: 50%;
+        background-color: $color-alt;
+        height: 20px;
+        width: 2px;
+      }
+
+      .slide-title{
+        color: $color-alt;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  .swiper-slide{
+    .slide-title{
+      font-size: 38px;
+      color: $color-alt-light;
+      font-family: $font-main;
+    }
+
+    p{
+      line-height: 1.2em;
+    }
+  }
+}

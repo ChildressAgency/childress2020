@@ -83,17 +83,42 @@ jQuery(document).ready(function ($) {
     },
   });
 
-  var learnMore = new Swiper('#learn_more .swiper-container', {
+  /* step slider */
+  var $progressBar = $('.step-slider .progress-bar');
+
+  var stepSlider = new Swiper('.step-slider .swiper-container', {
     autoplay: false,
     pagination: {
       el: '.swiper-pagination',
-      type: 'progressbar',
       clickable: true,
-      renderBullet: function(index, className){
-        return '<span class="' + className + '">' + (index + 1) + '</span>';
+      type: 'bullets',
+      renderBullet: function (index, className) {
+        var thisSlide = this.slides[index];
+        var thisSlideTitle = $(thisSlide).find('.slide-title').html();
+
+        return '<span class="' + className + '">' + (index + 1) + '<span class="slide-title">' + thisSlideTitle + '</span></span>';
+      }
+    },
+    on:{
+      init: function(){
+        var curIndex = this.activeIndex;
+        var numSlides = this.slides.length;
+        set_progress_bar_width(curIndex, numSlides);
       }
     }
   });
+
+  stepSlider.on('slideChange', function(){
+    var curIndex = stepSlider.activeIndex;
+    var numSlides = stepSlider.slides.length;
+    set_progress_bar_width(curIndex, numSlides);
+  });
+
+  function set_progress_bar_width(curIndex, numSlides){
+    var barWidth = ((curIndex + 1) / numSlides) * 100;
+    $($progressBar).css('width', barWidth + '%');
+  }
+  /* end step slider */
 
   // contact form custom checkboxes //
   $('.disc-icon-checkbox input[type="checkbox"]').on("click", function () {
