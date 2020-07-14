@@ -2,6 +2,8 @@
  * theme custom scripts
  */
 
+//const { default: Swiper } = require("swiper");
+
 jQuery(document).ready(function ($) {
   var $window = $(window);
 
@@ -81,6 +83,18 @@ jQuery(document).ready(function ($) {
         slidesPerView: 3,
       },
     },
+  });
+
+  var learnMore = new Swiper('#learn_more .swiper-container', {
+    autoplay: false,
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'progressbar',
+      clickable: true,
+      renderBullet: function(index, className){
+        return '<span class="' + className + '">' + (index + 1) + '</span>';
+      }
+    }
   });
 
   // contact form custom checkboxes //
