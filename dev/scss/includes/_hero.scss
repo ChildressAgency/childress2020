@@ -30,6 +30,31 @@
     transform: skew(0deg, -7deg);
     transform-origin: 0 100%;
   }
+
+  &.case-study-hero{
+    background-color: $color-alt;
+    color: #fff;
+    height: auto;
+    padding-top: 200px;
+    padding-bottom: 200px;
+
+    .container{
+      z-index: 9;
+    }
+
+    h1{
+      width: 100%;
+      text-align: right;
+      font-family: $font-main;
+      text-transform: none;
+    }
+
+    @include media-breakpoint-down(md){
+      h1{
+        text-align: center;
+      }
+    }
+  }
 }
 
 .hero-caption {
