@@ -121,6 +121,27 @@ jQuery(document).ready(function ($) {
   /* end step slider */
 
   var caseStudies = new Swiper('#case-studies .swiper-container', {
+    autoplay: true,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev'
+    },
+    slidesPerView: 1,
+    spaceBetween: 50,
+    grabCursor: true,
+    breakpoints: {
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 50
+      },
+      992: {
+        slidesPerView: 4,
+        spaceBetween: 20
+      }
+    }
+  });
+
+  var newsChats = new Swiper('#news-chats .swiper-container', {
     autoplay: false,
     navigation: {
       nextEl: '.swiper-button-next',
