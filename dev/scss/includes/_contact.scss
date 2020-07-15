@@ -12,31 +12,59 @@
           line-height: 1em;
         }
       }
-      background-image: url(../wp-theme-files/images/Contact_bckg.png);
-      background-position: center center;
-      background-repeat: no-repeat;
-      height: 33rem;
-      .contact-form {
-        max-width: 560px;
-        float: right;
-        color: #666;
-        font-family: $font-brand-bold;
-        font-size: 48px;
-        text-transform: uppercase;
+    }
+
+    .contact-form {
+      background-color: #e6e6e6;
+      border-radius: 15px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      background: #f9f9f9;
+      float: right;
+      color: #666;
+      font-family: $font-brand-bold;
+      font-size: 48px;
+      input {
+        outline: 0;
+        border-width: 0 0 1px;
+        border-color: #e6e6e6;
       }
     }
-    .bottom_contact {
-      background-color: #02203e;
-      height: 10rem;
+
+    .bottom-part {
       .call_box {
         position: relative;
         width: 35%;
         color: white;
         h2.call {
           position: absolute;
-          right: 0;
+          bottom: 0;
         }
       }
+    }
+  }
+
+  .bottom-part {
+    position: relative;
+    .top_contact_background {
+      position: absolute;
+      bottom: 10rem;
+      width: 100%;
+      background-image: url(../wp-theme-files/images/Contact_Background_clear_top.png);
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 27rem;
+      z-index: -1;
+    }
+
+    .bottom_contact_background {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      background-color: #02203e;
+      height: 10rem;
+      z-index: -1;
     }
   }
 }
