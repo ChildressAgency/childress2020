@@ -1,0 +1,64 @@
+#sub-services{
+  position: relative;
+
+  h2{
+    color: $color-alt-light;
+    font-family: $font-main;
+    font-size: 62px;
+    margin-bottom: 40px;
+  }
+
+  .sub-services{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .sub-service{
+    max-width: 350px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    color: #000;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all .3s ease;
+
+    h3{
+      color: $color-alt;
+      text-transform: none;
+      font-family: $font-main;
+      font-size: 26px;
+    }
+    p{
+      font-size: 14px;
+      line-height: 1.2em;
+    }
+
+    .btn-main{
+      margin-top: 25px;
+      align-self: flex-start;
+    }
+
+    &:hover{
+      box-shadow: 3px 3px 10px #999;
+      transform: translateY(-20px);
+    }
+  }
+
+  @include media-breakpoint-up(lg){
+    .container{
+      padding-bottom: 250px;
+      background-image: url(images/Subservices-Background-image.jpg);
+      background-repeat: no-repeat;
+      background-position: right bottom;
+      background-size: auto;
+    }
+
+    .sub-services{
+      justify-content: flex-start;
+    }
+  }
+}
+

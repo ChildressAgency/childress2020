@@ -83,6 +83,85 @@ jQuery(document).ready(function ($) {
     },
   });
 
+  /* step slider */
+  var $progressBar = $('.step-slider .progress-bar');
+
+  var stepSlider = new Swiper('.step-slider .swiper-container', {
+    autoplay: false,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+      type: 'bullets',
+      renderBullet: function (index, className) {
+        var thisSlide = this.slides[index];
+        var thisSlideTitle = $(thisSlide).find('.slide-title').html();
+
+        return '<span class="' + className + '">' + (index + 1) + '<span class="slide-title">' + thisSlideTitle + '</span></span>';
+      }
+    },
+    on:{
+      init: function(){
+        var curIndex = this.activeIndex;
+        var numSlides = this.slides.length;
+        set_progress_bar_width(curIndex, numSlides);
+      }
+    }
+  });
+
+  stepSlider.on('slideChange', function(){
+    var curIndex = stepSlider.activeIndex;
+    var numSlides = stepSlider.slides.length;
+    set_progress_bar_width(curIndex, numSlides);
+  });
+
+  function set_progress_bar_width(curIndex, numSlides){
+    var barWidth = ((curIndex + 1) / numSlides) * 100;
+    $($progressBar).css('width', barWidth + '%');
+  }
+  /* end step slider */
+
+  var caseStudies = new Swiper('#case-studies .swiper-container', {
+    autoplay: true,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev'
+    },
+    slidesPerView: 1,
+    spaceBetween: 50,
+    grabCursor: true,
+    breakpoints: {
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 50
+      },
+      992: {
+        slidesPerView: 4,
+        spaceBetween: 20
+      }
+    }
+  });
+
+  var newsChats = new Swiper('#news-chats .swiper-container', {
+    autoplay: false,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev'
+    },
+    slidesPerView: 1,
+    spaceBetween: 50,
+    grabCursor: true,
+    breakpoints: {
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 50
+      },
+      992: {
+        slidesPerView: 4,
+        spaceBetween: 20
+      }
+    }
+  });
+
   // contact form custom checkboxes //
   $('.disc-icon-checkbox input[type="checkbox"]').on("click", function () {
     var $serviceIconBg = $(this).closest(".service").siblings(".disc-icon-bg");
@@ -144,25 +223,3 @@ function isInViewport(element, offset) {
   return bottom > viewportTop && top < viewportBottom;
 }
 
-// swiper events //
-var mySwiper = new Swiper("#learn_more .swiper-container", {
-  // Optional parameters
-  direction: "vertical",
-  loop: true,
-
-  // If we need pagination
-  pagination: {
-    el: ".swiper-pagination",
-  },
-
-  // Navigation arrows
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-
-  // And if we need scrollbar
-  scrollbar: {
-    el: ".swiper-scrollbar",
-  },
-});

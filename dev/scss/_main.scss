@@ -158,36 +158,6 @@ b {
   }
 }
 
-#case-study {
-  .case-study {
-    width: 400px;
-    height: 400px;
-  }
-  .space_museum {
-    background: url(../wp-theme-files/images/Space_Museum.jpg) center center
-      no-repeat;
-  }
-  .loving_air {
-    background: url(../wp-theme-files/images/Loving_Air.jpg) center center
-      no-repeat;
-  }
-  .simply_home {
-    background: url(../wp-theme-files/images/Simply_Home.jpg) center center
-      no-repeat;
-  }
-  .davis_defense {
-    background: url(../wp-theme-files/images/Davis_Defense.jpg) center center
-      no-repeat;
-  }
-}
-
-#learn_more {
-  .swiper-container {
-    width: 600px;
-    height: 300px;
-  }
-}
-
 .stat-counter {
   text-align: center;
 
@@ -231,60 +201,6 @@ b {
   }
 }
 
-.promo-block {
-  position: relative;
-  background-repeat: no-repeat;
-  background-size: cover;
-  text-align: center;
-  padding: 40px 15px;
-  display: flex;
-  align-items: center;
-  margin-bottom: 40px;
-
-  .btn-main {
-    color: #fff;
-    margin-top: 40px;
-  }
-}
-
-.promo-block-caption {
-  position: relative;
-  z-index: 10;
-
-  .childress-chats-register {
-    font-family: $font-main-medium;
-    font-size: 51px;
-    color: $color-brand;
-    display: block;
-    line-height: 1em;
-    text-transform: uppercase;
-    text-align: left;
-    margin-top: 40px;
-
-    span {
-      font-family: $font-main-black;
-      font-size: 90px;
-      color: #fff;
-      display: block;
-      margin-bottom: 20px;
-    }
-
-    &:hover,
-    &:focus {
-      text-decoration: none;
-    }
-  }
-
-  @include media-breakpoint-down(sm) {
-    .childress-chats-register {
-      font-size: 40px;
-
-      span {
-        font-size: 59px;
-      }
-    }
-  }
-}
 
 .page-title {
   color: $color-alt-light;
@@ -675,4 +591,30 @@ article.center-align {
   .services-main {
     padding-top: 215px;
   }
+}
+
+.bubbles{
+  position: absolute;
+}
+.top-left-bubbles{
+  top: -10px;
+  left: 10%;
+  width: 80px;
+}
+.top-right-bubbles{
+  top: -25px;
+  right: 5%;
+  width: 100px;
+}
+.bottom-left-bubbles{
+  bottom: -25px;
+  left: 0;
+}
+.bottom-right-bubbles{
+  bottom: -25px;
+  right: 20px;
+}
+.center-left-bubbles{
+  top: 50%;
+  left: 0;
 }
