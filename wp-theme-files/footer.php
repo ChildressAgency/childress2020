@@ -1,3 +1,34 @@
+<?php if(get_field('show_quick_link_slider')): ?>
+  <?php if(have_rows('quick_links', 'option')): ?>
+    <section id="news-chats">
+      <div class="container-fluid">
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+            <?php while(have_rows('quick_links', 'option')): the_row(); ?>
+              <div class="swiper-slide">
+                <?php
+                  $quick_link_bg_image = get_sub_field('quick_link_background_image');
+                  $quick_link_caption = get_sub_field('quick_link_caption');
+                  $quick_link_link = get_sub_field('quick_link_link');
+                ?>
+                <div class="promo-block" style="background-image:url(<?php echo esc_url($quick_link_bg_image['url']); ?>);">
+                  <div class="promo-block-caption">
+                    <?php echo apply_filters('the_content', $quick_link_caption); ?>
+
+                    <a href="<?php echo esc_url($quick_link_link['url']); ?>" class="btn-main"><?php echo esc_url($quick_link_link['title']); ?></a>
+                  </div>
+                  <div class="blue-overlay"></div>
+                </div>
+              </div>
+            <?php endwhile; ?>
+          </div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+      </div>
+    </section>
+<?php endif; ?>
+
   <section id="contact" style="background-color:#02203e;<?php if(is_page('contact')){ echo ' padding-top:200px;'; } ?>">
     <div class="contact-container">
       <div class="top-part top_contact">
