@@ -148,6 +148,16 @@ function cai_register_sidebars(){
     'before_title' => '<h3>',
     'after_title' => '</h3>'
   ));
+
+  register_sidebar(array(
+    'name' => 'Case Studies Sidebar',
+    'id' => 'sidebar-casestudies',
+    'description' => 'Add widgets here to appear in your sidebar on Case Study archive pages.',
+    'before_widget' => '<div class="sidebar-section">',
+    'after_widget' => '</div>',
+    'before_title' => '<h3>',
+    'after_title' => '</h3>'
+  ));
 }
 
 add_filter('block_categories', 'cai_custom_block_category', 10, 2);
@@ -294,6 +304,35 @@ function cai_ajax_load_more_posts(){
       $more_posts->the_post();
 
       get_template_part('partials/loop', $template_part);
+    }
+  }
+
+  wp_die();
+}
+
+add_action('wp_ajax_cai_ajax_load_more_case_studies', 'cai_ajax_load_more_case_studies');
+add_action('wp_ajax_nopriv_cai_ajax_load_more_case_studies', 'cai_ajax_load_more_case_studies');
+function cai_load_more_case_studies(){
+  check_ajax_referrer('cai_ajax_load_more_posts', 'security');
+
+  $paged = $_POST['page'];
+  $more_case_studies = new WP_Query(array(
+    'post_type' => 'case_studies',
+    'post_status' => 'publish',
+    'posts_per_page' => 12,
+    'paged' => $paged
+  ));
+  if($more_case_studies->have_posts()){
+    while($more_case_studies->have_posts()){
+      $more_case_studies->the_post();
+
+      $case_study_link = get_permalink();
+      $case_study_image = get_field('case_study_link_image');
+      $case_study_logo = get_field('case_study_white_logo');
+
+      echo '<a href="' . esc_url($case_study_link) . '" style="background-image: url(' . esc_url($case_study_image['url']) . ');">';
+        echo '<img src="' . esc_url($case_study_logo['url']) . '" class="img-fluid d-block mx-auto" alt="' . esc_attr($case_study_logo['alt']) . '" />';
+      echo '</a>';
     }
   }
 

@@ -229,6 +229,29 @@ jQuery(document).ready(function ($) {
       }
     });
   });
+
+  $('body').on('click', '.loadmore-casestudies', function(e){
+    e.preventDefault();
+    var $clickedButton = $(this);
+    $clickedButton.text('Loading...');
+
+    var data = {
+      action: 'cai_ajax_load_more_case_studies',
+      page: cai_ajax_loadmore.page,
+      security: cai_ajax_loadmore.security
+    };
+
+    $.post(cai_ajax_loadmore.ajaxurl, data, function(response){
+      if(response != ''){
+        $('.case-studies-loop').append(response);
+        cai_ajax_loadmore.page++;
+        $clickedButton.text('Load More');
+      }
+      else{
+        $clickedButton.hide();
+      }
+    });
+  });
 }); //end jQuery
 
 function isInViewport(element, offset) {
