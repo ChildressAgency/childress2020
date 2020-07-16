@@ -114,7 +114,7 @@
     ?>
   </header>
 
-  <?php if(!is_page('services') && !is_page('contact')): ?>
+  <?php if(!is_page('services') && !is_page('contact') && !is_singular('case_studies')): ?>
     <?php
       if(is_home() || is_singular('post')){
         $blog_page = get_page_by_path('news-events');
@@ -139,10 +139,17 @@
       <div class="container">
         <div class="hero-caption" data-aos-easing="ease-out" data-aos-duration="1000" <?php echo is_front_page() ? 'data-aos="fade-down"' : 'data-aos="fade-right"'; ?>>
           <?php if(is_front_page()): ?>
-            <h1>Let's grow<br />your business</h1>
-            <h3>through powerful websites & <br />
-            digital marketing strategies.</h3>
-            <a href="<?php echo esc_url(home_url('contact')); ?>" class="btn-main btn-lrg">We're ready when you are.</a>
+            <?php echo apply_filters('the_content', $hero_caption); ?>
+            <?php
+              $hero_link_1 = get_field('hero_link_1');
+              $hero_link_2 = get_field('hero_link_2');
+            ?>
+
+            <?php if($hero_link_1): ?>
+              <a href="<?php esc_url($hero_link_1['url']); ?>" class="btn-main btn-alt"><?php echo esc_html($hero_link_1['title']); ?></a>
+            <?php endif; if($hero_link_2): ?>
+              <a href="<?php echo esc_url($hero_link_2['url']); ?>" class="btn-main"><?php echo esc_html($hero_link_2['title']); ?></a>
+            <?php endif; ?>
           <?php else: ?>
             <h2><?php echo wp_kses_post($hero_caption); ?></h2>
           <?php endif; ?>
@@ -153,4 +160,77 @@
       <div class="angle-left"></div>
       <div class="angle-right"></div>
     </section>
+  <?php else: ?>
+    <?php if(is_singular('case_studies')): ?>
+      <?php $client_logo = get_field('client_color_logo'); ?>
+
+      <section id="hero" class="hero case-study-hero">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <img src="<?php echo esc_url($client_logo['url']); ?>" class="img-fluid d-block mx-auto" alt="Client Logo" />
+            </div>
+            <div class="col-md-6">
+              <h1><?php echo esc_html(get_the_title()); ?></h1>
+            </div>
+          </div>
+        </div>
+        <a href="#contact-page" class="contact-phone"></a>
+        <div class="blue-overlay"></div>
+        <div class="angle-left"></div>
+        <div class="angle-right"></div>
+      </section>
+
+      <?php
+        $laptop_image_type = get_field('laptop_image_type');
+        $laptop_image = get_field('laptop_image');
+        if($laptop_image): ?>
+          <section id="laptop-icons">
+            <div class="container">
+              <div class="laptop laptop-image">
+                <div class="embed-responsive embed-responsive-16by9">
+                  <?php if($laptop_image_type == 'iframe'): ?>
+                    <iframe src="<?php echo esc_url($laptop_image); ?>" class="embed-responsive-item"></iframe>
+                  <?php else: ?>
+                    <img src="<?php echo esc_url($laptop_image); ?>" class="embed-responsive-item" alt="Client Website image" />
+                  <?php endif; ?>
+                </div>
+              </div>
+
+              <?php if(have_rows('service_icons')): ?>
+                <div class="case-icons">
+                  <?php while(have_rows('service_icons')): the_row(); ?>
+                    <div class="case-icon">
+                      <?php
+                        switch($service_icon){
+                          case 'website': ?>
+                            <svg class="case-study-icon">
+                              <use xlink:href="#icon-monitor" />
+                            </svg>
+                            <span>WEBSITE</span>
+                          <?php break;
+
+                          case 'graphic-design': ?>
+                            <svg class="case-study-icon">
+                              <use xlink:href="#icon-pen" />
+                            </svg>
+                            <span>GRAPHIC DESIGN</span>
+                          <?php break;
+
+                          case 'social-media': ?>
+                            <svg class="case-study-icon">
+                              <use xlink:href="#icon-social-circle" />
+                            </svg>
+                            <span>SOCIAL MEDIA</span>
+                          <?php break;
+                        }
+                      ?>
+                    </div>
+                  <?php endwhile; ?>
+                </div>
+              <?php endif; ?>
+            </div>
+          </section>
+      <?php endif; ?>
+    <?php endif; ?>
   <?php endif; ?>
