@@ -24,6 +24,7 @@ function cai_create_post_types(){
     'query_var' => 'case_studies',
     'has_archive' => false,
     'show_in_rest' => true,
+    'taxonomies' => array('category'),
     'supports' => array(
       'title',
       'editor',
