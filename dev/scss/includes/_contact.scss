@@ -31,6 +31,7 @@
       }
     }
 
+    
     .bottom-part {
       .call_box {
         position: relative;
@@ -65,6 +66,32 @@
       background-color: #02203e;
       height: 10rem;
       z-index: -1;
+    }
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  #contact{
+    .top-part.top_contact{
+      h2 {
+        text-align:center;
+      }
+    }
+    .contact-container{
+      .bottom-part{
+        .call_box{
+          width:100%;
+          position:relative;
+        h2.call{
+            text-align: center;
+            position: relative;
+            color: #02203e;
+          }
+        }
+        .contact-form{
+          float:none;
+        }
+      }
     }
   }
 }
