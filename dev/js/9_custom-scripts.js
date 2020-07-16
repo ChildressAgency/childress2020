@@ -142,7 +142,7 @@ jQuery(document).ready(function ($) {
   });
 
   var newsChats = new Swiper('#news-chats .swiper-container', {
-    autoplay: false,
+    autoplay: true,
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev'
@@ -160,6 +160,15 @@ jQuery(document).ready(function ($) {
         spaceBetween: 20
       }
     }
+  });
+
+  var studyStats = new Swiper('#study-stats .swiper-container', {
+    autoplay: false,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev'
+    },
+    grabCursor: true
   });
 
   // contact form custom checkboxes //

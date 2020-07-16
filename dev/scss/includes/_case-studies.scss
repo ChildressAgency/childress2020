@@ -52,3 +52,112 @@
     }
   }
 }
+
+.case-icons{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.case-icon{
+  margin: 25px;
+  text-align: center;
+
+  .case-study-icon{
+    width: 60px;
+    height: 60px;
+    fill: $color-alt;
+  }
+
+  span{
+    display: block;
+    font-size: 14px;
+  }
+}
+
+#laptop-icons{
+  margin-top: -200px;
+  z-index: 15;
+}
+
+.laptop{
+  background-image: url(images/laptop.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  padding-top: 1px;
+  padding-bottom: 1px;
+
+  .embed-responsive{
+    max-width: 75%;
+    margin-top: 50px;
+    margin-bottom: 90px;
+    margin: 50px auto 90px;
+  }
+
+  @include media-breakpoint-only(xs){
+    .embed-responsive{
+      margin-top: 60px;
+      margin-bottom: 80px;
+    }
+  }
+
+  &.laptop-image{
+    .embed-responsive{
+      overflow-y: scroll;
+
+      .embed-responsive-item{
+        height: auto;
+      }
+    }
+  }
+}
+
+#study-stats{
+  .swiper-slide{
+    background-color: #f2f2f2;
+    padding-bottom: 40px;
+  }
+
+  .study-description{
+    padding-top: 25px;
+    padding-bottom: 25px;
+
+    h3{
+      font-size: 48px;
+      font-family: $font-main;
+      color: $color-alt-light;
+    }
+
+    p{
+      line-height: 1.2em;
+    }
+  }
+
+  .study-stats{
+    background-color: #fff;
+    padding: 10px 20px;
+
+    .stat-description{
+      display: block;
+      line-height: 1.2em;
+    }
+
+    .count,
+    .count-plus{
+      color: $color-brand;
+      font-size: 34px;
+      font-family: $font-main;
+    }
+  }
+}
+
+#color-bar{
+  margin-top: 60px;
+  margin-bottom: 60px;
+  display: flex;
+
+  span{
+    display: block;
+    height: 80px;
+  }
+}
