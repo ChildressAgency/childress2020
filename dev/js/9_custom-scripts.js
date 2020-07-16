@@ -163,12 +163,28 @@ jQuery(document).ready(function ($) {
   });
 
   var studyStats = new Swiper('#study-stats .swiper-container', {
-    autoplay: false,
+    autoplay: true,
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev'
     },
     grabCursor: true
+  });
+
+  var caseSlides = new Swiper('#case-slides .swiper-container', {
+    autoplay: false,
+    slidesPerView: 1,
+    centeredSlides: true,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev'
+    },
+    breakpoints: {
+      768: {
+        slidesPerView: 3,
+        spaceBetween: -200
+      }
+    }
   });
 
   // contact form custom checkboxes //
