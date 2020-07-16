@@ -1,28 +1,50 @@
   <section id="contact" style="background-color:#02203e;<?php if(is_page('contact')){ echo ' padding-top:200px;'; } ?>">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-lg-4 marketing-easy">
-          <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo-large.png" class="img-fluid d-block" alt="Childress Agency Logo" />
-          <h2>We Make Marketing Easy</h2>
+    <div class="contact-container">
+      <div class="top-part top_contact">
+        <div class="container">
+          <div class="col-md-6">
+            <div class="contact_info">
+              <h2>Ready to <br/> get started? </h2>
+              <p>Leave us some information so we can get started TODAY. </p>
+            </div>  
+          </div>
         </div>
-        <div class="col-lg-8">
-          <?php echo do_shortcode(get_field('contact_form_shortcode', 'option')); ?>
-       		<script>
-      			var wpcf7Elm = jQuery('#2650').closest('.wpcf7')[0];
-			      wpcf7Elm.addEventListener( 'wpcf7mailsent', function( event ){
-               __ss_noform.push(['submit', null, '811714e0-9dbc-49d2-ad51-586093d6b12e']); 
-            },false );
-		      </script>
-		      <script type="text/javascript">
-		        var __ss_noform = __ss_noform || [];
-    		    __ss_noform.push(['baseURI', 'https://app-3QNKNGNIX6.marketingautomation.services/webforms/receivePostback/MzawMDG3MDMzBgA/']);
-    		    __ss_noform.push(['form', '2650', '811714e0-9dbc-49d2-ad51-586093d6b12e']);
-			      __ss_noform.push(['submitType', 'manual']);
-		      </script>
-		      <script type="text/javascript" src="https://koi-3QNKNGNIX6.marketingautomation.services/client/noform.js?ver=1.24" ></script>
-        </div>
-      </div>
-    </div>
+     </div>
+     
+     <div class="bottom-part">
+       <div class="container">
+         <div class="row">
+           <div class="col-md-6 call_box">
+             <h2 class="call"> Call today:<br/> <?php the_field('phone_number'); ?> </h2>
+           </div>
+           <div class="col-md-6">
+             <div class="contact-form">
+               <h3 class="intro">Let's talk about your project.</h3>
+                 <?php echo do_shortcode(get_field('contact_form_shortcode', 'option')); ?>
+       	        	<script>
+      	        		var wpcf7Elm = jQuery('#2650').closest('.wpcf7')[0];
+			              wpcf7Elm.addEventListener( 'wpcf7mailsent', function( event ){
+                    __ss_noform.push(['submit', null, '811714e0-9dbc-49d2-ad51-586093d6b12e']); 
+                      },false );
+		              </script>
+		              <script type="text/javascript">
+		                 var __ss_noform = __ss_noform || [];
+    		             __ss_noform.push(['baseURI', 'https://app-3QNKNGNIX6.marketingautomation.services/webforms/receivePostback/MzawMDG3MDMzBgA/']);
+    		              __ss_noform.push(['form', '2650', '811714e0-9dbc-49d2-ad51-586093d6b12e']);
+			               __ss_noform.push(['submitType', 'manual']);
+		              </script>
+		             <script type="text/javascript" src="https://koi-3QNKNGNIX6.marketingautomation.services/client/noform.js?ver=1.24" ></script>
+                   <p class="text-right">
+                      <input type="submit" class="btn-main btn-alt" value="SEND" />
+                   </p>
+              </div>
+            </div>  
+          </div>
+       </div>  
+       <div class="top_contact_background"></div>
+       <div class="bottom_contact_background"></div>
+     </div>
+   </div>
   </section>
 
 <?php if(is_page('contact')): ?>
