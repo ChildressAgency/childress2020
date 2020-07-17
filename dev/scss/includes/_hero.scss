@@ -62,9 +62,16 @@
   z-index: 9;
   padding-bottom: 115px;
 
-  h1 {
+  h1,
+  h2 {
     font-size: 65px;
     color: #fff;
+    font-family: $font-main;
+    text-transform: none;
+
+    span{
+      color: $color-brand;
+    }
 
     .brand {
       font-family: $font-brand-bold;
@@ -73,8 +80,15 @@
     }
   }
 
+  p{
+    color: #fff;
+    font-size: 34px;
+    line-height: 1.2em;
+  }
+
   @include media-breakpoint-down(sm) {
-    h1 {
+    h1,
+    h2 {
       font-size: 52px;
     }
 
@@ -85,15 +99,9 @@
 
   .btn-main {
     color: #fff;
+    font-size: 26px;
+    margin: 10px;
   }
-}
-
-#badge {
-  width: 320px;
-  height: 150px;
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  background-image: url(../wp-theme-files/images/google-partner.jpg);
 }
 
 #hero {
