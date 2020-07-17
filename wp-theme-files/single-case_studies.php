@@ -57,6 +57,7 @@
         <div class="swiper-button-next"></div>
       </div>
     </section>
+  <?php endif; ?>
 
     <?php
       $colors = get_field('color_bar_colors');
