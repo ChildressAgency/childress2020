@@ -1,16 +1,16 @@
   <?php if(have_rows('process_steps')): ?>
     <section id="learn_more" class="step-slider">
       <div class="d-none d-md-block bubbles top-left-bubbles">
-        <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/top-left bubbles.png" class="img-fluid d-block" alt="" />
+        <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/top-left-bubbles.png" class="img-fluid d-block" alt="" />
       </div>
       <div class="d-none d-md-block bubbles top-right-bubbles">
-        <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/top-right bubbles.png" class="img-fluid d-block" alt="" />
+        <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/top-right-bubbles.png" class="img-fluid d-block" alt="" />
       </div>
       <div class="d-none d-md-block bubbles bottom-left-bubbles">
-        <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/bottom-left bubbles.png" class="img-fluid d-block" alt="" />
+        <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/bottom-left-bubbles.png" class="img-fluid d-block" alt="" />
       </div>
       <div class="d-none d-md-block bubbles bottom-right-bubbles">
-        <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/bottom-right bubbles.png" class="img-fluid d-block" alt="" />
+        <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/bottom-right-bubbles.png" class="img-fluid d-block" alt="" />
       </div>
 
       <div class="container">
