@@ -52,7 +52,7 @@
       bottom: 10rem;
       width: 100%;
       background-image: url(../wp-theme-files/images/Contact_Background_clear_top.png);
-      background-position: center center;
+      background-position: center bottom;
       background-repeat: no-repeat;
       background-size: cover;
       height: 27rem;
@@ -67,6 +67,19 @@
       height: 10rem;
       z-index: -1;
     }
+  }
+
+  @include media-breakpoint-up(md){
+    .contact-container{
+      .bottom-part{
+        margin-top: -225px;
+
+        .call_box h2.call{
+          bottom: 40px;
+        }
+      }
+    }
+
   }
 }
 
