@@ -92,7 +92,7 @@
   <?php if(!is_page('services') && !is_page('contact') && !is_singular('case_studies')): ?>
     <?php
       if(is_home() || is_singular('post')){
-        $blog_page = get_page_by_path('news-events');
+        $blog_page = get_page_by_path('blog');
         $blog_page_id = $blog_page->ID;
 
         $hero_image = get_field('hero_background_image', $blog_page_id);
