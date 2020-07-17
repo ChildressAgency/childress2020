@@ -1,6 +1,7 @@
 .hero {
   position: relative;
-  height: 900px;
+  min-height: 500px;
+  padding-top: 200px;
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
@@ -104,13 +105,13 @@
   }
 }
 
+
 #hero {
   .hero-caption {
     margin-left: auto;
     margin-right: 0;
 
-    h2 {
-      font-size: 104px;
+    h1,h2 {
       color: #fff;
       text-align: right;
       text-transform: lowercase;

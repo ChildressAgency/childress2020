@@ -113,7 +113,6 @@
     <section id="<?php echo is_front_page() ? 'hp-hero' : 'hero'; ?>" class="hero" style="background-image:url(<?php echo esc_url($hero_image); ?>);<?php echo esc_attr($hero_image_css); ?>">
       <div class="container">
         <div class="hero-caption" data-aos-easing="ease-out" data-aos-duration="1000" <?php echo is_front_page() ? 'data-aos="fade-down"' : 'data-aos="fade-right"'; ?>>
-          <?php if(is_front_page()): ?>
             <?php echo apply_filters('the_content', $hero_caption); ?>
             <?php
               $hero_link_1 = get_field('hero_link_1');
@@ -125,9 +124,6 @@
             <?php endif; if($hero_link_2): ?>
               <a href="<?php echo esc_url($hero_link_2['url']); ?>" class="btn-main"><?php echo esc_html($hero_link_2['title']); ?></a>
             <?php endif; ?>
-          <?php else: ?>
-            <h2><?php echo wp_kses_post($hero_caption); ?></h2>
-          <?php endif; ?>
         </div>
       </div>
       <a href="#contact-page" class="contact-phone"></a>
