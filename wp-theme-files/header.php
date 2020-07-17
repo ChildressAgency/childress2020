@@ -172,37 +172,39 @@
                 </div>
               </div>
 
-              <?php if(have_rows('service_icons')): ?>
-                <div class="case-icons">
-                  <?php while(have_rows('service_icons')): the_row(); ?>
-                    <div class="case-icon">
-                      <?php
-                        switch($service_icon){
-                          case 'website': ?>
-                            <svg class="case-study-icon">
-                              <use xlink:href="#icon-monitor" />
-                            </svg>
-                            <span>WEBSITE</span>
-                          <?php break;
+              <?php 
+                $service_icons = get_field('service_icons');
+                if($service_icons): ?>
+                  <div class="case-icons">
+                    <?php foreach($services_icons as $icon): ?>
+                      <div class="case-icon">
+                        <?php
+                          switch($icon){
+                            case 'website': ?>
+                              <svg class="case-study-icon">
+                                <use xlink:href="#icon-monitor" />
+                              </svg>
+                              <span>WEBSITE</span>
+                            <?php break;
 
-                          case 'graphic-design': ?>
-                            <svg class="case-study-icon">
-                              <use xlink:href="#icon-pen" />
-                            </svg>
-                            <span>GRAPHIC DESIGN</span>
-                          <?php break;
+                            case 'graphic-design': ?>
+                              <svg class="case-study-icon">
+                                <use xlink:href="#icon-pen" />
+                              </svg>
+                              <span>GRAPHIC DESIGN</span>
+                            <?php break;
 
-                          case 'social-media': ?>
-                            <svg class="case-study-icon">
-                              <use xlink:href="#icon-social-circle" />
-                            </svg>
-                            <span>SOCIAL MEDIA</span>
-                          <?php break;
-                        }
-                      ?>
-                    </div>
-                  <?php endwhile; ?>
-                </div>
+                            case 'social-media': ?>
+                              <svg class="case-study-icon">
+                                <use xlink:href="#icon-social-circle" />
+                              </svg>
+                              <span>SOCIAL MEDIA</span>
+                            <?php break;
+                          }
+                        ?>
+                      </div>
+                    <?php endforeach; ?>
+                  </div>
               <?php endif; ?>
             </div>
           </section>
