@@ -1,4 +1,5 @@
 #contact {
+  margin-top: 60px;
   .contact-container {
     .top_contact {
       .contact_info {
@@ -23,7 +24,6 @@
       float: right;
       color: #666;
       font-family: $font-brand-bold;
-      font-size: 48px;
       input {
         outline: 0;
         border-width: 0 0 1px;
@@ -37,9 +37,14 @@
         position: relative;
         width: 35%;
         color: white;
+
         h2.call {
           position: absolute;
           bottom: 0;
+
+          a{
+            color: #fff;
+          }
         }
       }
     }
@@ -51,7 +56,7 @@
       position: absolute;
       bottom: 10rem;
       width: 100%;
-      background-image: url(../wp-theme-files/images/Contact_Background_clear_top.png);
+      background-image: url(images/Contact_Background_clear_top.png);
       background-position: center bottom;
       background-repeat: no-repeat;
       background-size: cover;

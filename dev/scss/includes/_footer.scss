@@ -57,11 +57,14 @@ span.wpcf7-list-item {
 .social {
   display: flex;
   align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 
   a {
     display: inline-block;
     background-image: url(images/sprites-png.png);
     background-repeat: no-repeat;
+    margin: 5px;
 
     & + a {
       margin-left: 20px;
@@ -144,10 +147,29 @@ span.wpcf7-list-item {
 #footer {
   background-color: #fff;
   .footer {
+    padding-top: 0;
     display: flex;
     margin: auto;
     justify-content: space-between;
     flex-wrap: wrap;
+
+    h3{
+      font-family: $font-main;
+    }
+  }
+
+  .services-nav{
+    li{
+      a{
+        font-size: 16px;
+      }
+    }
+  }
+
+  .phone-numbers{
+    a{
+      display: inline-block;
+    }
   }
 }
 .copyright {
