@@ -103,7 +103,11 @@
         h2.call{
             text-align: center;
             position: relative;
-            color: #02203e;
+            color: $color-alt;
+
+            a{
+              color: $color-alt;
+            }
           }
         }
         .contact-form{
