@@ -160,6 +160,17 @@ function cai_register_sidebars(){
   ));
 }
 
+add_action('acf/init', 'cai_acf_options_page');
+function cai_acf_options_page(){
+  acf_add_options_page(array(
+    'page_title' => esc_html__('General Settings', 'cai'),
+    'menu_title' => esc_html__('General Settings', 'cai'),
+    'menu_slug' => 'general-settings',
+    'capability' => 'edit_posts',
+    'redirect' => false
+  ));
+}
+
 add_filter('block_categories', 'cai_custom_block_category', 10, 2);
 function cai_custom_block_category($categories, $post){
   return array_merge(
