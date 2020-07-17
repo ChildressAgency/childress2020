@@ -349,3 +349,23 @@ function cai_load_more_case_studies(){
 
   wp_die();
 }
+
+add_action('frm_after_create_entry', 'cai_submit_sharpspring', 30, 2);
+function cai_submit_sharspring($entry, $form_id){
+  if($form_id == 0001){
+    $baseURI = 'https://app-3QNKNGNIX6.marketingautomation.services/webforms/receivePostback/MzawMDG3MDMzBgA/';
+    $endpoint = 'd041986f-fd8f-42cb-8c07-92a3c3d8fd61';
+    $post_url = $baseURI . $endpoint;
+
+    $body = array(
+      'Name' => $_POST['item_meta'][1],
+      'Email' => $_POST['item_meta'][3],
+      'Phone' => $_POST['item_meta'][4],
+      'How can we help you?' => $_POST['item_meta'][5],
+      'trackingid__sb' => $_COOKIE['__ss_tk']
+    );
+
+    $request = new WP_Http();
+    $response = $request->post( $post_url, array( 'body' => $body ) );
+  }
+}
