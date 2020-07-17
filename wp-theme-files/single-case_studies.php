@@ -117,5 +117,7 @@
         </div>
       </section>
     <?php endif; ?>
+
+  <?php get_template_part('partials/featured-case-studies'); ?>
 </main>
 <?php get_footer();
