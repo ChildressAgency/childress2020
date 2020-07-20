@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 <main id="main">
   <div class="container-fluid">
-    <h1>CASE STUDIES</h1>
+    <h2 style="color:#1277d6; font-family:'Avenir LT W01_55 Roman1475520', sans-serif">CASE STUDIES</h2>
     <div class="row">
       <div class="col-md-8 col-lg-9">
         <section id="case-studies">
@@ -22,7 +22,7 @@
                   $case_study_image = get_field('case_study_link_image');
                   $case_study_logo = get_field('case_study_white_logo');
 
-                  echo '<a href="' . esc_url($case_study_link) . '" style="background-image: url(' . esc_url($case_study_image['url']) . ');">';
+                  echo '<a href="' . esc_url($case_study_link) . '" class="case-study-link" style="background-image: url(' . esc_url($case_study_image['url']) . ');">';
                     echo '<img src="' . esc_url($case_study_logo['url']) . '" class="img-fluid d-block mx-auto" alt="' . esc_attr($case_study_logo['alt']) . '" />';
                   echo '</a>';
                 }
