@@ -17,7 +17,7 @@ get_header(); ?>
 
   <?php get_template_part('partials/process-steps-slider'); ?>
 
-  <?php if(have_rows('sub_services')); ?>
+  <?php if(have_rows('sub_services')): ?>
     <section id="sub-services">
       <div class="container">
         <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/bubble-set-1.png" class="bubbles center-left-bubbles" alt="" />

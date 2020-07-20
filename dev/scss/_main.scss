@@ -5,24 +5,27 @@ body {
 }
 
 h1 {
-  font-family: $font-main-black;
+  font-family: $font-main;
   font-size: 72px;
   text-transform: uppercase;
   line-height: 1em;
+  color: $color-alt-light;
 }
 
 h2 {
-  font-family: $font-main-black;
+  font-family: $font-main;
   font-size: 40px;
   text-transform: uppercase;
   line-height: 1em;
+  color: $color-alt-light;
 }
 
 h3 {
-  font-family: $font-main-black;
+  font-family: $font-main;
   font-size: 20px;
   text-transform: uppercase;
   line-height: 1em;
+  color: $color-alt-light;
 }
 
 @include media-breakpoint-down(sm) {
@@ -219,7 +222,7 @@ article.center-align {
   text-align: center;
 }
 
-.service-page {
+.services-page {
   padding-top: 160px;
   position: relative;
   overflow: hidden;

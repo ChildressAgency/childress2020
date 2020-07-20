@@ -88,6 +88,11 @@ jQuery(document).ready(function ($) {
 
   var stepSlider = new Swiper('.step-slider .swiper-container', {
     autoplay: false,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev"
+    },
+    spaceBetween: 50,
     pagination: {
       el: '.swiper-pagination',
       clickable: true,
