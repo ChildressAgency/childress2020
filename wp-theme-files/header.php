@@ -158,7 +158,7 @@
         if($laptop_image): ?>
           <section id="laptop-icons">
             <div class="container">
-              <div class="laptop laptop-image">
+              <div class="laptop<?php if($laptop_image_type == 'image'){ echo ' laptop-image'; } ?>">
                 <div class="embed-responsive embed-responsive-16by9">
                   <?php if($laptop_image_type == 'iframe'): ?>
                     <iframe src="<?php echo esc_url($laptop_image); ?>" class="embed-responsive-item"></iframe>
@@ -172,7 +172,7 @@
                 $service_icons = get_field('service_icons');
                 if($service_icons): ?>
                   <div class="case-icons">
-                    <?php foreach($services_icons as $icon): ?>
+                    <?php foreach($service_icons as $icon): ?>
                       <div class="case-icon">
                         <?php
                           switch($icon){
