@@ -133,7 +133,7 @@
           </div>
           <div class="col-xl-9 mt-5 text-center text-xl-left">
             <div class="row">
-              <div class="col-md-6 col-xl-3 mt-4">
+              <div class="col-md-6 col-xl-2 mt-4">
                 <h3>Services</h3>
                 <?php
                   $services_footer_nav_args = array(
@@ -152,7 +152,7 @@
                   wp_nav_menu($services_footer_nav_args);
                 ?>
               </div>
-              <div class="col-md-6 col-xl-3 mt-4">
+              <div class="col-md-6 col-xl-4 mt-4">
                 <?php if(have_rows('locations_phone_numbers', 'option')): ?>
                   <h3>Local numbers</h3>
                   <div class="phone-numbers">

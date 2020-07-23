@@ -57,7 +57,7 @@ span.wpcf7-list-item {
 .social {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   flex-wrap: wrap;
 
   a {
@@ -65,10 +65,6 @@ span.wpcf7-list-item {
     background-image: url(images/sprites-png.png);
     background-repeat: no-repeat;
     margin: 5px;
-
-    & + a {
-      margin-left: 20px;
-    }
 
     &#facebook {
       height: 36px;
