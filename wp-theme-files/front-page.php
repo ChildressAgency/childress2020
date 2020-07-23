@@ -26,7 +26,13 @@
                     <use xlink:href="#icon-monitor" />
                   </svg>
                 </div>
-                <p><?php echo esc_html($web_design_link['title']); ?></p>
+                <?php
+                  $web_design_link_text = get_field('web_design_side_link_text');
+                  if(!$web_design_link_text){
+                    $web_design_link_text = $web_design_link['title'];
+                  }
+                 ?>
+                <p><?php echo wp_kses_post($web_design_link_text); ?></p>
               </a>
             </div>
           </div>
@@ -49,7 +55,13 @@
                     <use xlink:href="#icon-graph" />
                   </svg>
                 </div>
-                <p><?php echo esc_html($marketing_link['title']); ?></p>
+                <?php
+                  $marketing_link_text = get_field('marketing_side_link_text');
+                  if(!$marketing_link_text){
+                    $marketing_link_text = $marketing_link['title'];
+                  }
+                ?>
+                <p><?php echo wp_kses_post($marketing_link_text); ?></p>
               </a>
             </div>
           </div>
