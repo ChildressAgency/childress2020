@@ -101,7 +101,7 @@
   .btn-main {
     color: #fff;
     font-size: 26px;
-    margin: 10px 10px 10px 0px;
+    margin: 10px 0 10px 10px;
   }
 }
 
@@ -110,6 +110,7 @@
   .hero-caption {
     margin-left: auto;
     margin-right: 0;
+    text-align: right;
 
     h1,h2 {
       color: #fff;
@@ -125,6 +126,16 @@
       h2 {
         font-size: 65px;
       }
+    }
+  }
+}
+
+#hp-hero{
+  .hero-caption{
+    text-align: left;
+
+    .btn-main{
+      margin: 10px 10px 10px 0;
     }
   }
 }

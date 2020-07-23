@@ -51,17 +51,17 @@ input[type="submit"] {
 }
 
 .btn-main {
-  color: $color-brand-gray;
+  color: #fff;
   text-transform: uppercase;
   padding: 5px 40px;
   border: 2px solid $color-brand;
-  background-color: transparent;
+  background-color: $color-brand;
   display: inline-block;
   text-align: center;
 
   &:hover,
   &:focus {
-    background-color: $color-brand;
+    background-color: $color-alt;
     color: #fff;
     text-decoration: none;
   }

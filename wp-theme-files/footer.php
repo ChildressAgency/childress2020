@@ -30,7 +30,7 @@
   <?php endif; ?>
 <?php endif; ?>
 
-  <section id="contact" style="<?php if(is_page('contact')){ echo 'padding-bottom:0; padding-top:200px;'; } ?>">
+  <section id="contact" style="<?php if(is_page('contact')){ echo 'padding-bottom:0; padding-top:60px; margin-bottom:0;'; } ?>">
     <div class="contact-top">
       <div class="container">
         <div class="row">
