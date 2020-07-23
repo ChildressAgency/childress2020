@@ -1,132 +1,78 @@
-#contact {
-  margin-top: 60px;
-  .contact-container {
-    .top_contact {
-      .contact_info {
-        display: flex;
-        flex-direction: column;
-        
-        h2 {
-          font-size: 50px;
-          font-family: "Avenir LT W01_55 Roman1475520", sans-serif;
-          color: #1277d6;
-          line-height: 1em;
-        }
-      }
+#contact{
+  background-color: #f9f9f9;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: 40px;
+  margin-bottom: 40px;
+
+  .contact-top{
+    background-image: url(images/Contact_Background_clear_top.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center bottom;
+    padding-bottom: 130px;
+    padding-top: 12%;
+
+    h2{
+      font-size: 54px;
     }
+  }
 
-    .contact-form {
-      background-color: #e6e6e6;
-      border-radius: 15px;
-      padding: 2rem;
-      margin-bottom: 2rem;
-      background: #f9f9f9;
-      float: right;
-      color: #666;
-      font-family: $font-brand-bold;
-      input {
-        outline: 0;
-        border-width: 0 0 1px;
-        border-color: #e6e6e6;
-      }
-    }
+  .contact-bottom{
+    position: relative;
+    background-color: $color-alt;
+    color: #fff;
+    padding-bottom: 25px;
 
-    
-    .bottom-part {
-      .call_box {
-        position: relative;
-        width: 35%;
-        color: white;
+    .call{
+      color: #fff;
+      font-size: 38px;
+      padding-top: 25px;
+      padding-bottom: 25px;
+      text-align: right;
 
-        h2.call {
-          position: absolute;
-          bottom: 0;
+      a{
+        color: #fff;
+        font-family: $font-main;
+        font-size: 32px;
 
-          a{
-            color: #fff;
-          }
+        &:hover,
+        &:focus{
+          color: #fff;
+          text-decoration: underline;
         }
       }
     }
   }
 
-  .bottom-part {
-    position: relative;
-    .top_contact_background {
-      position: absolute;
-      bottom: 10rem;
-      width: 100%;
-      background-image: url(images/Contact_Background_clear_top.png);
-      background-position: center bottom;
-      background-repeat: no-repeat;
-      background-size: cover;
-      height: 27rem;
-      z-index: -1;
+  .contact-form{
+    background-color: #e6e6e6;
+    border-radius: 24px;
+    padding: 40px 20px 20px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 12px 10px 10px rgba(0,0,0,.4);
+
+    .intro{
+      text-transform: none;
+      color: $color-alt;
+      margin-bottom: 20px;
     }
 
-    .bottom_contact_background {
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      background-color: #02203e;
-      height: 10rem;
-      z-index: -1;
+    input.form-control{
+      border-width: 0;
+      border-bottom-width: 1px;
+    }
+
+    textarea{
+      border-radius: 10px;
     }
   }
 
   @include media-breakpoint-up(md){
-    .contact-container{
-      .bottom-part{
-        margin-top: -225px;
-
-        .call_box h2.call{
-          bottom: 40px;
-        }
-      }
+    .contact-form{
+      margin-top: -400px;
     }
-
-  }
-}
-
-@include media-breakpoint-down(sm) {
-  #contact{
-    .top-part.top_contact{
-      h2 {
-        text-align:center;
-      }
-    }
-    .contact-container{
-      .bottom-part{
-        .call_box{
-          width:100%;
-          position:relative;
-        h2.call{
-            text-align: center;
-            position: relative;
-            color: $color-alt;
-
-            a{
-              color: $color-alt;
-            }
-          }
-        }
-        .contact-form{
-          float:none;
-        }
-      }
-    }
-  }
-}
-
-#contact-info{
-  color:#fff;
-
-  a{
-    color: #fff;
-  }
-
-  .container-fluid{
-    position: relative;
-    z-index: 5;
   }
 }

@@ -31,36 +31,32 @@
 <?php endif; ?>
 
   <section id="contact" style="<?php if(is_page('contact')){ echo 'padding-bottom:0; padding-top:200px;'; } ?>">
-    <div class="contact-container">
-      <div class="top-part top_contact">
-        <div class="container">
-          <div class="col-md-6">
-            <div class="contact_info">
-              <h2>Ready to <br/> get started? </h2>
-              <p>Leave us some information so we can get started TODAY. </p>
-            </div>  
+    <div class="contact-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 d-flex flex-column justify-content-center">
+            <h2>READY TO<br />GET STARTED?</h2>
+            <p>Leave us some information so we can get started TODAY.</p>
           </div>
         </div>
       </div>
-     
-     <div class="bottom-part">
-       <div class="container">
-         <div class="row">
-           <div class="col-md-6 call_box">
-             <h2 class="call"> Call today:<br/><a href="tel:8664022002">866-402-2002</a></h2>
-           </div>
-           <div class="col-md-6">
-             <div class="contact-form">
-               <h3 class="intro">Let's talk about your project.</h3>
-                <?php echo do_shortcode(get_field('contact_form_shortcode', 'option')); ?>
-              </div>
-            </div>  
+    </div>
+    <div class="contact-bottom">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 d-flex align-items-center">
+            <h3 class="call">CALL TODAY<br />
+              <a href="tel:8664022002">866-402-2002</a>
+            </h3>
           </div>
-       </div>  
-       <div class="top_contact_background"></div>
-       <div class="bottom_contact_background"></div>
-     </div>
-   </div>
+          <div class="col-md-6">
+            <div class="contact-form">
+              <?php echo do_shortcode(get_field('contact_form_shortcode', 'option')); ?>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
 <?php if(is_page('contact')): ?>
