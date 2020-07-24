@@ -120,7 +120,7 @@
             ?>
 
             <?php if($hero_link_1): ?>
-              <a href="<?php esc_url($hero_link_1['url']); ?>" class="btn-main btn-alt"><?php echo esc_html($hero_link_1['title']); ?></a>
+              <a href="<?php echo esc_url($hero_link_1['url']); ?>" class="btn-main btn-alt"><?php echo esc_html($hero_link_1['title']); ?></a>
             <?php endif; if($hero_link_2): ?>
               <a href="<?php echo esc_url($hero_link_2['url']); ?>" class="btn-main"><?php echo esc_html($hero_link_2['title']); ?></a>
             <?php endif; ?>
