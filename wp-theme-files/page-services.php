@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-  <main id="main" class="service-page services-main">
+  <main id="main" class="services-page services-main">
     <div class="container-fluid clearfix">
       <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/cloud-four-circles.png" class="service-page-header-img" alt="" />
       <h1 class="page-title">Our Services</h1>

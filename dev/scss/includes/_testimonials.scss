@@ -86,6 +86,31 @@
   }
 }
 
+#case-study-testimonial{
+  .testimonial-bubble{
+    max-width: none;
+    font-size: 18px;
+
+    &:after{
+      content: "";
+      position: absolute;
+      height: 51px;
+      width: 36px;
+      background-image: url(images/sprites-png.png);
+      background-repeat: no-repeat;
+      background-position: -150px -41px;
+      transform: rotateX(180deg);
+      bottom: -50px;
+      left: 50px;
+    }
+
+    img{
+      max-width: 125px;
+      height: auto;
+    }
+  }
+}
+
 .swiper-button-prev::after{
   content: "";
   font-family: none;

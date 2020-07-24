@@ -1,25 +1,73 @@
-  <section id="contact" style="background-color:#02203e;<?php if(is_page('contact')){ echo ' padding-top:200px;'; } ?>">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-lg-4 marketing-easy">
-          <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo-large.png" class="img-fluid d-block" alt="Childress Agency Logo" />
-          <h2>We Make Marketing Easy</h2>
+<?php if(get_field('show_quick_link_slider')): ?>
+  <?php if(have_rows('quick_links', 'option')): ?>
+    <section id="news-chats">
+      <div class="container-fluid">
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+            <?php while(have_rows('quick_links', 'option')): the_row(); ?>
+              <div class="swiper-slide">
+                <?php
+                  $quick_link_bg_image = get_sub_field('quick_link_background_image');
+                  $quick_link_caption = get_sub_field('quick_link_caption');
+                  $quick_link_link = get_sub_field('quick_link_link');
+                ?>
+                <div class="promo-block" style="background-image:url(<?php echo esc_url($quick_link_bg_image['url']); ?>);">
+                  <div class="promo-block-caption">
+                    <?php echo apply_filters('the_content', $quick_link_caption); ?>
+
+                    <a href="<?php echo esc_url($quick_link_link['url']); ?>" class="btn-main"><?php echo esc_url($quick_link_link['title']); ?></a>
+                  </div>
+                  <div class="blue-overlay"></div>
+                </div>
+              </div>
+            <?php endwhile; ?>
+          </div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
         </div>
-        <div class="col-lg-8">
-          <?php echo do_shortcode(get_field('contact_form_shortcode', 'option')); ?>
-       		<script>
-      			var wpcf7Elm = jQuery('#2650').closest('.wpcf7')[0];
-			      wpcf7Elm.addEventListener( 'wpcf7mailsent', function( event ){
-               __ss_noform.push(['submit', null, '811714e0-9dbc-49d2-ad51-586093d6b12e']); 
-            },false );
-		      </script>
-		      <script type="text/javascript">
-		        var __ss_noform = __ss_noform || [];
-    		    __ss_noform.push(['baseURI', 'https://app-3QNKNGNIX6.marketingautomation.services/webforms/receivePostback/MzawMDG3MDMzBgA/']);
-    		    __ss_noform.push(['form', '2650', '811714e0-9dbc-49d2-ad51-586093d6b12e']);
-			      __ss_noform.push(['submitType', 'manual']);
-		      </script>
-		      <script type="text/javascript" src="https://koi-3QNKNGNIX6.marketingautomation.services/client/noform.js?ver=1.24" ></script>
+      </div>
+    </section>
+  <?php endif; ?>
+<?php endif; ?>
+
+<?php if(is_page('contact')) : ?>
+  <style>
+    #contact{
+      padding-bottom: 0;
+      padding-top: 60px;
+      margin-bottom: 0;
+    }
+    @media (max-width:465px){
+      #contact{
+        padding-top: 125px;
+      }
+    }
+  </style>
+<?php endif; ?>
+  <section id="contact">
+    <div class="contact-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 d-flex flex-column justify-content-center">
+            <h2>READY TO<br />GET STARTED?</h2>
+            <p>Leave us some information so we can get started TODAY.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-bottom">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 d-flex align-items-center">
+            <h3 class="call">CALL TODAY<br />
+              <a href="tel:8664022002">866-402-2002</a>
+            </h3>
+          </div>
+          <div class="col-md-6">
+            <div class="contact-form">
+              <?php echo do_shortcode(get_field('contact_form_shortcode', 'option')); ?>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -88,12 +136,67 @@
 <?php endif; ?>
 
   <footer id="footer">
-    <section id="upper-footer">
+    <section class="footer">
       <div class="container-fluid">
         <div class="row">
-          <div class="col-lg-6">
+          <div class="col-xl-3 mt-5 text-center text-xl-left">
+            <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo_blue_330.png" class="img-fluid d-block mx-auto mx-xl-0" alt="Logo" />
+            <p class="mt-2">&copy;<?php echo date('Y'); ?> Childress Agency, Inc.<br />All Rights Reserved</p>
+          </div>
+          <div class="col-xl-9 mt-5 text-center text-xl-left">
             <div class="row">
-              <div class="col-sm-7">
+              <div class="col-md-6 col-xl-2 mt-4">
+                <h3>Services</h3>
+                <?php
+                  $services_footer_nav_args = array(
+                    'theme_location' => 'services-nav', 
+                    'menu' => '',
+                    'container' => '',
+                    'container_id' => '',
+                    'container_class' => '',
+                    'menu_id' => '',
+                    'menu_class' => 'services-nav list-unstyled',
+                    'echo' => true,
+                    'fallback_cb' => 'cai_services_footer_nav_fallback_menu',
+                    'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+                    'depth' => 1,
+                  );
+                  wp_nav_menu($services_footer_nav_args);
+                ?>
+              </div>
+              <div class="col-md-6 col-xl-4 mt-4">
+                <?php if(have_rows('locations_phone_numbers', 'option')): ?>
+                  <h3>Local numbers</h3>
+                  <div class="phone-numbers">
+                    <?php while(have_rows('locations_phone_numbers', 'option')): the_row(); ?>
+                      <div itemscope itemtype="https://schema.org/LocalBusiness">
+                        <p>
+                          <span itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+                            <span itemprop="addressLocality"><?php the_sub_field('location_city'); ?></span>, 
+                            <span itemprop="addressRegion"><?php the_sub_field('location_state'); ?></span>:
+                          </span> 
+                            <a href="tel:<?php the_sub_field('location_phone'); ?>"><span itemprop="telephone"><?php the_sub_field('location_phone'); ?></span></a>
+                        </p>
+                      </div>
+                    <?php endwhile; ?>
+                  </div>
+                <?php endif; ?>
+              </div>
+              <div class="col-md-6 col-xl-3 mt-4">
+                <h3>Headquarters</h3>
+                <div itemscope itemtype="https://schema.org/LocalBusiness">
+                  <div itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+                    <p>
+                      <span itemprop="streetAddress">417 Wolfe Street</span><br />
+                      <span itemprop="addressLocality">Fredericksburg</span>, 
+                      <span itemprop="addressRegion">VA</span> 
+                      <span itemprop="postalCode">22401</span>
+                    </p>
+                  </div>
+                </div>
+                <p><a href="<?php echo esc_url(home_url('careers')); ?>">Careers</a></p>
+              </div>
+              <div class="col-md-6 col-xl-3 mt-4">
                 <?php
                   $facebook = get_field('facebook', 'option');
                   $instagram = get_field('instagram', 'option');
@@ -115,120 +218,21 @@
                     <a href="<?php echo esc_url($youtube); ?>" id="youtube" aria-label="YouTube" target="_blank"><span class="sr-only">YouTube</span></a>
                   <?php endif; ?>
                 </div>
-                <!--<p class="mt-5">Keep up to date with our weekly newsletter.</p>-->
-                <?php //echo do_shortcode(get_field('newsletter_form_shortcode', 'option')); ?>
-              </div>
-              <div class="col-sm-4">
-                <h3 class="mt-5 mt-md-0">Services</h3>
-                <?php
-                  $services_footer_nav_args = array(
-                    'theme_location' => 'services-nav', 
-                    'menu' => '',
-                    'container' => '',
-                    'container_id' => '',
-                    'container_class' => '',
-                    'menu_id' => '',
-                    'menu_class' => 'services-nav list-unstyled',
-                    'echo' => true,
-                    'fallback_cb' => 'cai_services_footer_nav_fallback_menu',
-                    'items_wrap' => '<nav id="%1$s" class="%2$s">%3$s</nav>',
-                    'depth' => 1,
-                  );
-                  wp_nav_menu($services_footer_nav_args);
-                ?>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-5">
-            <div class="row">
-              <div class="col-sm-7">
-                <?php if(have_rows('locations_phone_numbers', 'option')): ?>
-                  <h3 class="mt-5 mt-lg-0">Contact</h3>
-                  <?php while(have_rows('locations_phone_numbers', 'option')): the_row(); ?>
-                    <div itemscope itemtype="https://schema.org/LocalBusiness">
-                      <p>
-                        <span itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
-                          <span itemprop="addressLocality"><?php the_sub_field('location_city'); ?></span>, 
-                          <span itemprop="addressRegion"><?php the_sub_field('location_state'); ?></span>:
-                        </span> 
-                          <a href="tel:<?php the_sub_field('location_phone'); ?>"><span itemprop="telephone"><?php the_sub_field('location_phone'); ?></span></a>
-                      </p>
-                    </div>
-                  <?php endwhile; ?>
-                <?php endif; ?>
-              </div>
-              <div class="col-sm-5">
-                <h3 class="mt-5 mt-lg-0">Headquarters</h3>
-                <div itemscope itemtype="https://schema.org/LocalBusiness">
-                  <div itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
-                    <p>
-                      <span itemprop="streetAddress">417 Wolfe Street</span><br />
-                      <span itemprop="addressLocality">Fredericksburg</span>, 
-                      <span itemprop="addressRegion">VA</span> 
-                      <span itemprop="postalCode">22401</span>
-                    </p>
-                  </div>
+                <div class="social mt-2">
+                  <!-- google partner code -->
+                  <script src="https://apis.google.com/js/platform.js" async defer></script>
+                  <div class="g-partnersbadge" data-agency-id="3546559613"></div>
+                  <!-- Add the code snippet above to the sites listed to display your badge: http://www.childressagency.com -->
+                  <!-- end google partner code -->
                 </div>
-                <p class="mt-5"><a href="<?php echo esc_url(home_url('careers')); ?>">Careers</a></p>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="lower-footer">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-xl-3 text-center mt-4">
-            <!--<img src="<?php //echo get_stylesheet_directory_uri(); ?>/images/logo-color.png" class="img-fluid d-block mx-auto ml-md-0" alt="Childress Agency Logo" />-->
-            <svg class="logo-color-name">
-              <use xlink:href="#logo-color-name" />
-            </svg>
-          </div>
-          <div class="col-xl-9">
-            <div class="row">
-              <div class="col-md-6 col-xl-3 mt-4 text-center">
-                <!-- google partner code -->
-                <script src="https://apis.google.com/js/platform.js" async defer></script>
-                <div class="g-partnersbadge" data-agency-id="3546559613"></div>
-                <!-- Add the code snippet above to the sites listed to display your badge: http://www.childressagency.com -->
-                <!-- end google partner code -->
-              </div>
-              <div class="col-md-6 col-xl-3 mt-4 text-center">
-                <!-- sharpspring partner code -->
-                <style>
-                  .ss-partner-certification-badge img{
-                    max-width: 100% !important;
-                    height: auto !important;
-                  }
-                </style>
-                <div class="ss-partner-certification-badge" data-badge-shape="ribbon" data-badge-width="300"></div>
-                <script type="text/javascript">
-                  var ss_cid = 'MzawMDG3MDMzBgA';
-                  var ss_domain = 'https://koi-3QNKNGNIX6.marketingautomation.services/';
-                </script>
-                <script type="text/javascript" src="https://koi-3QNKNGNIX6.marketingautomation.services/client/partner-cert.js" async></script>
-                <noscript>
-                  <a href="https://sharpspring.com" target="_blank"></a>
-                </noscript>
-                <!-- end sharpspring partner code -->
-              </div>
-              <div class="col-md-6 col-xl-3 mt-4 text-center">
-                <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/sdvosb_120x120.png" class="img-fluid d-block mx-auto" alt="Service Disabled Veteran Owned Small Business" />
-              </div>
-              <div class="col-md-6 col-xl-3 mt-4 text-center">
-                <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/swam-certified-120.jpg" class="img-fluid d-block mx-auto" alt="SWaM Certified" style="max-width:180px; width:100%;" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="copyright text-center mt-5">
-          <p>&copy; <?php echo date('Y'); ?> The Childress Agency, Inc.<br />All Rights Reserved</p>
         </div>
       </div>
     </section>
   </footer>
+
     <div id="call-chat">
       <a href="tel:5404125199" class="call-chat_call">
         <div class="black-circle"></div>

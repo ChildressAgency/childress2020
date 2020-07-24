@@ -1,13 +1,14 @@
-.hero{
+.hero {
   position: relative;
-  height: 900px;
+  min-height: 500px;
+  padding-top: 200px;
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
   align-items: flex-end;
   overflow: hidden;
 
-  .angle-left{
+  .angle-left {
     position: absolute;
     bottom: -50%;
     width: 46%;
@@ -19,7 +20,7 @@
     transform-origin: 100% 0;
   }
 
-  .angle-right{
+  .angle-right {
     position: absolute;
     bottom: -50%;
     width: 60%;
@@ -30,81 +31,133 @@
     transform: skew(0deg, -7deg);
     transform-origin: 0 100%;
   }
+
+  &.case-study-hero{
+    background-color: $color-alt;
+    color: #fff;
+    height: auto;
+    padding-top: 200px;
+    padding-bottom: 200px;
+
+    .container{
+      z-index: 9;
+    }
+
+    h1{
+      width: 100%;
+      text-align: right;
+      font-family: $font-main;
+      text-transform: none;
+    }
+
+    @include media-breakpoint-down(md){
+      h1{
+        text-align: center;
+      }
+    }
+  }
 }
 
-.hero-caption{
+.hero-caption {
   position: relative;
   z-index: 9;
   padding-bottom: 115px;
 
-  h1{
+  h1,
+  h2 {
     font-size: 65px;
     color: #fff;
+    font-family: $font-main;
+    text-transform: none;
 
-    .brand{
+    span{
+      color: $color-brand;
+    }
+
+    .brand {
       font-family: $font-brand-bold;
       color: $color-brand;
       display: block;
     }
   }
 
-  @include media-breakpoint-down(sm){
-    h1{
+  p{
+    color: #fff;
+    font-size: 34px;
+    line-height: 1.2em;
+  }
+
+  @include media-breakpoint-down(sm) {
+    h1,
+    h2 {
       font-size: 52px;
     }
 
-    .btn-main.btn-lrg{
+    .btn-main.btn-lrg {
       font-size: 20px;
     }
   }
 
-  .btn-main{
+  .btn-main {
     color: #fff;
+    font-size: 26px;
+    margin: 10px 0 10px 10px;
   }
 }
 
-#hero{
-  .hero-caption{
+
+#hero {
+  .hero-caption {
     margin-left: auto;
     margin-right: 0;
+    text-align: right;
 
-    h2{
-      font-size: 104px;
+    h1,h2 {
       color: #fff;
       text-align: right;
       text-transform: lowercase;
 
-      span{
+      span {
         color: $color-brand;
       }
     }
 
-    @include media-breakpoint-down(sm){
-      h2{
+    @include media-breakpoint-down(sm) {
+      h2 {
         font-size: 65px;
       }
     }
   }
 }
 
-@include media-breakpoint-up(lg){
+#hp-hero{
   .hero-caption{
-    max-width:75%;
+    text-align: left;
+
+    .btn-main{
+      margin: 10px 10px 10px 0;
+    }
   }
 }
 
-@include media-breakpoint-down(sm){
-  .hero{
+@include media-breakpoint-up(lg) {
+  .hero-caption {
+    max-width: 75%;
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .hero {
     height: auto;
     padding-top: 300px;
 
-    .hero-caption{
+    .hero-caption {
       padding-bottom: 0;
     }
   }
 
-  .page-template-services{
-    .service-page{
+  .page-template-services {
+    .service-page {
       padding-top: 0;
     }
   }

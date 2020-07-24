@@ -2,16 +2,6 @@
 <html lang="en">
 
 <head>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-30535612-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'UA-30535612-1');
-  </script>
-
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -39,24 +29,9 @@
   <title><?php echo esc_html(bloginfo('name')); ?></title>
 
   <?php wp_head(); ?>
-  <script type="text/javascript">
-      var _ss = _ss || [];
-      _ss.push(['_setDomain', 'https://koi-3QNKNGNIX6.marketingautomation.services/net']);
-      _ss.push(['_setAccount', 'KOI-461EIL3BMQ']);
-      _ss.push(['_trackPageView']);
-    (function() {
-      var ss = document.createElement('script');
-      ss.type = 'text/javascript'; ss.async = true;
-      ss.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'koi-3QNKNGNIX6.marketingautomation.services/client/ss.js?ver=2.2.1';
-      var scr = document.getElementsByTagName('script')[0];
-      scr.parentNode.insertBefore(ss, scr);
-    })();
-  </script>
 </head>
 
 <body <?php body_class(); ?>>
-  	<!-- Hotjar Tracking Code for http://childressagency.com/ --> <script> (function(h,o,t,j,a,r){ h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)}; h._hjSettings={hjid:1199441,hjsv:6}; a=o.getElementsByTagName('head')[0]; r=o.createElement('script');r.async=1; r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv; a.appendChild(r); })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv='); </script>
-
   <header id="header">
     <nav class="navbar navbar-expand-lg navbar-dark">
       <div class="container-fluid">
@@ -68,7 +43,7 @@
           </a>
           <div class="brand-name-phone">
             <a href="<?php echo esc_url(home_url()); ?>" class="brand-name">Childress Agency</a>
-            <a href="tel:5404125199" class="brand-phone">540-412-5199</a>
+            <a href="tel:8664022002" class="brand-phone">866-402-2002</a>
           </div>
         </div>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#header-nav" aria-controls="header-nav" aria-expanded="false" aria-label="Toggle Navigation">
@@ -114,10 +89,10 @@
     ?>
   </header>
 
-  <?php if(!is_page('services') && !is_page('contact')): ?>
+  <?php if(!is_page('services') && !is_page('contact') && !is_singular('case_studies')): ?>
     <?php
       if(is_home() || is_singular('post')){
-        $blog_page = get_page_by_path('news-events');
+        $blog_page = get_page_by_path('blog');
         $blog_page_id = $blog_page->ID;
 
         $hero_image = get_field('hero_background_image', $blog_page_id);
@@ -138,12 +113,17 @@
     <section id="<?php echo is_front_page() ? 'hp-hero' : 'hero'; ?>" class="hero" style="background-image:url(<?php echo esc_url($hero_image); ?>);<?php echo esc_attr($hero_image_css); ?>">
       <div class="container">
         <div class="hero-caption" data-aos-easing="ease-out" data-aos-duration="1000" <?php echo is_front_page() ? 'data-aos="fade-down"' : 'data-aos="fade-right"'; ?>>
-          <?php if(is_front_page()): ?>
-            <h1><span class="brand">Childress Agency</span>Web Design &<br />Digital Marketing</h1>
-            <a href="<?php echo esc_url(home_url('contact')); ?>" class="btn-main btn-lrg">We're ready when you are.</a>
-          <?php else: ?>
-            <h2><?php echo wp_kses_post($hero_caption); ?></h2>
-          <?php endif; ?>
+            <?php echo apply_filters('the_content', $hero_caption); ?>
+            <?php
+              $hero_link_1 = get_field('hero_link_1');
+              $hero_link_2 = get_field('hero_link_2');
+            ?>
+
+            <?php if($hero_link_1): ?>
+              <a href="<?php echo esc_url($hero_link_1['url']); ?>" class="btn-main btn-alt"><?php echo esc_html($hero_link_1['title']); ?></a>
+            <?php endif; if($hero_link_2): ?>
+              <a href="<?php echo esc_url($hero_link_2['url']); ?>" class="btn-main"><?php echo esc_html($hero_link_2['title']); ?></a>
+            <?php endif; ?>
         </div>
       </div>
       <a href="#contact-page" class="contact-phone"></a>
@@ -151,4 +131,79 @@
       <div class="angle-left"></div>
       <div class="angle-right"></div>
     </section>
+  <?php else: ?>
+    <?php if(is_singular('case_studies')): ?>
+      <?php $client_logo = get_field('client_color_logo'); ?>
+
+      <section id="hero" class="hero case-study-hero">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <img src="<?php echo esc_url($client_logo['url']); ?>" class="img-fluid d-block mx-auto" alt="Client Logo" />
+            </div>
+            <div class="col-md-6">
+              <h1><?php echo esc_html(get_the_title()); ?></h1>
+            </div>
+          </div>
+        </div>
+        <a href="#contact-page" class="contact-phone"></a>
+        <div class="blue-overlay"></div>
+        <div class="angle-left"></div>
+        <div class="angle-right"></div>
+      </section>
+
+      <?php
+        $laptop_image_type = get_field('laptop_image_type');
+        $laptop_image = get_field('laptop_image');
+        if($laptop_image): ?>
+          <section id="laptop-icons">
+            <div class="container">
+              <div class="laptop<?php if($laptop_image_type == 'image'){ echo ' laptop-image'; } ?>">
+                <div class="embed-responsive embed-responsive-16by9">
+                  <?php if($laptop_image_type == 'iframe'): ?>
+                    <iframe src="<?php echo esc_url($laptop_image); ?>" class="embed-responsive-item"></iframe>
+                  <?php else: ?>
+                    <img src="<?php echo esc_url($laptop_image); ?>" class="embed-responsive-item" alt="Client Website image" />
+                  <?php endif; ?>
+                </div>
+              </div>
+
+              <?php 
+                $service_icons = get_field('service_icons');
+                if($service_icons): ?>
+                  <div class="case-icons">
+                    <?php foreach($service_icons as $icon): ?>
+                      <div class="case-icon">
+                        <?php
+                          switch($icon){
+                            case 'website': ?>
+                              <svg class="case-study-icon">
+                                <use xlink:href="#icon-monitor" />
+                              </svg>
+                              <span>WEBSITE</span>
+                            <?php break;
+
+                            case 'graphic-design': ?>
+                              <svg class="case-study-icon">
+                                <use xlink:href="#icon-pen" />
+                              </svg>
+                              <span>GRAPHIC DESIGN</span>
+                            <?php break;
+
+                            case 'social-media': ?>
+                              <svg class="case-study-icon">
+                                <use xlink:href="#icon-social-circle" />
+                              </svg>
+                              <span>SOCIAL MEDIA</span>
+                            <?php break;
+                          }
+                        ?>
+                      </div>
+                    <?php endforeach; ?>
+                  </div>
+              <?php endif; ?>
+            </div>
+          </section>
+      <?php endif; ?>
+    <?php endif; ?>
   <?php endif; ?>

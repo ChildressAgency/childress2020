@@ -1,0 +1,134 @@
+#contact {
+  margin-top: 90px;
+
+  .contact-container {
+    .top_contact {
+      .contact_info {
+        display: flex;
+        flex-direction: column;
+        
+        h2 {
+          font-size: 50px;
+          font-family: "Avenir LT W01_55 Roman1475520", sans-serif;
+          color: #1277d6;
+          line-height: 1em;
+        }
+      }
+    }
+
+    .contact-form {
+      background-color: #e6e6e6;
+      border-radius: 15px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      float: right;
+      color: #666;
+      font-family: $font-brand-bold;
+      box-shadow: 12px 10px 10px rgba(0,0,0,.4);
+      input {
+        outline: 0;
+        border-width: 0 0 1px;
+        border-color: #ccc;
+      }
+    }
+
+    
+    .bottom-part {
+      .call_box {
+        position: relative;
+        width: 35%;
+        color: white;
+
+        h2.call {
+          position: absolute;
+          bottom: 0;
+          color: #fff;
+
+          a{
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+
+  .bottom-part {
+    position: relative;
+    .top_contact_background {
+      position: absolute;
+      bottom: 10rem;
+      width: 100%;
+      background-image: url(images/Contact_bckg.png);
+      background-position: center bottom;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 27rem;
+      z-index: -1;
+    }
+
+    .bottom_contact_background {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      background-color: #02203e;
+      height: 10rem;
+      z-index: -1;
+    }
+  }
+
+  @include media-breakpoint-up(md){
+    .contact-container{
+      .bottom-part{
+        margin-top: -225px;
+
+        .call_box h2.call{
+          bottom: 40px;
+        }
+      }
+    }
+
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  #contact{
+    .top-part.top_contact{
+      h2 {
+        text-align:center;
+      }
+    }
+    .contact-container{
+      .bottom-part{
+        .call_box{
+          width:100%;
+          position:relative;
+        h2.call{
+            text-align: center;
+            position: relative;
+            color: $color-alt;
+
+            a{
+              color: $color-alt;
+            }
+          }
+        }
+        .contact-form{
+          float:none;
+        }
+      }
+    }
+  }
+}
+
+#contact-info{
+  color:#fff;
+
+  a{
+    color: #fff;
+  }
+
+  .container-fluid{
+    position: relative;
+    z-index: 5;
+  }
+}

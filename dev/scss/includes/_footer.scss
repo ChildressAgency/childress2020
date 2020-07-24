@@ -1,145 +1,122 @@
-.marketing-easy{
+.marketing-easy {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: flex-start;
 
-  .logo-large{
+  .logo-large {
     height: 273px;
     width: 244px;
     fill: #fff;
   }
 
-  h2{
+  h2 {
     font-family: $font-brand-bold;
     font-size: 65px;
     color: #fff;
     text-transform: uppercase;
-    margin-top:60px;
+    margin-top: 60px;
   }
 
-  @include media-breakpoint-down(sm){
-    h2{
+  @include media-breakpoint-down(sm) {
+    h2 {
       font-size: 52px;
     }
   }
 }
 
-.contact-form{
-  max-width: 560px;
-  margin-left: auto;
-  margin-right: auto;
-  color: #fff;
-
-  .contact-form-intro{
-    font-family: $font-brand-bold;
-    font-size: 48px;
-    color: #fff;
-    text-transform: uppercase;
-  }
-
-  p{
-    font-family: $font-main-black;
-    font-size: 22px;
-    color: #fff;
-  }
-
-  .control-label{
-    margin-bottom: 0;
-    color: $color-brand;
-  }
-
-  .form-control{
-    border-radius: 0;
-  }
-
-  input.form-control{
-    background-color: transparent;
-    border: 1px solid #fff;
-    color: #fff;
-  }
-
-  textarea.form-control{
-    margin-top: 25px;
-  }
-
-  span.wpcf7-list-item{
-    margin-left: 0;
-  }
+.control-label {
+  margin-bottom: 0;
+  color: $color-brand;
 }
 
-.service-selection{
+.form-control {
+  border-radius: 0;
+}
+
+input.form-control {
+  background-color: transparent;
+}
+
+textarea.form-control {
+  margin-top: 25px;
+}
+
+span.wpcf7-list-item {
+  margin-left: 0;
+}
+
+.service-selection {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
   text-align: center;
-  font-size:14px;
+  font-size: 14px;
 }
 
-.social{
+.social {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
 
-  a{
+  a {
     display: inline-block;
     background-image: url(images/sprites-png.png);
     background-repeat: no-repeat;
+    margin: 5px;
 
-    &+a{
-      margin-left: 20px;
-    }
-
-    &#facebook{
+    &#facebook {
       height: 36px;
       width: 36px;
       background-position: 0 0;
     }
-    &#instagram{
+    &#instagram {
       height: 39px;
       width: 39px;
       background-position: -46px 0;
     }
-    &#twitter{
+    &#twitter {
       height: 26px;
-      width:31px;
+      width: 31px;
       background-position: -97px 0px;
     }
-    &#linkedin{
+    &#linkedin {
       height: 36px;
       width: 36px;
       background-position: -137px 0;
     }
-    &#youtube{
+    &#youtube {
       height: 36px;
       width: 50px;
       background-position: -188px 0;
     }
 
     &:hover,
-    &:focus{
+    &:focus {
       transform: scale(1.2);
     }
   }
 }
 
-.newsletter-form{
-  .form-control{
+.newsletter-form {
+  .form-control {
     border-radius: 0;
   }
 
-  .btn-main{
+  .btn-main {
     border: none;
     margin-left: 15px;
   }
 }
 
-.services-nav{
-  a{
+.services-nav {
+  a {
     color: #333;
     font-family: $font-main;
 
     &:hover,
-    &:focus{
+    &:focus {
       color: $color-alt;
       font-family: $font-main-heavy;
       text-decoration: none;
@@ -147,48 +124,51 @@
   }
 }
 
-.affiliations{
+.affiliations {
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
 
-  &>*{
-    margin:10px;
+  & > * {
+    margin: 10px;
   }
-  
-  .affiliate-code{
+
+  .affiliate-code {
     margin-left: 10px;
     margin-right: 10px;
   }
 }
 
-#contact-info{
-  color: #fff;
+#footer {
+  background-color: #fff;
+  .footer {
+    padding-top: 0;
+    display: flex;
+    margin: auto;
+    justify-content: space-between;
+    flex-wrap: wrap;
 
-  .container-fluid{
-    position: relative;
-    z-index: 5;
+    h3{
+      font-family: $font-main;
+      color: $color-alt; 
+    }
   }
 
-  h3{
-    font-size: 48px;
+  .services-nav{
+    li{
+      a{
+        font-size: 16px;
+      }
+    }
   }
 
-  h4{
-    font-family: $font-main-black;
-    color: $color-brand;
+  .phone-numbers{
+    a{
+      display: inline-block;
+    }
   }
-
-  .loc-city{
-    font-size: 20px;
-    color: $color-brand;
-    font-family: $font-main-heavy;
-    margin-bottom: 0;
-    margin-top: 25px;
-  }
-
-  a{
-    color: #fff;
-  }
+}
+.copyright {
+  min-width: 256px;
 }

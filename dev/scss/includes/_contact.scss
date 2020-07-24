@@ -1,0 +1,91 @@
+#contact{
+  background-color: #f9f9f9;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: 40px;
+  margin-bottom: 40px;
+
+  .contact-top{
+    background-image: url(images/Contact_Background_clear_top.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center bottom;
+    padding-bottom: 130px;
+    padding-top: 12%;
+
+    h2{
+      font-size: 54px;
+    }
+  }
+
+  .contact-bottom{
+    position: relative;
+    background-color: $color-alt;
+    color: #fff;
+    padding-bottom: 25px;
+
+    .call{
+      color: #fff;
+      font-size: 38px;
+      padding-top: 25px;
+      padding-bottom: 25px;
+      text-align: right;
+
+      a{
+        color: #fff;
+        font-family: $font-main;
+        font-size: 32px;
+
+        &:hover,
+        &:focus{
+          color: #fff;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  .contact-form{
+    background-color: #e6e6e6;
+    border-radius: 24px;
+    padding: 40px 20px 20px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 12px 10px 10px rgba(0,0,0,.4);
+
+    .intro{
+      text-transform: none;
+      color: $color-alt;
+      margin-bottom: 20px;
+    }
+
+    input.form-control{
+      border-width: 0;
+      border-bottom-width: 1px;
+    }
+
+    textarea{
+      border-radius: 10px;
+    }
+  }
+
+  @include media-breakpoint-up(md){
+    .contact-form{
+      margin-top: -400px;
+    }
+  }
+}
+
+#contact-info{
+  color:#fff;
+
+  a{
+    color: #fff;
+  }
+
+  .container-fluid{
+    position: relative;
+    z-index: 5;
+  }
+}

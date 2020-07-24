@@ -1,10 +1,12 @@
 <?php
-/*
 add_action('wp_footer', 'show_template');
 function show_template() {
-	global $template;
-	print_r($template);
-}*/
+  global $template;
+  
+  if(WP_DEBUG === true){
+    print_r($template);
+  }
+}
 
 add_action('wp_enqueue_scripts', 'jquery_cdn');
 function jquery_cdn(){
@@ -132,55 +134,10 @@ function cai_setup(){
 }
 
 require_once dirname(__FILE__) . '/includes/class-wp-bootstrap-navwalker.php';
+require_once dirname(__FILE__) . '/includes/cai-fallback-menus.php';
+require_once dirname(__FILE__) . '/includes/cai-post-types.php';
 
-function cai_header_fallback_menu(){ ?>
-  <div id="header-nav" class="collapse navbar-collapse">
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-item<?php if(is_front_page()){ echo ' active'; } ?>">
-        <a href="<?php echo esc_url(home_url()); ?>" class="nav-link" title="<?php echo esc_attr__('Home', 'cai'); ?>"><?php echo esc_html__('Home', 'cai'); ?></a>
-      </li>
-      <li class="nav-item<?php if(is_page('about-us')); ?>">
-        <a href="<?php echo esc_url(home_url('about-us')); ?>" class="nav-link" title="<?php echo esc_attr__('About Us', 'cai'); ?>"><?php echo esc_html__('About Us', 'cai'); ?></a>
-      </li>
-      <li class="nav-item<?php if(is_page('services') || is_page_template('templates/services.php')){ echo ' active'; } ?>">
-        <a href="<?php echo esc_url(home_url('services')); ?>" class="nav-link" title="<?php echo esc_attr__('Services', 'cai'); ?>"><?php echo esc_html__('Services', 'cai'); ?></a>
-      </li>
-      <li class="nav-item<?php if(is_page('case-studies') || is_singular('case-study')){ echo ' active'; } ?>">
-        <a href="<?php echo esc_url(home_url('case-studies')); ?>" class="nav-link" title="<?php echo esc_attr__('Case Studies', 'cai'); ?>"><?php echo esc_html__('Case Studies', 'cai'); ?></a>
-      </li>
-      <li class="nav-item<?php if(is_home() || is_singular('post')){ echo ' active'; } ?>">
-        <a href="<?php echo esc_url(home_url('news-events')); ?>" class="nav-link" title="<?php echo esc_attr__('News/Events', 'cai'); ?>"><?php echo esc_html__('News/Events', 'cai'); ?></a>
-      </li>
-      <li class="nav-item<?php if(is_page('contact')){ echo ' active'; } ?>">
-        <a href="<?php echo esc_url(home_url('contact')); ?>" class="nav-link" title="<?php echo esc_attr__('Contact', 'cai'); ?>"><?php echo esc_html__('Contact', 'cai'); ?></a>
-      </li>
-    </ul>
-  </div>
-<?php }
-
-function cai_services_sub_nav_fallback_menu(){ ?>
-  <div id="services-nav">
-    <nav class="nav services-nav">
-      <a href="<?php echo esc_url(home_url('brand-identity')); ?>" title="<?php echo esc_attr__('Brand Identity', 'cai'); ?>"><?php echo esc_html__('Brand Identity', 'cai'); ?></a>
-      <a href="<?php echo esc_url(home_url('graphic-design')); ?>" title="<?php echo esc_attr__('Graphic Design', 'cai'); ?>"><?php echo esc_html__('Graphic Design', 'cai'); ?></a>
-      <a href="<?php echo esc_url(home_url('web-design')); ?>" title="<?php echo esc_attr__('Web Design', 'cai'); ?>"><?php echo esc_html__('Web Design', 'cai'); ?></a>
-      <a href="<?php echo esc_url(home_url('seo')); ?>" title="<?php echo esc_attr__('SEO', 'cai'); ?>"><?php echo esc_html__('SEO', 'cai'); ?></a>
-      <a href="<?php echo esc_url(home_url('digital-marketing')); ?>" title="<?php echo esc_attr_('Digital Marketing', 'cai'); ?>"><?php echo esc_html__('Digital Marketing', 'cai'); ?></a>
-      <a href="<?php echo esc_url(home_url('social-media')); ?>" title="<?php echo esc_attr__('Social Media', 'cai'); ?>"><?php echo esc_html__('Social Media', 'cai'); ?></a>
-    </nav>
-  </div>
-<?php }
-
-function cai_services_footer_nav_fallback_menu(){ ?>
-  <ul class="services-nav list-unstyled">
-    <li><a href="<?php echo esc_url(home_url('brand-identity')); ?>"><?php echo esc_html__('brand identity', 'cai'); ?></a></li>
-    <li><a href="<?php echo esc_url(home_url('graphic-design')); ?>"><?php echo esc_html__('graphic design', 'cai'); ?></a></li>
-    <li><a href="<?php echo esc_url(home_url('web-design')); ?>"><?php echo esc_html__('web design', 'cai'); ?></a></li>
-    <li><a href="<?php echo esc_url(home_url('seo')); ?>"><?php echo esc_html__('seo', 'cai'); ?></a></li>
-    <li><a href="<?php echo esc_url(home_url('digital-marketing')); ?>"><?php echo esc_html__('digital marketing', 'cai'); ?></a></li>
-    <li><a href="<?php echo esc_url(home_url('social-media')); ?>"><?php echo esc_html__('social media', 'cai'); ?></a></li>
-  </ul>
-<?php }
+add_action('init', 'cai_create_post_types');
 
 add_action('widgets_init', 'cai_register_sidebars');
 function cai_register_sidebars(){
@@ -192,6 +149,27 @@ function cai_register_sidebars(){
     'after_widget' => '</div>',
     'before_title' => '<h3>',
     'after_title' => '</h3>'
+  ));
+
+  register_sidebar(array(
+    'name' => 'Case Studies Sidebar',
+    'id' => 'sidebar-casestudies',
+    'description' => 'Add widgets here to appear in your sidebar on Case Study archive pages.',
+    'before_widget' => '<div class="sidebar-section">',
+    'after_widget' => '</div>',
+    'before_title' => '<h3>',
+    'after_title' => '</h3>'
+  ));
+}
+
+add_action('acf/init', 'cai_acf_options_page');
+function cai_acf_options_page(){
+  acf_add_options_page(array(
+    'page_title' => esc_html__('General Settings', 'cai'),
+    'menu_title' => esc_html__('General Settings', 'cai'),
+    'menu_slug' => 'general-settings',
+    'capability' => 'edit_posts',
+    'redirect' => false
   ));
 }
 
@@ -343,4 +321,53 @@ function cai_ajax_load_more_posts(){
   }
 
   wp_die();
+}
+
+add_action('wp_ajax_cai_ajax_load_more_case_studies', 'cai_ajax_load_more_case_studies');
+add_action('wp_ajax_nopriv_cai_ajax_load_more_case_studies', 'cai_ajax_load_more_case_studies');
+function cai_load_more_case_studies(){
+  check_ajax_referrer('cai_ajax_load_more_posts', 'security');
+
+  $paged = $_POST['page'];
+  $more_case_studies = new WP_Query(array(
+    'post_type' => 'case_studies',
+    'post_status' => 'publish',
+    'posts_per_page' => 12,
+    'paged' => $paged
+  ));
+  if($more_case_studies->have_posts()){
+    while($more_case_studies->have_posts()){
+      $more_case_studies->the_post();
+
+      $case_study_link = get_permalink();
+      $case_study_image = get_field('case_study_link_image');
+      $case_study_logo = get_field('case_study_white_logo');
+
+      echo '<a href="' . esc_url($case_study_link) . '" style="background-image: url(' . esc_url($case_study_image['url']) . ');">';
+        echo '<img src="' . esc_url($case_study_logo['url']) . '" class="img-fluid d-block mx-auto" alt="' . esc_attr($case_study_logo['alt']) . '" />';
+      echo '</a>';
+    }
+  }
+
+  wp_die();
+}
+
+add_action('frm_after_create_entry', 'cai_submit_sharpspring', 30, 2);
+function cai_submit_sharspring($entry, $form_id){
+  if($form_id == 0001){
+    $baseURI = 'https://app-3QNKNGNIX6.marketingautomation.services/webforms/receivePostback/MzawMDG3MDMzBgA/';
+    $endpoint = 'd041986f-fd8f-42cb-8c07-92a3c3d8fd61';
+    $post_url = $baseURI . $endpoint;
+
+    $body = array(
+      'Name' => $_POST['item_meta'][1],
+      'Email' => $_POST['item_meta'][3],
+      'Phone' => $_POST['item_meta'][4],
+      'How can we help you?' => $_POST['item_meta'][5],
+      'trackingid__sb' => $_COOKIE['__ss_tk']
+    );
+
+    $request = new WP_Http();
+    $response = $request->post( $post_url, array( 'body' => $body ) );
+  }
 }

@@ -1,0 +1,54 @@
+#design-marketing{
+  background-color: $color-alt;
+  color: #fff;
+  margin-top: 90px;
+
+  .bump-phone{
+    margin-top: 40px;
+  }
+
+  .design-marketing-title{
+    font-size: 34px;
+    font-family: $font-main-medium;
+    margin-bottom: 20px;
+    color: #fff;
+
+    span{
+      color: $color-brand;
+    }
+  }
+
+  p{
+    font-size: 24px;
+    line-height: 1.2em;
+  }
+
+  .disc-icon-wrapper{
+    text-align: center;
+    margin: 40px auto 0px;
+
+    p{
+      margin-top: 15px;
+      font-family: $font-main-heavy;
+    }
+  }
+
+
+  @include media-breakpoint-up(lg){
+    .bump-phone{
+      margin-top: -125px;
+    }
+    .design-side{
+      text-align: right;
+      .disc-icon-wrapper{
+        margin-right: 0;
+      }
+    }
+    .marketing-side{
+      text-align: left;
+      .disc-icon-wrapper{
+        margin-left: 0;
+      }
+    }
+  }
+}

@@ -10,7 +10,7 @@
               $most_recent_video_id = '';
               $video_category = get_category_by_slug('videos');
               $video_category_id = $video_category->term_id;
-              $blog_page = get_page_by_path('news-events');
+              $blog_page = get_page_by_path('blog');
               $blog_page_id = $blog_page->ID;
 
               $most_recent = new WP_Query(array(
