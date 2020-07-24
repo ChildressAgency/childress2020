@@ -126,9 +126,7 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-xl-3 mt-5 text-center text-xl-left">
-            <svg class="logo-color-name">
-              <use xlink:href="#logo-color-name" />
-            </svg>
+            <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo_blue_330.png" class="img-fluid d-block mx-auto mx-xl-0" alt="Logo" />
             <p class="mt-2">&copy;<?php echo date('Y'); ?> Childress Agency, Inc.<br />All Rights Reserved</p>
           </div>
           <div class="col-xl-9 mt-5 text-center text-xl-left">
