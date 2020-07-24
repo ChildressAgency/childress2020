@@ -43,7 +43,7 @@
           </a>
           <div class="brand-name-phone">
             <a href="<?php echo esc_url(home_url()); ?>" class="brand-name">Childress Agency</a>
-            <a href="tel:5404125199" class="brand-phone">540-412-5199</a>
+            <a href="tel:8664022002" class="brand-phone">866-402-2002</a>
           </div>
         </div>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#header-nav" aria-controls="header-nav" aria-expanded="false" aria-label="Toggle Navigation">
