@@ -19,6 +19,12 @@
     margin-top: 175px;
   }
 
+  @include media-breakpoint-down(sm){
+    .swiper-wrapper{
+      margin-top: 50px;
+    }
+  }
+
   .progress{
     height: 10px;
     background-color: #fff;
