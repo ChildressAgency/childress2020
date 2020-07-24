@@ -30,7 +30,21 @@
   <?php endif; ?>
 <?php endif; ?>
 
-  <section id="contact" style="<?php if(is_page('contact')){ echo 'padding-bottom:0; padding-top:60px; margin-bottom:0;'; } ?>">
+<?php if(is_page('contact')) : ?>
+  <style>
+    #contact{
+      padding-bottom: 0;
+      padding-top: 60px;
+      margin-bottom: 0;
+    }
+    @media (max-width:465px){
+      #contact{
+        padding-top: 125px;
+      }
+    }
+  </style>
+<?php endif; ?>
+  <section id="contact">
     <div class="contact-top">
       <div class="container">
         <div class="row">
