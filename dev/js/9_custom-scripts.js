@@ -30,7 +30,7 @@ jQuery(document).ready(function ($) {
   });
 
   // service page center line
-  var servicePageHeight = $(".service-page").outerHeight();
+  var servicePageHeight = $(".services-page").outerHeight();
   var windowHeight = $window.height() - 250; //250 = distance from line start to top of doc
   var serviceLineContainerHeight = servicePageHeight - windowHeight;
   var $serviceLine = $(".service-line");
