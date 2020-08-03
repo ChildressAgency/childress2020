@@ -257,6 +257,15 @@ jQuery(document).ready(function ($) {
       }
     });
   });
+
+  var $caiIcon = $('#cai-icon');
+  $('.cai-state').hover(function(){
+    var caiState = $(this).attr('id');
+    $caiIcon.addClass(caiState);
+  }, function(){
+    var caiState = $(this).attr('id');
+    $caiIcon.removeClass(caiState);
+  });
 }); //end jQuery
 
 function isInViewport(element, offset) {

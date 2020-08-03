@@ -1,0 +1,308 @@
+.cai-country{
+  position: relative;
+}
+#States{
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+
+  .cai-state{
+    fill: $color-alt;
+    
+    .cai-state-logo{
+      fill: #fff;
+      width: 90%;
+      height: 90%;
+    }
+
+    &:hover,
+    &:focus{
+      fill: $color-brand;
+    }
+  }
+}
+
+#cai-icon{
+  position: absolute;
+  opacity: 0;
+  height: auto;
+  pointer-events: none;
+  z-index: 999;
+
+  &.alaska{
+    opacity: 1;
+    top: 82%;
+    left: 6.4%;
+    width: 5%;
+  }
+  &.hawaii{
+    
+  }
+  &.texas{
+    opacity: 1;
+    top: 65%;
+    left: 44%;
+    width: 6%;
+  }
+  &.california{
+    opacity: 1;
+    top: 37.5%;
+    left: 5.2%;
+    width: 4.5%;
+  }
+  &.montana{
+    opacity: 1;
+    top: 8.5%;
+    left: 28%;
+    width: 6%;
+  }
+  &.new-mexico{
+    opacity: 1;
+    top: 53.5%;
+    left: 30%;
+    width: 6%;
+  }
+  &.arizona{
+    opacity: 1;
+    top: 51.5%;
+    left: 19%;
+    width: 6%;
+  }
+  &.oregon{
+    opacity: 1;
+    top: 14.5%;
+    left: 8.5%;
+    width: 5%;
+  }
+  &.minnesota{
+    opacity: 1;
+    top: 15.5%;
+    left: 52.7%;
+    width: 4%;
+  }
+  &.idaho{
+    opacity: 1;
+    top: 19.5%;
+    left: 18.5%;
+    width: 4%;
+  }
+  &.north-dakota{
+    opacity: 1;
+    top: 10.5%;
+    left: 43.2%;
+    width: 4%;
+  }
+  &.washington{
+    opacity: 1;
+    top: 4%;
+    left: 12.2%;
+    width: 4%;
+  }
+  &.georgia{
+    opacity: 1;
+    top: 61%;
+    left: 75.5%;
+    width: 4%;
+  }
+  &.illinois{
+    opacity: 1;
+    top: 35.2%;
+    left: 62.5%;
+    width: 4%;
+  }
+
+  &.florida{
+    opacity: 1;
+    top: 78.2%;
+    left: 81.5%;
+    width: 3%;
+  }
+  &.wisconsin{
+    opacity: 1;
+    top: 20%;
+    left: 60.5%;
+    width: 4%;
+  }
+  &.alabama{
+    opacity: 1;
+    top: 61%;
+    left: 68.5%;
+    width: 4%;
+  }
+  &.north-carolina{
+    opacity: 1;
+    top: 48.3%;
+    left: 83%;
+    width: 3.5%;
+  }
+  &.mississippi{
+    opacity: 1;
+    top: 61.5%;
+    left: 63.2%;
+    width: 3.5%;
+  }
+  &.new-york{
+    opacity: 1;
+    top: 20.5%;
+    left: 86.5%;
+    width: 3.5%;
+  }
+  &.louisiana{
+    opacity: 1;
+    top: 68%;
+    left: 57.8%;
+    width: 3%;
+  }
+  &.pennsylvania{
+    opacity: 1;
+    top: 29%;
+    left: 82.5%;
+    width: 4%;
+  }
+  &.ohio{
+    width: 4%;
+    top: 34%;
+    left: 73.5%;
+    opacity: 1;
+  }
+  &.virginia{
+    opacity: 1;
+    top: 41%;
+    left: 83%;
+    width: 3.5%;
+  }
+  &.indiana{
+    opacity: 1;
+    top: 35.7%;
+    left: 68.2%;
+    width: 3.5%;
+  }
+  &.maine{
+    opacity: 1;
+    top: 9.7%;
+    left: 94.7%;
+    width: 3%;
+  }
+  &.south-carolina{
+    opacity: 1;
+    top: 55.7%;
+    left: 80.7%;
+    width: 3%;
+  }
+  &.michigan{
+    opacity: 1;
+    width: 3.5%;
+    top: 26%;
+    left: 70.2%;
+  }
+  &.maryland{
+
+  }
+  &.vermont{
+
+  }
+  &.new-hampshire{
+
+  }
+  &.massachusettes{
+
+  }
+  &.new-jersey{
+
+  }
+  &.connecticut{
+
+  }
+  &.delaware{
+
+  }
+  &.rhode-island{
+
+  }
+  &.nevada{
+    opacity: 1;
+    top: 31%;
+    left: 12.2%;
+    width: 6%;
+  }
+  &.colorado{
+    opacity: 1;
+    top: 38%;
+    left: 32%;
+    width: 6%;
+  }
+  &.wyoming{
+    opacity: 1;
+    top: 23%;
+    left: 29.5%;
+    width: 6%;
+  }
+  &.utah{
+    opacity: 1;
+    top: 36.5%;
+    left: 22%;
+    width: 4.5%;
+  }
+  &.kansas{
+    opacity: 1;
+    top: 41.5%;
+    left: 46%;
+    width: 4.5%;
+  }
+  &.south-dakota{
+    opacity: 1;
+    top: 20.5%;
+    left: 43%;
+    width: 4.5%;
+  }
+  &.nebraska{
+    opacity: 1;
+    top: 31%;
+    left: 43.5%;
+    width: 4.5%;
+  }
+  &.oklahoma{
+    opacity: 1;
+    top: 52.3%;
+    left: 47.5%;
+    width: 4.5%;
+  }
+  &.missouri{
+    opacity: 1;
+    top: 41.5%;
+    left: 56.5%;
+    width: 4.5%;
+  }
+  &.iwoa{
+    opacity: 1;
+    top: 29%;
+    left: 54%;
+    width: 4.5%;
+  }
+  &.arkansas{
+    opacity: 1;
+    top: 54%;
+    left: 56.7%;
+    width: 4.5%;
+  }
+  &.tennessee{
+    opacity: 1;
+    top: 51%;
+    left: 68.5%;
+    width: 3%;
+  }
+  &.kentucky{
+    opacity: 1;
+    top: 44%;
+    left: 72%;
+    width: 3%;
+  }
+  &.west-virginia{
+    opacity: 1;
+    top: 39.5%;
+    left: 78.2%;
+    width: 3%;
+  }
+}
