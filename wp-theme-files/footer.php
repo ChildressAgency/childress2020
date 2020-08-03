@@ -115,7 +115,7 @@
                       <span itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
                         <span itemprop="addressLocality"><?php the_sub_field('location_city'); ?></span>
                       </span><br />
-                      <a href="<?php the_sub_field('location_phone'); ?>"><span itemprop="telephone"><?php the_sub_field('location_phone'); ?></span></a>
+                      <a href="tel:<?php the_sub_field('location_phone'); ?>"><span itemprop="telephone"><?php the_sub_field('location_phone'); ?></span></a>
                     </p>
                   </div>
                 <?php endwhile; ?>
