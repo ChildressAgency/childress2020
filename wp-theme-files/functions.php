@@ -371,3 +371,10 @@ function cai_submit_sharspring($entry, $form_id){
     $response = $request->post( $post_url, array( 'body' => $body ) );
   }
 }
+
+add_shortcode('cai_location_map', 'cai_show_location_map');
+function cai_show_location_map($atts){
+  ob_start();
+  include(locate_template('partials/cai-country.svg.php'));
+  return ob_get_clean();
+}
