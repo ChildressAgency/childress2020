@@ -18,13 +18,15 @@
     }
 
     &:hover,
-    &:focus{
+    &:focus,
+    &.active{
       fill: $color-brand;
     }
   }
 }
 
-#cai-icon{
+#cai-icon,
+#cai-active-icon{
   position: absolute;
   opacity: 0;
   height: auto;
@@ -206,7 +208,7 @@
   &.new-hampshire{
 
   }
-  &.massachusettes{
+  &.massachusetts{
 
   }
   &.new-jersey{
