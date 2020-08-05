@@ -8,8 +8,9 @@
   margin-left: auto;
   margin-right: auto;
 
-  .cai-state{
+  .state{
     fill: $color-alt;
+    transition: none;
     
     .cai-state-logo{
       fill: #fff;
@@ -306,5 +307,49 @@
     top: 39.5%;
     left: 78.2%;
     width: 3%;
+  }
+}
+
+#work-with{
+  margin-top: 60px;
+  margin-bottom: 40px;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  background-color: $color-alt;
+  color: #fff;
+
+  h2{
+    color: #fff;
+    margin-bottom: 20px;
+
+    span{
+      color: $color-brand;
+    }
+  }
+
+  h4{
+    margin-bottom: 20px;
+  }
+}
+
+#location-services{
+  h2{
+    text-align: center;
+    margin-bottom: 25px;
+    font-family: $font-main-black;
+  }
+
+  .media{
+    margin-top: 60px;
+
+    .disc-icon-bg{
+      height: 100px;
+      width: 100px;
+      margin-right: 15px;
+    }
+
+    h3{
+      font-family: $font-main-heavy;
+    }
   }
 }
