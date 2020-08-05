@@ -1,6 +1,6 @@
 <?php get_header();?>
 <main id="main">
-  <section is="main-content">
+  <section id="main-content">
     <div class="container">
       <?php
         if(have_posts()){
