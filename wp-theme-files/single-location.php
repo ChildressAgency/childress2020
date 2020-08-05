@@ -21,7 +21,7 @@
           <img src="<?php echo esc_url($state_image['url']); ?>" class="img-fluid d-block mx-auto" alt="<?php echo esc_url($state_image['alt']); ?>" />
         </div>
         <div class="col-md-8">
-          <?php the_field('work_with_section_title'); ?>
+          <h2><?php the_field('work_with_section_title'); ?></h2>
           <?php the_field('work_with_section_content'); ?>
         </div>
       </div>
