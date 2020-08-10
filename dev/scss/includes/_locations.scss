@@ -12,16 +12,49 @@
     fill: $color-alt;
     transition: none;
     
-    .cai-state-logo{
-      fill: #fff;
-      width: 90%;
-      height: 90%;
-    }
 
-    &:hover,
-    &:focus,
-    &.active{
+    &.on{
       fill: $color-brand;
+
+      .cai-state-logo{
+        fill: #fff;
+        width: 90%;
+        height: 90%;
+      }
+    }
+  }
+}
+
+.country-list{
+  margin-top: 80px;
+  padding-left: 0;
+  list-style: none;
+  columns: 200px auto;
+  column-gap: 15px;
+
+  li{
+    display: inline-block;
+    width: 100%;
+
+    a{
+      display: block;
+      padding: 2px 4px;
+      transition: none;
+
+      &.cai-word-state{
+        color: $color-brand;
+      }
+
+      &:hover,
+      &:focus{
+        text-decoration: none;
+      }
+    }
+    &.on{
+      a.cai-word-state{
+        background-color: $color-brand;
+        color: #fff;
+      }
     }
   }
 }
@@ -34,275 +67,275 @@
   pointer-events: none;
   z-index: 999;
 
-  &.alaska{
+  &.AK{
     opacity: 1;
     top: 82%;
     left: 6.4%;
     width: 5%;
   }
-  &.hawaii{
+  &.HI{
     
   }
-  &.texas{
+  &.TX{
     opacity: 1;
     top: 65%;
     left: 44%;
     width: 6%;
   }
-  &.california{
+  &.CA{
     opacity: 1;
     top: 37.5%;
     left: 5.2%;
     width: 4.5%;
   }
-  &.montana{
+  &.MT{
     opacity: 1;
     top: 8.5%;
     left: 28%;
     width: 6%;
   }
-  &.new-mexico{
+  &.NM{
     opacity: 1;
     top: 53.5%;
     left: 30%;
     width: 6%;
   }
-  &.arizona{
+  &.AZ{
     opacity: 1;
     top: 51.5%;
     left: 19%;
     width: 6%;
   }
-  &.oregon{
+  &.OR{
     opacity: 1;
     top: 14.5%;
     left: 8.5%;
     width: 5%;
   }
-  &.minnesota{
+  &.MN{
     opacity: 1;
     top: 15.5%;
     left: 52.7%;
     width: 4%;
   }
-  &.idaho{
+  &.ID{
     opacity: 1;
     top: 19.5%;
     left: 18.5%;
     width: 4%;
   }
-  &.north-dakota{
+  &.ND{
     opacity: 1;
     top: 10.5%;
     left: 43.2%;
     width: 4%;
   }
-  &.washington{
+  &.WA{
     opacity: 1;
     top: 4%;
     left: 12.2%;
     width: 4%;
   }
-  &.georgia{
+  &.GA{
     opacity: 1;
     top: 61%;
     left: 75.5%;
     width: 4%;
   }
-  &.illinois{
+  &.IL{
     opacity: 1;
     top: 35.2%;
     left: 62.5%;
     width: 4%;
   }
 
-  &.florida{
+  &.FL{
     opacity: 1;
     top: 78.2%;
     left: 81.5%;
     width: 3%;
   }
-  &.wisconsin{
+  &.WI{
     opacity: 1;
     top: 20%;
     left: 60.5%;
     width: 4%;
   }
-  &.alabama{
+  &.AL{
     opacity: 1;
     top: 61%;
     left: 68.5%;
     width: 4%;
   }
-  &.north-carolina{
+  &.NC{
     opacity: 1;
     top: 48.3%;
     left: 83%;
     width: 3.5%;
   }
-  &.mississippi{
+  &.MS{
     opacity: 1;
     top: 61.5%;
     left: 63.2%;
     width: 3.5%;
   }
-  &.new-york{
+  &.NY{
     opacity: 1;
     top: 20.5%;
     left: 86.5%;
     width: 3.5%;
   }
-  &.louisiana{
+  &.LA{
     opacity: 1;
     top: 68%;
     left: 57.8%;
     width: 3%;
   }
-  &.pennsylvania{
+  &.PA{
     opacity: 1;
     top: 29%;
     left: 82.5%;
     width: 4%;
   }
-  &.ohio{
+  &.OH{
     width: 4%;
     top: 34%;
     left: 73.5%;
     opacity: 1;
   }
-  &.virginia{
+  &.VA{
     opacity: 1;
     top: 41%;
     left: 83%;
     width: 3.5%;
   }
-  &.indiana{
+  &.IN{
     opacity: 1;
     top: 35.7%;
     left: 68.2%;
     width: 3.5%;
   }
-  &.maine{
+  &.ME{
     opacity: 1;
     top: 9.7%;
     left: 94.7%;
     width: 3%;
   }
-  &.south-carolina{
+  &.SC{
     opacity: 1;
     top: 55.7%;
     left: 80.7%;
     width: 3%;
   }
-  &.michigan{
+  &.MI{
     opacity: 1;
     width: 3.5%;
     top: 26%;
     left: 70.2%;
   }
-  &.maryland{
+  &.MD{
 
   }
-  &.vermont{
+  &.VT{
 
   }
-  &.new-hampshire{
+  &.NH{
 
   }
-  &.massachusetts{
+  &.MA{
 
   }
-  &.new-jersey{
+  &.NJ{
 
   }
-  &.connecticut{
+  &.CT{
 
   }
-  &.delaware{
+  &.DE{
 
   }
-  &.rhode-island{
+  &.RI{
 
   }
-  &.nevada{
+  &.NV{
     opacity: 1;
     top: 31%;
     left: 12.2%;
     width: 6%;
   }
-  &.colorado{
+  &.CO{
     opacity: 1;
     top: 38%;
     left: 32%;
     width: 6%;
   }
-  &.wyoming{
+  &.WY{
     opacity: 1;
     top: 23%;
     left: 29.5%;
     width: 6%;
   }
-  &.utah{
+  &.UT{
     opacity: 1;
     top: 36.5%;
     left: 22%;
     width: 4.5%;
   }
-  &.kansas{
+  &.KS{
     opacity: 1;
     top: 41.5%;
     left: 46%;
     width: 4.5%;
   }
-  &.south-dakota{
+  &.SD{
     opacity: 1;
     top: 20.5%;
     left: 43%;
     width: 4.5%;
   }
-  &.nebraska{
+  &.NE{
     opacity: 1;
     top: 31%;
     left: 43.5%;
     width: 4.5%;
   }
-  &.oklahoma{
+  &.OK{
     opacity: 1;
     top: 52.3%;
     left: 47.5%;
     width: 4.5%;
   }
-  &.missouri{
+  &.MO{
     opacity: 1;
     top: 41.5%;
     left: 56.5%;
     width: 4.5%;
   }
-  &.iwoa{
+  &.IA{
     opacity: 1;
     top: 29%;
     left: 54%;
     width: 4.5%;
   }
-  &.arkansas{
+  &.AR{
     opacity: 1;
     top: 54%;
     left: 56.7%;
     width: 4.5%;
   }
-  &.tennessee{
+  &.TN{
     opacity: 1;
     top: 51%;
     left: 68.5%;
     width: 3%;
   }
-  &.kentucky{
+  &.KY{
     opacity: 1;
     top: 44%;
     left: 72%;
     width: 3%;
   }
-  &.west-virginia{
+  &.WV{
     opacity: 1;
     top: 39.5%;
     left: 78.2%;

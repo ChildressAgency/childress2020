@@ -285,3 +285,67 @@ function isInViewport(element, offset) {
   return bottom > viewportTop && top < viewportBottom;
 }
 
+//locations
+var wordStates = document.querySelectorAll('.country-list li');
+var svgStates = document.querySelectorAll('.state');
+var caiIcon = document.querySelector('#cai-icon');
+
+function removeAllOn() {
+  wordStates.forEach(function (el) {
+    el.classList.remove("on");
+  });
+  svgStates.forEach(function (el) {
+    el.classList.remove("on");
+    var stateCode = el.getAttribute('id');
+    removeIcon(stateCode);
+  });
+}
+
+function removeIcon(stateCode){
+  caiIcon.classList.remove(stateCode);
+}
+
+function addOnFromList(el) {
+  var stateCode = el.getAttribute("data-state");
+  var svgState = document.querySelector("#" + stateCode);
+  el.classList.add("on");
+  svgState.classList.add("on");
+  if(svgState.classList.contains('cai-state')){
+    caiIcon.classList.add(stateCode);
+  }
+}
+
+function addOnFromState(el) {
+  var stateId = el.getAttribute("id");
+  var wordState = document.querySelector("[data-state='" + stateId + "']");
+  el.classList.add("on");
+  wordState.classList.add("on");
+}
+
+wordStates.forEach(function (el) {
+  el.addEventListener("mouseenter", function () {
+    addOnFromList(el);
+  });
+  el.addEventListener("mouseleave", function () {
+    removeAllOn();
+  });
+
+  el.addEventListener("touchstart", function () {
+    removeAllOn();
+    addOnFromList(el);
+  });
+});
+
+svgStates.forEach(function (el) {
+  el.addEventListener("mouseenter", function () {
+    addOnFromState(el);
+  });
+  el.addEventListener("mouseleave", function () {
+    removeAllOn();
+  });
+
+  el.addEventListener("touchstart", function () {
+    removeAllOn();
+    addOnFromState(el);
+  });
+});
