@@ -33,7 +33,7 @@
                           <?php while(have_rows('stats')): the_row(); ?>
 
                             <div class="col-md-6">
-                              <span class="count-plus">&plus;&nbsp;</span><span class="count odometer" data-top_number="<?php the_sub_field('stat_number'); ?>"></span>
+                              <span class="count odometer" data-top_number="<?php the_sub_field('stat_number'); ?>"></span><span class="count-plus" style="margin-left:5px;"><?php the_sub_field('stat_symbol'); ?></span>
                               <span class="stat-description"><?php the_sub_field('stat_title'); ?></span>
                             </div>
 
