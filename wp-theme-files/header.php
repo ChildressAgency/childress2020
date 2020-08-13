@@ -183,11 +183,18 @@
                               <span>WEBSITE</span>
                             <?php break;
 
-                            case 'graphic-design': ?>
+                            case 'digital-marketing': ?>
                               <svg class="case-study-icon">
-                                <use xlink:href="#icon-pen" />
+                                <use xlink:href="#icon-devices-circle" />
                               </svg>
-                              <span>GRAPHIC DESIGN</span>
+                              <span>DIGITAL MARKETING</span>
+                            <?php break;
+
+                            case 'seo': ?>
+                              <svg class="case-study-icon">
+                                <use xlink:href="#icon-graph" />
+                              </svg>
+                              <span>SEO</span>
                             <?php break;
 
                             case 'social-media': ?>
@@ -195,6 +202,13 @@
                                 <use xlink:href="#icon-social-circle" />
                               </svg>
                               <span>SOCIAL MEDIA</span>
+                            <?php break;
+
+                            case 'graphic-design': ?>
+                              <svg class="case-study-icon">
+                                <use xlink:href="#icon-pen" />
+                              </svg>
+                              <span>GRAPHIC DESIGN</span>
                             <?php break;
                           }
                         ?>
