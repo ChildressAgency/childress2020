@@ -168,7 +168,7 @@ jQuery(document).ready(function ($) {
   });
 
   var studyStats = new Swiper('#study-stats .swiper-container', {
-    autoplay: true,
+    autoplay: false,
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev'
