@@ -43,7 +43,7 @@
             $city_states['state'] = $state->name;
             $city_states['location_link'] = get_the_permalink();
           }
-        }
+        } wp_reset_postdata();
       }
 
       if(!empty($city_states)){
