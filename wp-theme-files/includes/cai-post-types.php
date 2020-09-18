@@ -117,5 +117,5 @@ function cai_create_post_types(){
         'back_to_items' => esc_html__('Back To States', 'cai')
       )
     )
-  )
+  );
 }
