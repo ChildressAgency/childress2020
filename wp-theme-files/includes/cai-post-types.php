@@ -92,4 +92,30 @@ function cai_create_post_types(){
     )
   );
   register_post_type('location', $location_args);
+
+  register_taxonomy(
+    'state',
+    'location',
+    array(
+      'hierarchical' => true,
+      'show_admin_column' => true,
+      'public' => true,
+      'show_in_rest' => true,
+      'labels' => array(
+        'name' => esc_html__('States', 'cai'),
+        'singular_name' => esc_html__('State', 'cai'),
+        'all_items' => esc_html__('All State', 'cai'),
+        'edit_item' => esc_html__('Edit State', 'cai'),
+        'view_item' => esc_html__('View State', 'cai'),
+        'update_item' => esc_html__('Update State', 'cai'),
+        'add_new_item' => esc_html__('Add New State', 'cai'),
+        'parent_item' => esc_html__('Parent State', 'cai'),
+        'search_items' => esc_html__('Search States', 'cai'),
+        'popular_items' => esc_html__('Popular State', 'cai'),
+        'add_or_remove_item' => esc_html__('Add or Remove State', 'cai'),
+        'not_found' => esc_html__('No States Found', 'cai'),
+        'back_to_items' => esc_html__('Back To States', 'cai')
+      )
+    )
+  )
 }
