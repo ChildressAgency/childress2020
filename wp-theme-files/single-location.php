@@ -70,7 +70,7 @@
     <div class="container">
       <h2><?php the_field('locations_services_section_title'); ?></h2>
       <div class="row">
-        <?php if(have_rows('location_services')): while(have_rows('locations_services')): the_row(); ?>
+        <?php if(have_rows('location_services')): while(have_rows('location_services')): the_row(); ?>
           <div class="col-md-6 d-flex">
             <div class="post-summary">
               <?php $service_image = get_sub_field('service_image'); ?>
