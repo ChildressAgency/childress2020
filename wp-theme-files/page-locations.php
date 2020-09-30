@@ -57,7 +57,7 @@
 		    //var_dump($city_states);
       	if(!empty($city_states)){
 		      for($s = 0; $s < count($city_states); $s++){
-            echo '<li><a href="' . $city_state[$s]['location_link'] . '" class="ca-location">' . $city_states[$s]['city'] . ', ' . $city_states[$s]['state'] . '</a></li>';
+            echo '<li><a href="' . $city_states[$s]['location_link'] . '" class="ca-location">' . $city_states[$s]['city'] . ', ' . $city_states[$s]['state'] . '</a></li>';
           }
       	}
       }
